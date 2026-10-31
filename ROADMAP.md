@@ -88,7 +88,8 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - [3 variantes de paroles sans audio](songs/drafts/2026-10-31-lyrics-preflight.md) : A = deux voix, B = deux époques, C = contrôle à deux cibles.
 - **Statut : à relire par Vincent**. Aucune des trois variantes n'est validée.
 - Les ancrages français risquent encore de ressembler à des traductions ; c'est l'objet du test textuel.
-- La variante C est volontairement hors densité 3–4 cibles et requiert une décision produit avant toute génération.
+- Vincent a **validé le principe de 2 cibles/minute** et la piste de la reprise naturelle d'une notion dans un autre contexte ; il **n'a pas validé les paroles C**.
+- [3 nouvelles mini-scènes dialoguées (D1/D2/D3)](songs/drafts/2026-10-31-dialogue-mechanisms.md) : écho, correction, souvenir contradictoire ; mêmes 2 cibles pour comparer le mécanisme, **en attente de revue textuelle**.
 - **Ne pas utiliser Suno pour ces variantes avant validation explicite des paroles.**
 - Garde-fou ajouté : `scripts/check_generation_gate.py` vérifie l'approbation humaine **liée au hash des paroles** ; les exports hors ligne restent marqués en attente si l'approbation manque.
 
@@ -111,7 +112,7 @@ Nouvelle règle de process :
 
 1. Repenser la structure des paroles pour que les passages français ne soient pas des traductions empilées.
 2. Réduire fortement la répétition intra-morceau : une cible peut n'apparaître qu'une fois en espagnol si le contexte est clair, avec un ancrage français naturel ailleurs ; la répétition se fait surtout entre plusieurs chansons.
-3. **En attente de revue textuelle humaine** : trois variantes préparées dans [lyrics-preflight](songs/drafts/2026-10-31-lyrics-preflight.md), dont un contrôle exploratoire à deux cibles. Ne pas générer d'audio sur ces textes avant retour explicite.
+3. **En attente de revue textuelle humaine** : variantes A/B/C dans [lyrics-preflight](songs/drafts/2026-10-31-lyrics-preflight.md) et trois mini-scènes D1/D2/D3 dans [dialogue-mechanisms](songs/drafts/2026-10-31-dialogue-mechanisms.md). La piste C (densité et écho) est retenue comme direction, **aucun texte n'est approuvé pour génération**.
 4. Une fois une structure textuelle validée, tester plusieurs traitements musicaux cohérents avec le profil Deezer en gardant les paroles constantes.
 5. Utiliser progressivement le budget Suno quotidien uniquement sur des hypothèses déjà valides sur papier.
 6. Préparer un chemin de validation V6 complet dès qu'il devient accessible.
@@ -119,7 +120,7 @@ Nouvelle règle de process :
 ## Règle de répétition
 
 - Ne pas forcer 3–4 répétitions d'un même mot cible dans une chanson d'une minute.
-- Nouvelle piste validée par Vincent : chercher la répétition **dans des contextes conversationnels naturels**, où deux personnes se répondent, se corrigent, reformulent ou reprennent une idée avec un autre exemple.
+- Nouvelle piste validée par Vincent : chercher la répétition **dans des contextes conversationnels naturels**, où deux personnes se répondent, se corrigent, reformulent ou reprennent une idée avec un autre exemple. Trois micro-scènes D1/D2/D3 sont disponibles pour prévalidation.
 - Par défaut, viser **1 occurrence espagnole claire par cible** dans le morceau, puis éventuellement une reprise naturelle dans un autre contexte ou par une autre voix.
 - Un ancrage français naturel peut apparaître ailleurs dans la chanson sans répéter mécaniquement le mot.
 - Une deuxième occurrence espagnole n'est utile que si elle tombe naturellement dans un refrain ou une reprise crédible.
