@@ -1,0 +1,89 @@
+{
+  "experiment_id": "2026-10-31-reinforcement",
+  "created_on": "2026-10-31",
+  "status": "draft_only_no_audio",
+  "objective": "Compare early vs delayed exact French anchors for sosiego and hallar, the two terms left without French anchors in the first lyric pack.",
+  "common": {
+    "target_words": [
+      {
+        "lemma": "añorar",
+        "surface": "añoro",
+        "fr": "avoir la nostalgie de",
+        "anchor": null
+      },
+      {
+        "lemma": "sosiego",
+        "surface": "sosiego",
+        "fr": "quiétude / calme intérieur",
+        "anchor": "sa quiétude"
+      },
+      {
+        "lemma": "hallar",
+        "surface": "hallo",
+        "fr": "trouver",
+        "anchor": "j'ai trouvé"
+      },
+      {
+        "lemma": "dejar atrás",
+        "surface": "Dejo atrás",
+        "fr": "laisser derrière soi",
+        "anchor": null
+      }
+    ],
+    "style_prompt": "prompts/indie-pop.md",
+    "estimated_duration_seconds": "60-90",
+    "planned_generation_replicates_per_variant": 2,
+    "notes": "Both variants have identical Spanish and French lines in the same order; only the placement of the French bridge changes. No claim of learning without audio and independent listeners."
+  },
+  "variants": [
+    {
+      "id": "A",
+      "file": "A-early-anchors.md",
+      "treatment": "French bridge after first full verse, before chorus repetitions",
+      "french_anchor_count": 2,
+      "anchored_lemmas": [
+        "sosiego",
+        "hallar"
+      ],
+      "suno_url": null,
+      "generated": false
+    },
+    {
+      "id": "B",
+      "file": "B-late-anchors.md",
+      "treatment": "Same French bridge after chorus repetitions, before outro",
+      "french_anchor_count": 2,
+      "anchored_lemmas": [
+        "sosiego",
+        "hallar"
+      ],
+      "suno_url": null,
+      "generated": false
+    }
+  ],
+  "controlled_pairs": [
+    {
+      "variants": [
+        "A",
+        "B"
+      ],
+      "hold_constant": [
+        "spanish_lyrics",
+        "french_lyrics"
+      ],
+      "variable": "Timing of the same two French semantic anchors relative to Spanish repetitions"
+    }
+  ],
+  "evaluation": {
+    "human_review_required": true,
+    "metrics": [
+      "French intelligibility 0-5",
+      "Spanish intelligibility 0-5",
+      "Musical naturalness 0-5",
+      "Perceived rushed transitions 0-5 (higher=worse)",
+      "Immediate target recall count 0-4",
+      "24h delayed target recall count 0-4"
+    ],
+    "conclusions": "pending_audio_and_listening"
+  }
+}
