@@ -66,14 +66,16 @@ Référence actuelle :
 
 ## Politique de crédits et autonomie
 
-La routine autonome peut utiliser Suno MCP directement pour avancer le POC, avec les règles suivantes :
+La politique opérationnelle courante est définie dans `ROADMAP.md`.
 
+Principes :
+- viser jusqu'à **50 crédits Suno disponibles par jour** comme budget de travail courant demandé par Vincent ;
+- répartir les générations sur les runs plutôt que consommer le budget d'un coup ;
+- maximum un appel de génération par run sauf exception documentée ;
+- vérifier le solde réel avant chaque appel ;
 - ne jamais acheter de crédits ;
 - ne jamais changer d'abonnement ;
-- rester dans les crédits déjà disponibles ;
-- privilégier 1 à 3 générations discriminantes plutôt que des lots volumineux ;
-- noter la consommation de crédits dans le récap quotidien ;
-- si Suno devient indisponible ou si le quota est trop bas, continuer hors audio sur le repo, les prompts, les paroles, les tests et l'évaluation.
+- utiliser les runs sans audio pour avancer le repo, les prompts, paroles, vocabulaire, scripts et tests.
 
 ## Automatisation
 
@@ -88,6 +90,6 @@ Le run de 21:00 heure de Paris inclut le bilan quotidien : avancées, générati
 - Deux appels de génération custom `v6-mini` ont produit **quatre clips privés** (deux prises par appel) pour l'expérience A/B `2026-10-31-semantic-reset`.
 - Quota vérifié après génération : **80/100 crédits restants**, donc **20 crédits consommés**.
 - Le paramètre `negative_style` a échoué avec `feature_not_on_plan` sur le compte Free ; les exclusions de style ont été placées dans le champ `style` à la place.
-- Malgré « voix dans les 3 premières secondes », l'alignement automatique donne une première syllabe à ~8 s dans 3 prises sur 4. Un hard cap à 60 s a probablement coupé l'outro de l'une d'elles.
+- Des analyses automatiques d'alignement ont été faites lors du premier smoke test ; **ne pas répéter ce type d'analyse pour l'évaluation audio**. L'écoute et le jugement qualitatif appartiennent désormais à Vincent.
 - Un appel Suno `audio_create` peut générer **deux morceaux**. Budgéter en conséquence et utiliser des clés d'idempotence pour les retries.
-- Voir [le journal complet](../songs/experiments/2026-10-31-semantic-reset/runs/2026-10-31-mcp-smoke-test.json) ; l'évaluation humaine de la musique et de la prononciation reste à faire.
+- Voir [le journal complet](../songs/experiments/2026-10-31-semantic-reset/runs/2026-10-31-mcp-smoke-test.json). Les clips générés restent en attente de revue humaine ; GPT ne doit pas analyser subjectivement l'audio.
