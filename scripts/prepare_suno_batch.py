@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 from validate_experiment import DEFAULT_PACK, validate
+from check_generation_gate import check_generation_gate
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -18,6 +19,7 @@ def prepare(pack: Path, output: Path) -> list[Path]:
     errors = validate(pack)
     if errors:
         raise ValueError("Experiment validation failed:\n" + "\n".join(errors))
+    gate_errors = check_generation_gate(pack)
     manifest = json.loads((pack / "manifest.json").read_text(encoding="utf-8"))
     style_path = ROOT / manifest["common"]["style_prompt"]
     style = style_path.read_text(encoding="utf-8").strip()
@@ -40,9 +42,10 @@ def prepare(pack: Path, output: Path) -> list[Path]:
                 "target_duration_seconds": manifest["common"].get("estimated_duration_seconds"),
                 "model_preference": manifest["common"].get("model_preference"),
                 "intro_max_seconds": manifest["common"].get("intro_max_seconds"),
-                "status": "ready_for_manual_generation",
+                "status": "ready_for_manual_generation" if not gate_errors else "awaiting_human_lyrics_approval",
+                "generation_gate_errors": gate_errors,
                 "suno_url": None,
-                "note": "Offline preparation only; requires authenticated Suno and authorized credits."
+                "note": "Offline preparation only. Suno calls require an approved human lyrics gate and available credits."
             }
             dest = output / f"{job_id}.json"
             dest.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
