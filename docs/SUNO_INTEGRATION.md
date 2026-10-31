@@ -82,3 +82,12 @@ La routine Sonora principale est rattachée à la conversation où Suno MCP est 
 Cadence : toutes les 3 heures.
 
 Le run de 21:00 heure de Paris inclut le bilan quotidien : avancées, générations, apprentissages, hypothèses, crédits consommés, blocages et prochaines orientations.
+
+## Premier test réel — 31 octobre 2026
+
+- Deux appels de génération custom `v6-mini` ont produit **quatre clips privés** (deux prises par appel) pour l'expérience A/B `2026-10-31-semantic-reset`.
+- Quota vérifié après génération : **80/100 crédits restants**, donc **20 crédits consommés**.
+- Le paramètre `negative_style` a échoué avec `feature_not_on_plan` sur le compte Free ; les exclusions de style ont été placées dans le champ `style` à la place.
+- Malgré « voix dans les 3 premières secondes », l'alignement automatique donne une première syllabe à ~8 s dans 3 prises sur 4. Un hard cap à 60 s a probablement coupé l'outro de l'une d'elles.
+- Un appel Suno `audio_create` peut générer **deux morceaux**. Budgéter en conséquence et utiliser des clés d'idempotence pour les retries.
+- Voir [le journal complet](../songs/experiments/2026-10-31-semantic-reset/runs/2026-10-31-mcp-smoke-test.json) ; l'évaluation humaine de la musique et de la prononciation reste à faire.
