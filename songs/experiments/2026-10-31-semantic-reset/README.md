@@ -1,6 +1,6 @@
 # Semantic reset — four ideas, two French lines
 
-Status: **text-only drafts**. No Suno audio generated or verified in this repository. This pack supersedes the earlier freeform `generation.md` candidate for the next test; that file is kept as a historical draft.
+Status: **four real Suno v6-mini audio takes generated on 31 October 2026; human listening review pending**. This pack supersedes the earlier freeform `generation.md` candidate for the next test; that file is kept as a historical draft.
 
 ## Problem addressed
 
@@ -22,7 +22,7 @@ These are **two lyrical sentences**, not four separate vocabulary definitions. H
 - **A — grouped**: both French lines appear together after the chorus.
 - **B — spaced**: first French line after the verse, second after the chorus.
 - The Spanish lines, French lines, target words and style prompt are identical.
-- Each variant has two planned Suno takes, but none has been generated.
+- Each variant now has two generated Suno takes (four total); the comparison is not yet evaluated by a human listener.
 
 The hypothesis is that spreading the same two French lines may improve comprehension without sounding like a classroom interlude. A single listener hearing both variants cannot support an unbiased memory comparison because of carryover. Test different listeners or treat comparisons as qualitative.
 
@@ -43,4 +43,21 @@ The exporter writes four JSON copy/paste jobs. It does not access Suno.
 4. Note whether the French lines feel like natural song lyrics, and whether grouped or spaced placement disrupts the song.
 5. Keep failed takes in the log. Do not claim an A/B winner until audio and listening data exist.
 
-The user reports that Suno's higher-quality V6 voice was more convincing than mini for French/Spanish; use mini only as a drafting baseline if available and avoid treating text-only QA as proof of pronunciation.
+The user reports that Suno's higher-quality V6 voice was more convincing than mini for French/Spanish; these v6-mini takes are prototypes only and do not validate pronunciation.
+
+## First real Suno MCP run — 31 October 2026
+
+Full machine-readable log: [runs/2026-10-31-mcp-smoke-test.json](runs/2026-10-31-mcp-smoke-test.json).
+
+| Variant | Take | Song | Duration | First aligned word | Outro aligned? |
+| --- | --- | --- | ---: | ---: | --- |
+| A grouped | 1 | [Listen](https://suno.com/song/43caccdc-d1d5-4123-88da-9f0f5fdb517d) | 59.56 s | 8.17 s | No — likely truncated |
+| A grouped | 2 | [Listen](https://suno.com/song/70e582cb-b367-4d40-8b4b-67baaeacc9fe) | 59.96 s | 8.25 s | Yes |
+| B spaced | 1 | [Listen](https://suno.com/song/ac7962eb-a401-465a-8b15-65d1ada951ec) | 60.00 s | 8.66 s | Yes, at cap |
+| B spaced | 2 | [Listen](https://suno.com/song/a3be1624-9939-4830-b67a-b55cd8d55743) | 59.96 s | 0.74 s | Yes |
+
+Suno generated **two takes per API call**. Two successful calls generated four clips and spent **20 credits total** (100 → 80 on the Free plan). A prior request using `negative_style` was rejected with `feature_not_on_plan` before generation; the exclusion terms were moved into the common style string.
+
+**Early mechanical findings:** the 3-second intro target failed in 3/4 takes despite an explicit style instruction. The hard 60-second cap appears to truncate A1's outro. Automatic analysis reports guitar/acoustic female-vocal arrangements, but it does **not** establish that the songs sound non-cute or that French is intelligible. The first-word timestamps are automatic lyric alignments, not a human-verified vocal-onset measurement. No A/B memory winner can be declared yet.
+
+**Next:** listen blind to the four takes, score all four target meanings, naturalness and pronunciation; then prepare a shorter lyric pack (about 65–75 words) to reduce truncation and test first-vocal onset. Avoid more generations before extracting feedback from this batch.
