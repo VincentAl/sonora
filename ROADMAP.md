@@ -15,7 +15,7 @@ La musique est le vecteur. L'objectif produit reste l'apprentissage.
 ## Règles produit stables
 
 - Une chanson doit sonner comme une vraie chanson, jamais comme un exercice.
-- Environ 3–4 mots / idées cibles par morceau.
+- Pour les tests d'une minute : viser **2 mots / idées cibles**. Sur une chanson finale d'environ 3 minutes, viser environ **4–5 notions** avec répétitions naturelles.
 - Chaque cible doit être compréhensible en espagnol dans le contexte et recevoir un ancrage français naturel à l'échelle du morceau.
 - Pas de traduction phrase par phrase.
 - Pas d'introduction pédagogique parlée.
@@ -119,10 +119,28 @@ Nouvelle règle de process :
 ## Règle de répétition
 
 - Ne pas forcer 3–4 répétitions d'un même mot cible dans une chanson d'une minute.
-- Par défaut, viser **1 occurrence espagnole claire par cible** dans le morceau.
+- Nouvelle piste validée par Vincent : chercher la répétition **dans des contextes conversationnels naturels**, où deux personnes se répondent, se corrigent, reformulent ou reprennent une idée avec un autre exemple.
+- Par défaut, viser **1 occurrence espagnole claire par cible** dans le morceau, puis éventuellement une reprise naturelle dans un autre contexte ou par une autre voix.
 - Un ancrage français naturel peut apparaître ailleurs dans la chanson sans répéter mécaniquement le mot.
 - Une deuxième occurrence espagnole n'est utile que si elle tombe naturellement dans un refrain ou une reprise crédible.
 - La vraie répétition pédagogique doit surtout se faire **entre plusieurs chansons espacées**, pas à l'intérieur du même morceau.
+
+## Piste d'écriture à explorer — répétition conversationnelle naturelle
+
+Chercher des scènes où, dans la vraie vie, des gens répètent naturellement un mot ou une idée sans donner l'impression de réciter :
+
+- **Reprise / écho** : « J'ai laissé la ville. » — « Moi, j'ai laissé les clés. »
+- **Confirmation** : « Tu veux dire que tu l'as trouvé ? » — « Oui, je l'ai trouvé sous le siège. »
+- **Correction** : « Tu regrettes la maison ? » — « Non, surtout les matins là-bas. »
+- **Renchérissement** : « J'ai tout laissé derrière moi. » — « Même les photos ? »
+- **Parallèle entre deux personnes** : chacun raconte une situation différente avec la même notion.
+- **Question / réponse** : la question contient l'idée, la réponse la réemploie avec un nouveau contexte.
+- **Malentendu / précision** : un mot revient parce qu'il faut préciser ce qu'on voulait dire.
+- **Souvenir partagé** : deux personnes se rappellent le même événement avec des détails différents.
+- **Décision commune** : « On laisse ça derrière nous ? » — « Oui, on avance. »
+- **Refrain dialogué** : la seconde voix répond au motif de la première sans répéter la phrase exacte.
+
+Objectif : obtenir une répétition qui sert la scène et le dialogue, pas la pédagogie visible.
 
 ## Backlog
 
