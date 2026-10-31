@@ -1,0 +1,123 @@
+{
+  "run_id": "2026-10-31-mcp-smoke-test",
+  "generated_at_utc": "2026-10-31T16:21:43Z",
+  "experiment_id": "2026-10-31-semantic-reset",
+  "purpose": "Real MCP A/B feasibility check: grouped vs spaced French semantic anchors, two stochastic takes per variant",
+  "provider": "Suno official MCP",
+  "model": "v6-mini",
+  "source_files": {
+    "A": "songs/experiments/2026-10-31-semantic-reset/A-grouped.md",
+    "B": "songs/experiments/2026-10-31-semantic-reset/B-spaced.md"
+  },
+  "parameters": {
+    "duration_seconds": 60,
+    "duration_strict": true,
+    "mode": "custom",
+    "style": "Original dark acoustic Spanish indie, emotionally raw intimate vocal, dry rhythmic nylon guitar, tense low bass, restrained organic hand percussion, moderate forward momentum, lean live-room sound, memorable understated hook. Natural Spanish and French singing, no spoken intro, vocal starts within 3 seconds. Two French lyric lines belong to the same story. No cute, twee, cozy or bubbly pop, no boom-boom beat, no EDM.",
+    "note": "Exactly the same style and generation controls for both variants. Variant title and French-line insertion points differ. Two songs generated per API request."
+  },
+  "generation_requests": 2,
+  "total_clips": 4,
+  "credits": {
+    "before": 100,
+    "after": 80,
+    "spent": 20,
+    "observed_at": "2026-10-31T16:22Z",
+    "note": "20 total credits observed across four generated songs; first unsupported negative_style request failed before generation."
+  },
+  "api_limitations": [
+    "negative_style on this Free plan returned feature_not_on_plan, despite controls.advanced being listed; use exclusions in style string instead.",
+    "Only v6-mini allowed through MCP; French/Spanish pronunciation still requires human listening and V6 comparison when available."
+  ],
+  "takes": [
+    {
+      "variant": "A",
+      "replicate": 1,
+      "id": "43caccdc-d1d5-4123-88da-9f0f5fdb517d",
+      "url": "https://suno.com/song/43caccdc-d1d5-4123-88da-9f0f5fdb517d",
+      "status": "complete",
+      "duration_s": 59.56,
+      "first_aligned_word_s": 8.168,
+      "last_aligned_word_s": 60.062,
+      "aligned_word_count": 100,
+      "aligned_outro": false,
+      "bpm": 111,
+      "audio_analysis_terms": [
+        "song",
+        "female vocals",
+        "guitar"
+      ]
+    },
+    {
+      "variant": "A",
+      "replicate": 2,
+      "id": "70e582cb-b367-4d40-8b4b-67baaeacc9fe",
+      "url": "https://suno.com/song/70e582cb-b367-4d40-8b4b-67baaeacc9fe",
+      "status": "complete",
+      "duration_s": 59.96,
+      "first_aligned_word_s": 8.247,
+      "last_aligned_word_s": 59.577,
+      "aligned_word_count": 112,
+      "aligned_outro": true,
+      "bpm": 119.9,
+      "audio_analysis_terms": [
+        "song",
+        "female vocals",
+        "guitar",
+        "acoustic"
+      ]
+    },
+    {
+      "variant": "B",
+      "replicate": 1,
+      "id": "ac7962eb-a401-465a-8b15-65d1ada951ec",
+      "url": "https://suno.com/song/ac7962eb-a401-465a-8b15-65d1ada951ec",
+      "status": "complete",
+      "duration_s": 60,
+      "first_aligned_word_s": 8.663,
+      "last_aligned_word_s": 60.248,
+      "aligned_word_count": 107,
+      "aligned_outro": true,
+      "bpm": 115.4,
+      "audio_analysis_terms": [
+        "song",
+        "female vocals",
+        "guitar",
+        "pop",
+        "acoustic"
+      ]
+    },
+    {
+      "variant": "B",
+      "replicate": 2,
+      "id": "a3be1624-9939-4830-b67a-b55cd8d55743",
+      "url": "https://suno.com/song/a3be1624-9939-4830-b67a-b55cd8d55743",
+      "status": "complete",
+      "duration_s": 59.96,
+      "first_aligned_word_s": 0.738,
+      "last_aligned_word_s": 53.972,
+      "aligned_word_count": 109,
+      "aligned_outro": true,
+      "bpm": 139,
+      "audio_analysis_terms": [
+        "song",
+        "female vocals",
+        "guitar",
+        "acoustic"
+      ]
+    }
+  ],
+  "preliminary_findings": [
+    "All four songs completed and have Suno song URLs.",
+    "Lyric alignments indicate three of four introductions start vocals at about 8.2–8.7 seconds, violating the 3-second target; only B replicate 2 begins at about 0.74 seconds.",
+    "A replicate 1 appears to lose the Spanish outro to the hard 60-second cap; remaining takes have the outro aligned, although B replicate 1 runs right up to the cap.",
+    "Automatic audio tagging identifies guitar/acoustic female-vocal arrangements, but cannot establish listener preference, French naturalness, exact words actually heard, or recall.",
+    "No conclusion about grouped vs spaced anchors can be drawn from only two stochastic takes per variant and no human listening."
+  ],
+  "next_actions": [
+    "Human blind review of the four takes, especially whether all four target meanings are intelligible and whether French is natural.",
+    "Prepare a shorter 65–75-word lyric pack or revised structure to reduce hard-cut risk, then test a stronger first-vocal instruction or soft duration cap.",
+    "Do not spend further credits before extracting feedback from these four takes."
+  ],
+  "human_review_status": "pending"
+}
