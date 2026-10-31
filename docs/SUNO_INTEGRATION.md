@@ -1,42 +1,84 @@
-# Suno — connexion officielle (vérifiée le 31 octobre 2026)
+# Suno — connexion officielle (état au 31 octobre 2026)
 
-## Changement important
+## Connexion
 
-Suno a lancé **Suno MCP (Beta)**. Contrairement à l'hypothèse initiale « une API tierce et une clé API sont nécessaires », Suno documente maintenant une connexion **officielle** à ChatGPT, via un serveur MCP avec authentification de l'utilisateur. Elle ne nécessite **pas de clé API**.
+Suno MCP est désormais **connecté et authentifié** dans la conversation Sonora principale.
 
-- Guide officiel : https://help.suno.com/en/articles/14551425 (mis à jour le 28 octobre 2026)
-- FAQ officielle : https://help.suno.com/en/articles/14486145 (mise à jour le 28 octobre 2026)
-- Page officielle : https://suno.com/mcp
-- URL MCP officielle : `https://api.suno.com/mcp`
+- Serveur MCP officiel : `https://api.suno.com/mcp`
+- Compte connecté : `vincent_alfaro`
+- Plan observé : Free
+- Crédits observés au moment de la vérification : 100 restants / 100 mensuels
+- Les générations utilisent les crédits Suno du compte et apparaissent dans la bibliothèque Suno.
 
-## Activation dans ChatGPT
+## Modèles disponibles via MCP
 
-1. Dans **Plugins**, choisir **Add → Add custom MCP server**.
-2. Nommer le plugin **Suno** et entrer `https://api.suno.com/mcp`.
-3. Choisir **Create as a plugin**, puis **Connect Suno**.
-4. Se connecter au compte Suno et autoriser l'accès.
+Au 31 octobre 2026, le MCP expose uniquement :
 
-Le compte Suno est requis ; **les générations consomment les crédits Suno du plan**, y compris sur le plan gratuit. Les chansons générées sont sauvegardées dans la bibliothèque Suno.
+- `v6-mini`
 
-## État dans l'environnement de travail de ce run
+Le modèle V6 complet n'est pas actuellement autorisé via ce MCP.
 
-Aucun outil Suno connecté n'est exposé dans cet environnement. Aucun audio n'a été généré, aucun crédit consommé. Ne pas inventer de lien Suno.
+Conséquence pour Sonora :
 
-**Important :** même si Suno est connecté dans une conversation ChatGPT, sa disponibilité dans les exécutions autonomes doit être vérifiée explicitement. Ne pas supposer qu'une authentification interactive rend le connecteur disponible dans tous les contextes. Une fois le plugin disponible, vérifier la liste des outils et les droits avant de lancer des générations.
+- utiliser `v6-mini` pour les prototypes, essais d'arrangement, structure, rythme et comparaison de variantes ;
+- **ne pas considérer la prononciation française ou espagnole comme validée sur mini** ;
+- réserver la validation finale de la voix/prononciation au V6 complet dès qu'il devient accessible par un chemin autorisé.
 
-## Politique d'autonomie
+## Stratégie de génération actuelle
 
-- La préparation des paroles, prompts, manifestes et tests peut avancer sans compte Suno.
-- **Ne pas dépenser de crédits Suno** sans budget/autorisation de génération établi.
-- Ne pas utiliser d'API Suno non officielle ou de cookies de session détournés.
-- Si la connexion officielle est indisponible dans l'automatisation, consigner ce blocage et continuer les tests hors audio.
+Pendant la phase POC :
 
-## Critère de déblocage
+- viser environ **45 à 60 secondes** ;
+- éviter les longues introductions ;
+- éviter de générer 2m30 quand l'hypothèse peut être testée sur un extrait court ;
+- générer peu de variantes, mais réellement discriminantes ;
+- conserver dans le repo les paroles, prompts, paramètres, IDs/URLs et observations utiles.
 
-Un outil Suno effectivement disponible, authentifié, avec autorisation explicite d'utiliser des crédits (quantité ou plafond), puis un premier lot limité à 2 prises par variante.
+La chanson doit rester une chanson normale. Elle ne doit jamais commencer par une consigne pédagogique du type « écoute les mots en français ».
 
-## Éligibilité du compte (31 octobre 2026)
+## Priorités pédagogiques
 
-La tentative réelle de connexion a échoué avec : `Connecting AI apps to Suno isn't available for your account yet.` Le support Suno a répondu que l'accès MCP est encore limité et renvoie vers la **liste d'attente** sur https://suno.com/mcp ; l'inscription effective sur cette liste n'est pas confirmée. **Ce n'est pas un problème de code Sonora.**
+Chaque morceau contient environ 3 à 4 mots ou idées cibles.
 
-Ne pas retenter la connexion à chaque exécution autonome ni prétendre avoir généré des audios. Reprendre la vérification seulement après un changement explicite d'éligibilité ou la disponibilité d'un outil Suno authentifié. Les lots restent préparables hors ligne et sans dépense.
+Les cibles doivent être comprises :
+
+- en espagnol grâce au contexte narratif ;
+- en français grâce à des ancrages naturels au cours du morceau.
+
+Il ne faut **pas** traduire chaque phrase. Les ancrages français servent uniquement à verrouiller le sens des cibles sans transformer le morceau en dictée bilingue.
+
+## Direction musicale
+
+Référence actuelle :
+
+- intime, organique, sombre ou brute ;
+- voix au premier plan ;
+- guitare acoustique / nylon, basse discrète, percussion sèche si utile ;
+- légère texture ibérique possible.
+
+À éviter explicitement :
+
+- cute / twee / cozy ;
+- pop sucrée ou enfantine ;
+- petit beat rond « boum boum » ;
+- longue intro ;
+- énergie de chanson pédagogique.
+
+## Politique de crédits et autonomie
+
+La routine autonome peut utiliser Suno MCP directement pour avancer le POC, avec les règles suivantes :
+
+- ne jamais acheter de crédits ;
+- ne jamais changer d'abonnement ;
+- rester dans les crédits déjà disponibles ;
+- privilégier 1 à 3 générations discriminantes plutôt que des lots volumineux ;
+- noter la consommation de crédits dans le récap quotidien ;
+- si Suno devient indisponible ou si le quota est trop bas, continuer hors audio sur le repo, les prompts, les paroles, les tests et l'évaluation.
+
+## Automatisation
+
+La routine Sonora principale est rattachée à la conversation où Suno MCP est disponible.
+
+Cadence : toutes les 3 heures.
+
+Le run de 21:00 heure de Paris inclut le bilan quotidien : avancées, générations, apprentissages, hypothèses, crédits consommés, blocages et prochaines orientations.
