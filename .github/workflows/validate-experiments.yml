@@ -14,3 +14,5 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Validate all lyric packs
         run: python scripts/validate_all_experiments.py
+      - name: Audit vocabulary planning and real exposure separation
+        run: python scripts/audit_vocabulary.py
