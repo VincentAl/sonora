@@ -1,0 +1,4 @@
+# Offline generated payloads; source manifests and lyrics are tracked.
+artifacts/
+__pycache__/
+*.pyc
