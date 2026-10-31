@@ -127,3 +127,16 @@ After generation, evaluate:
 - transition speed;
 - musical naturalness;
 - recall of target meanings after repeated listening.
+
+## 9. Current short-form calibration (31 October 2026)
+
+Recent listener feedback overrides the earlier overly soft/slow default:
+- Target **45–60 seconds** while iterating, or a useful 30-second excerpt if the generation workflow permits it. Do not pad to 2:30.
+- A normal song from the first second: **no spoken teaching instructions**, no “écoute les mots en français”, and no long instrumental intro.
+- Keep forward rhythmic energy; **clear enunciation does not mean artificially slow music**.
+- Reject cute, bouncy, twee, sugary “boom-boom” backing; favor a drier, more tense, organic or dark-indie arrangement.
+- The listener reported that the higher-quality **V6** voice rendered French/Spanish more convincingly than **mini**. Treat this as a user observation, not a measured model benchmark; mini can be used for cheap drafts, but pronunciation decisions require listening to the better model.
+- A song should have a single narrative. **All 3–4 targets must be understandable in Spanish and have precise French semantic anchors within the song**, but not every lyric line needs a French counterpart. Two natural French lines can cover four ideas if they are intelligible.
+- Use an explicit pre-generation target-to-anchor map; static matching verifies text presence, not that the listener learns the meanings.
+
+See the short-form [semantic-reset pack](../songs/experiments/2026-10-31-semantic-reset/) and its two placement variants. The earlier packs remain historical experiments and should not be treated as the latest preferred generation style.
