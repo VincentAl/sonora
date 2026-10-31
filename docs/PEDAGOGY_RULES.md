@@ -131,3 +131,15 @@ If removing the learning objective leaves awkward lyrics, rewrite them.
 But musical naturalness never justifies breaking the semantic link needed for learning.
 
 The music is the delivery mechanism; the vocabulary learning is the product.
+
+## Rule 13 — Anchor the four ideas, not every line
+
+The latest listener clarification is **not** “translate every Spanish line into French”. For a four-target song, each of the four ideas should be made clear in both languages **somewhere in the song**, while most lines remain ordinary Spanish songwriting.
+
+Two French lines may each naturally contain two target meanings. They should preserve the same story without reading like a list of definitions. A single French bridge that recites four unrelated translations is a failure even if every target technically appears.
+
+## Rule 14 — No classroom intro; do not confuse clarity with slowness
+
+Do not start with spoken instructions such as “écoute les mots en français”. Start with a real song. Short musical pauses around language switches are useful; artificially sluggish tempo and overlong intros are not. Reject cute or bouncy backing when it conflicts with the listener's taste.
+
+**Human check remains mandatory:** lexical anchor detection is not semantic validation, and a drafted lyric is not an observed learning result.
