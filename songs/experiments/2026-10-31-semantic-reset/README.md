@@ -1,6 +1,6 @@
 # Semantic reset — four ideas, two French lines
 
-Status: **four real Suno v6-mini audio takes generated on 31 October 2026; human listening review pending**. This pack supersedes the earlier freeform `generation.md` candidate for the next test; that file is kept as a historical draft.
+Status: **four real Suno v6-mini audio takes generated on 31 October 2026; first human review completed, structure rejected for further audio iteration**. This pack supersedes the earlier freeform `generation.md` candidate for the next test; that file is kept as a historical draft.
 
 ## Problem addressed
 
@@ -24,7 +24,15 @@ These are **two lyrical sentences**, not four separate vocabulary definitions. H
 - The Spanish lines, French lines, target words and style prompt are identical.
 - Each variant now has two generated Suno takes (four total); the comparison is not yet evaluated by a human listener.
 
-The hypothesis is that spreading the same two French lines may improve comprehension without sounding like a classroom interlude. A single listener hearing both variants cannot support an unbiased memory comparison because of carryover. Test different listeners or treat comparisons as qualitative.
+Human feedback from Vincent:
+- B is preferable to A because the French is less visibly grouped;
+- however, this does **not** validate B;
+- both variants still feel like translated/paraphrased French sentences placed end-to-end;
+- A is especially obvious because it resembles a Spanish verse followed by its French translation;
+- the target words are repeated too many times for a one-minute song, making the writing feel pedagogical rather than natural;
+- these problems are visible from the lyrics alone and should have been caught before spending Suno credits.
+
+Therefore the A/B placement question is secondary. The experiment exposed a more important upstream writing problem: French must contribute naturally to the song, and target repetition should happen mainly across songs rather than several times inside one minute.
 
 ## Execution (offline, no credits)
 
@@ -60,4 +68,4 @@ Suno generated **two takes per API call**. Two successful calls generated four c
 
 **Early mechanical findings:** the 3-second intro target failed in 3/4 takes despite an explicit style instruction. The hard 60-second cap appears to truncate A1's outro. Automatic analysis reports guitar/acoustic female-vocal arrangements, but it does **not** establish that the songs sound non-cute or that French is intelligible. The first-word timestamps are automatic lyric alignments, not a human-verified vocal-onset measurement. No A/B memory winner can be declared yet.
 
-**Next:** listen blind to the four takes, score all four target meanings, naturalness and pronunciation; then prepare a shorter lyric pack (about 65–75 words) to reduce truncation and test first-vocal onset. Avoid more generations before extracting feedback from this batch.
+**Next:** do not generate another audio variant from this structure. First create text-only lyric candidates with fewer forced repetitions and more natural bilingual integration, then obtain Vincent's text review before spending more Suno credits.
