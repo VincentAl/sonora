@@ -36,6 +36,10 @@ def prepare(pack: Path, output: Path) -> list[Path]:
                 "title_suggestion": f"Sonora {manifest['experiment_id']} {variant['id']} #{replicate}",
                 "style_prompt": style,
                 "lyrics": lyrics,
+                "generation_mode": "custom_lyrics",
+                "target_duration_seconds": manifest["common"].get("estimated_duration_seconds"),
+                "model_preference": manifest["common"].get("model_preference"),
+                "intro_max_seconds": manifest["common"].get("intro_max_seconds"),
                 "status": "ready_for_manual_generation",
                 "suno_url": None,
                 "note": "Offline preparation only; requires authenticated Suno and authorized credits."
