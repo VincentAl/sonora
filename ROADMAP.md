@@ -83,6 +83,14 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - 80 crédits restaient après le test.
 - Ces 4 clips ont reçu un premier feedback humain sur la structure bilingue.
 
+### Prévalidation en cours
+
+- [3 variantes de paroles sans audio](songs/experiments/2026-10-31-lyrics-preflight/README.md) : A = deux voix, B = deux époques, C = contrôle à deux cibles.
+- **Statut : à relire par Vincent**. Aucune des trois variantes n'est validée.
+- Les ancrages français risquent encore de ressembler à des traductions ; c'est l'objet du test textuel.
+- La variante C est volontairement hors densité 3–4 cibles et requiert une décision produit avant toute génération.
+- **Ne pas utiliser Suno pour ces variantes avant validation explicite des paroles.**
+
 ### Expérience active
 
 `songs/experiments/2026-10-31-semantic-reset/`
@@ -101,7 +109,7 @@ Nouvelle règle de process :
 
 1. Repenser la structure des paroles pour que les passages français ne soient pas des traductions empilées.
 2. Réduire fortement la répétition intra-morceau : une cible peut n'apparaître qu'une fois en espagnol si le contexte est clair, avec un ancrage français naturel ailleurs ; la répétition se fait surtout entre plusieurs chansons.
-3. Produire 2–3 variantes **texte seulement** et les soumettre à Vincent avant toute nouvelle génération.
+3. **En attente de revue textuelle humaine** : trois variantes préparées dans [lyrics-preflight](songs/experiments/2026-10-31-lyrics-preflight/README.md), dont un contrôle exploratoire à deux cibles. Ne pas générer d'audio sur ces textes avant retour explicite.
 4. Une fois une structure textuelle validée, tester plusieurs traitements musicaux cohérents avec le profil Deezer en gardant les paroles constantes.
 5. Utiliser progressivement le budget Suno quotidien uniquement sur des hypothèses déjà valides sur papier.
 6. Préparer un chemin de validation V6 complet dès qu'il devient accessible.
