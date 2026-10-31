@@ -1,0 +1,76 @@
+{
+  "experiment_id": "2026-10-31-anchoring",
+  "created_on": "2026-10-31",
+  "status": "draft_only_no_audio",
+  "objective": "Compare placement and density of autonomous French semantic anchors without changing the Spanish target vocabulary.",
+  "common": {
+    "target_words": [
+      {
+        "lemma": "añorar",
+        "surface": "añoro",
+        "fr": "avoir la nostalgie de",
+        "anchor": "J'ai la nostalgie de"
+      },
+      {
+        "lemma": "sosiego",
+        "surface": "sosiego",
+        "fr": "quiétude / calme intérieur",
+        "anchor": null
+      },
+      {
+        "lemma": "hallar",
+        "surface": "hallo",
+        "fr": "trouver",
+        "anchor": null
+      },
+      {
+        "lemma": "dejar atrás",
+        "surface": "Dejo atrás",
+        "fr": "laisser derrière soi",
+        "anchor": "J'ai laissé derrière moi"
+      }
+    ],
+    "style_prompt": "prompts/folk.md",
+    "estimated_duration_seconds": "60-90",
+    "planned_generation_replicates_per_variant": 2,
+    "notes": "Spanish lyrics and French anchor sentences are held constant between A and B; only their position changes. C changes the French dose and is a separate exploratory comparison."
+  },
+  "variants": [
+    {
+      "id": "A",
+      "file": "A-anchors-grouped.md",
+      "treatment": "Two French anchors grouped after chorus",
+      "french_anchor_count": 2,
+      "suno_url": null,
+      "generated": false
+    },
+    {
+      "id": "B",
+      "file": "B-anchors-spaced.md",
+      "treatment": "Same two French anchors spaced across the song",
+      "french_anchor_count": 2,
+      "suno_url": null,
+      "generated": false
+    },
+    {
+      "id": "C",
+      "file": "C-minimal-anchor.md",
+      "treatment": "Only one French anchor after chorus",
+      "french_anchor_count": 1,
+      "suno_url": null,
+      "generated": false
+    }
+  ],
+  "evaluation": {
+    "human_review_required": true,
+    "metrics": [
+      "French intelligibility 0-5",
+      "Spanish intelligibility 0-5",
+      "Musical naturalness 0-5",
+      "Perceived rushed transitions 0-5 (higher=worse)",
+      "Immediate target recall count 0-4",
+      "24h delayed target recall count 0-4"
+    ],
+    "conclusions": "pending_audio_and_listening"
+  }
+}
