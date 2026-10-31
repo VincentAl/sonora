@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+import json
 import shutil
 import sys
 import tempfile
@@ -36,10 +37,22 @@ class VocabularyAuditTests(unittest.TestCase):
         errors, coverage = audit(self.csv, PACKS)
         self.assertEqual([], errors)
         self.assertEqual({"añorar", "sosiego", "hallar", "dejar atrás"}, set(coverage))
-        for stats in coverage.values():
-            self.assertEqual(2, stats["planned_packs"])
-            self.assertEqual(5, stats["planned_variants"])
-            self.assertEqual(1, stats["anchored_packs"])
+        # Derive expected coverage from manifests rather than freezing the
+        # number of packs/variants: adding a new valid experiment is not a regression.
+        manifests = [
+            json.loads(p.read_text(encoding="utf-8"))
+            for p in sorted(PACKS.glob("*/manifest.json"))
+        ]
+        expected_packs = len(manifests)
+        expected_variants = sum(len(m["variants"]) for m in manifests)
+        for lemma, stats in coverage.items():
+            expected_anchored = sum(
+                any(lemma in v["anchored_lemmas"] for v in m["variants"])
+                for m in manifests
+            )
+            self.assertEqual(expected_packs, stats["planned_packs"])
+            self.assertEqual(expected_variants, stats["planned_variants"])
+            self.assertEqual(expected_anchored, stats["anchored_packs"])
         with self.csv.open(encoding="utf-8", newline="") as f:
             rows = list(csv.DictReader(f))
         self.assertTrue(all(row["appearance_count"] == "0" for row in rows))
