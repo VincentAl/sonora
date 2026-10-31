@@ -35,7 +35,9 @@
     "max_sung_words": 100,
     "planned_generation_replicates_per_variant": 2,
     "require_all_targets_anchored": true,
-    "notes": "2 French lines cover all 4 meanings; no spoken instructional opening; lyrics start immediately. Static coverage is not a semantic/listening guarantee. Prefer user-approved higher-quality Suno voice model when available; no audio generated in this run."
+    "notes": "2 French lines cover all 4 meanings; no spoken instructional opening; lyrics start immediately. Static coverage is not a semantic/listening guarantee. Prefer user-approved higher-quality Suno voice model when available; no audio generated in this run.",
+    "model_preference": "V6 (user-preferred for bilingual pronunciation; verify availability)",
+    "intro_max_seconds": 3
   },
   "variants": [
     {
