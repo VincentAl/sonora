@@ -90,6 +90,7 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - Les ancrages français risquent encore de ressembler à des traductions ; c'est l'objet du test textuel.
 - La variante C est volontairement hors densité 3–4 cibles et requiert une décision produit avant toute génération.
 - **Ne pas utiliser Suno pour ces variantes avant validation explicite des paroles.**
+- Garde-fou ajouté : `scripts/check_generation_gate.py` vérifie l'approbation humaine **liée au hash des paroles** ; les exports hors ligne restent marqués en attente si l'approbation manque.
 
 ### Expérience active
 
@@ -103,6 +104,7 @@ Conclusion actuelle :
 
 Nouvelle règle de process :
 - **ne pas générer sur Suno tant que les paroles n'ont pas passé une revue textuelle humaine de Vincent** pour les nouvelles structures pédagogiques ;
+- avant chaque appel Suno, exécuter `python3 scripts/check_generation_gate.py <répertoire-expérience>` ; le résultat doit être APPROVED. Si les paroles ne sont pas encore dans un pack structuré avec manifeste, aucun appel Suno ;
 - l'audio sert ensuite à tester musique, voix, rythme, accent et naturel — pas à découvrir un problème évident de rédaction.
 
 ## Objectifs immédiats
@@ -128,7 +130,7 @@ Nouvelle règle de process :
 - journal d'écoute / feedback humain structuré ;
 - distinguer clairement « candidat préparé », « généré », « écouté », « validé » ;
 - historique des crédits Suno par jour et par expérience ;
-- automatiser les checks déterministes de paroles / manifestes ;
+- étendre les checks déterministes de paroles / manifestes (garde-fou d'approbation déjà implémenté) ;
 - comparer 30–45 s vs 60 s si Suno permet un contrôle réellement utile de la durée ;
 - explorer des profils musicaux dérivés des goûts Deezer sans imitation d'artistes.
 
