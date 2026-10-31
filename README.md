@@ -68,3 +68,19 @@ No audio has been generated yet. Static checks cannot assess pronunciation, musi
 ## Suno integration update (October 2026)
 
 Suno now documents an **official MCP (Beta) connector for ChatGPT**, authenticated via Suno login rather than an API key. See [`docs/SUNO_INTEGRATION.md`](docs/SUNO_INTEGRATION.md) for setup and current automation limitations. Generation uses Suno credits and is not triggered without authorization.
+
+## Reproducible QA and offline generation queue
+
+The A/B controlled comparison is now explicit in the manifest: the same Spanish and French lines are held constant, with only French-anchor placement changed. C changes the number of anchors and remains exploratory.
+
+See [the listening protocol](docs/EXPERIMENT_PROTOCOL.md). The validator is generic (no hardcoded exception for C), the regression suite checks seven success/failure scenarios, and GitHub Actions runs static checks on push/PR.
+
+```bash
+python3 scripts/validate_experiment.py
+python3 -m unittest discover -s tests -v
+python3 scripts/prepare_suno_batch.py
+```
+
+The last command writes **six offline JSON jobs** (A/B/C × two takes) into ignored `artifacts/suno-batch/`. Each contains lyrics, style prompt, and metadata for manual or future authorized MCP generation. It never calls Suno or spends credits. Record audio evaluations in `data/reviews.csv`.
+
+Static QA and seven unit tests passed locally on 31 October 2026; GitHub Actions status should be checked separately. **No audio exists yet**, so recall, pronunciation and musical quality are untested.
