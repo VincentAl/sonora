@@ -72,6 +72,10 @@ class SemanticResetTests(unittest.TestCase):
         self.assertEqual(4, len(jobs))
         payloads = [json.loads(path.read_text(encoding="utf-8")) for path in jobs]
         self.assertTrue(all(job["suno_url"] is None for job in payloads))
+        self.assertTrue(all(job["generation_mode"] == "custom_lyrics" for job in payloads))
+        self.assertTrue(all(job["intro_max_seconds"] == 3 for job in payloads))
+        self.assertTrue(all("V6" in job["model_preference"] for job in payloads))
+        self.assertTrue(all(job["target_duration_seconds"] == "45-65" for job in payloads))
         self.assertTrue(all("no spoken introduction" in job["style_prompt"] for job in payloads))
         self.assertTrue(all("Je laisse la ville" in job["lyrics"] for job in payloads))
 
