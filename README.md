@@ -84,3 +84,14 @@ python3 scripts/prepare_suno_batch.py
 The last command writes **six offline JSON jobs** (A/B/C × two takes) into ignored `artifacts/suno-batch/`. Each contains lyrics, style prompt, and metadata for manual or future authorized MCP generation. It never calls Suno or spends credits. Record audio evaluations in `data/reviews.csv`.
 
 Static QA and seven unit tests passed locally on 31 October 2026; GitHub Actions status should be checked separately. **No audio exists yet**, so recall, pronunciation and musical quality are untested.
+
+## Second controlled experiment — early vs late anchors
+
+The [reinforcement pack](songs/experiments/2026-10-31-reinforcement/) reuses the four Spanish targets and now anchors **sosiego → quiétude** and **hallar → trouver**, which were intentionally left unanchored in the first song. Two variants keep the same ten Spanish lines and two French lines, changing only whether the French bridge comes before or after the chorus. Both use the same indie-pop prompt. This is an untested hypothesis about anchor timing, not evidence of better recall.
+
+```bash
+python3 scripts/validate_all_experiments.py
+python3 scripts/prepare_suno_batch.py songs/experiments/2026-10-31-reinforcement artifacts/suno-reinforcement
+```
+
+The exporter now prepares **10 offline jobs across two packs** (6 + 4), without any Suno calls. CI validates every experiment pack and runs the regression tests.

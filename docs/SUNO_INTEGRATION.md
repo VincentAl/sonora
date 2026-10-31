@@ -34,3 +34,9 @@ Aucun outil Suno connecté n'est exposé dans cet environnement. Aucun audio n'a
 ## Critère de déblocage
 
 Un outil Suno effectivement disponible, authentifié, avec autorisation explicite d'utiliser des crédits (quantité ou plafond), puis un premier lot limité à 2 prises par variante.
+
+## Éligibilité du compte (31 octobre 2026)
+
+La tentative réelle de connexion a échoué avec : `Connecting AI apps to Suno isn't available for your account yet.` Le support Suno a répondu que l'accès MCP est encore limité et renvoie vers la **liste d'attente** sur https://suno.com/mcp ; l'inscription effective sur cette liste n'est pas confirmée. **Ce n'est pas un problème de code Sonora.**
+
+Ne pas retenter la connexion à chaque exécution autonome ni prétendre avoir généré des audios. Reprendre la vérification seulement après un changement explicite d'éligibilité ou la disponibilité d'un outil Suno authentifié. Les lots restent préparables hors ligne et sans dépense.

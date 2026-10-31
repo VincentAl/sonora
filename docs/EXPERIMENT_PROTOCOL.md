@@ -39,3 +39,11 @@ The exporter creates six JSON jobs under `artifacts/suno-batch/`. These are **of
 `take_id,variant,replicate,suno_url,duration_s,french_intelligibility_0_5,spanish_intelligibility_0_5,musical_naturalness_0_5,rushed_transitions_0_5,immediate_recall_0_4,delayed_recall_0_4,missing_lines,comments`
 
 Store results separately from lyric manifests; do not mark drafts as generated until a real URL and a listening review exist.
+
+## Second controlled experiment — anchor timing (31 October 2026)
+
+The [reinforcement pack](../songs/experiments/2026-10-31-reinforcement/) reuses the same four Spanish targets and now anchors **sosiego → quiétude** and **hallar → trouver**. A and B contain identical Spanish and French lines, but the French bridge is early (after the first verse) or late (after the chorus). This tests **when** to resolve ambiguity, not whether the translations are correct. The first experiment's anchors are not repeated.
+
+The same blind-listening safeguards apply: independent listeners for A/B recall, two takes per variant, identical style prompt, and no pre-exposure to experiment 01 unless balanced across groups. These are untested lyric drafts; do not infer any learning advantage until real listening data exist.
+
+CI now validates **all** packs rather than only the first one. The second offline export yields four jobs, bringing the prepared total to ten (6 + 4); no audio is generated.
