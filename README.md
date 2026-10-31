@@ -95,3 +95,15 @@ python3 scripts/prepare_suno_batch.py songs/experiments/2026-10-31-reinforcement
 ```
 
 The exporter now prepares **10 offline jobs across two packs** (6 + 4), without any Suno calls. CI validates every experiment pack and runs the regression tests.
+
+## Current preferred generation pack (31 October 2026)
+
+The [semantic-reset pack](songs/experiments/2026-10-31-semantic-reset/) repairs a quality/CI issue: the prior standalone `generation.md` was not a valid experiment pack, leaving all-pack validation unable to pass. It now has two matched, shorter lyric variants, a manifest, and an energetic non-cute style prompt. Each of the **four** targets is semantically paired with French across **two** lyrical lines, rather than translating every line.
+
+```bash
+python3 scripts/validate_all_experiments.py
+python3 -m unittest discover -s tests -v
+python3 scripts/prepare_suno_batch.py songs/experiments/2026-10-31-semantic-reset artifacts/suno-semantic-reset
+```
+
+This prepares four offline jobs (A/B × two replicates). The exporter spends no credits and does not claim to generate audio. The latest user feedback prioritizes a **45–60 s song**, no didactic intro, natural pronunciation, and a less soft/more driving arrangement. Suno V6 sounded better than mini to the listener; that observation still needs controlled comparison.
