@@ -81,27 +81,38 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - Premier smoke test réel effectué.
 - 4 clips générés pour 20 crédits.
 - 80 crédits restaient après le test.
-- Ces 4 clips sont **en attente de revue humaine**.
+- Ces 4 clips ont reçu un premier feedback humain sur la structure bilingue.
 
 ### Expérience active
 
 `songs/experiments/2026-10-31-semantic-reset/`
 
-Question à trancher :
-- comment intégrer les ancrages français des quatre idées sans transformer la chanson en dictée bilingue ?
+Conclusion actuelle :
+- la variante B est préférable à A uniquement parce que l'effet « bloc de traduction » est moins visible ;
+- le vrai problème est en amont : les phrases françaises restent des traductions / paraphrases trop directement empilées ;
+- les cibles ont aussi été répétées trop souvent dans une seule minute, ce qui sonne artificiel ;
+- ces faiblesses sont détectables **sur les paroles seules**, sans génération audio.
 
-Le test actuel compare notamment ancrages regroupés vs répartis.
-
-**Ne pas conclure sur l'audio avant le feedback de Vincent.**
+Nouvelle règle de process :
+- **ne pas générer sur Suno tant que les paroles n'ont pas passé une revue textuelle humaine de Vincent** pour les nouvelles structures pédagogiques ;
+- l'audio sert ensuite à tester musique, voix, rythme, accent et naturel — pas à découvrir un problème évident de rédaction.
 
 ## Objectifs immédiats
 
-1. Attendre / intégrer le feedback humain sur les clips déjà générés.
-2. Continuer à préparer des variantes courtes et discriminantes prêtes à générer.
-3. Utiliser progressivement le budget Suno quotidien sur des hypothèses distinctes, pas sur des doublons.
-4. Réduire les intros longues par les paroles / prompts / structures, sans lancer d'analyse audio automatique.
-5. Tester plusieurs traitements musicaux cohérents avec le profil Deezer, tout en gardant les paroles constantes quand l'expérience porte sur le style.
+1. Repenser la structure des paroles pour que les passages français ne soient pas des traductions empilées.
+2. Réduire fortement la répétition intra-morceau : une cible peut n'apparaître qu'une fois en espagnol si le contexte est clair, avec un ancrage français naturel ailleurs ; la répétition se fait surtout entre plusieurs chansons.
+3. Produire 2–3 variantes **texte seulement** et les soumettre à Vincent avant toute nouvelle génération.
+4. Une fois une structure textuelle validée, tester plusieurs traitements musicaux cohérents avec le profil Deezer en gardant les paroles constantes.
+5. Utiliser progressivement le budget Suno quotidien uniquement sur des hypothèses déjà valides sur papier.
 6. Préparer un chemin de validation V6 complet dès qu'il devient accessible.
+
+## Règle de répétition
+
+- Ne pas forcer 3–4 répétitions d'un même mot cible dans une chanson d'une minute.
+- Par défaut, viser **1 occurrence espagnole claire par cible** dans le morceau.
+- Un ancrage français naturel peut apparaître ailleurs dans la chanson sans répéter mécaniquement le mot.
+- Une deuxième occurrence espagnole n'est utile que si elle tombe naturellement dans un refrain ou une reprise crédible.
+- La vraie répétition pédagogique doit surtout se faire **entre plusieurs chansons espacées**, pas à l'intérieur du même morceau.
 
 ## Backlog
 
@@ -120,5 +131,5 @@ Le test actuel compare notamment ancrages regroupés vs répartis.
 3. Éviter de refaire ce qui attend une revue humaine.
 4. Choisir la prochaine action qui réduit le plus une incertitude produit.
 5. Préférer scripts/checks déterministes à une analyse GPT lorsqu'ils suffisent.
-6. Si un appel Suno est utile et que le budget journalier le permet, faire au maximum un appel sur ce run.
+6. Pour une nouvelle structure de paroles, ne pas appeler Suno avant validation textuelle humaine par Vincent. Pour une structure déjà validée, si un appel Suno est utile et que le budget journalier le permet, faire au maximum un appel sur ce run.
 7. Mettre à jour cette roadmap si l'état ou les priorités ont réellement changé.
