@@ -33,7 +33,7 @@
     "style_prompt": "prompts/folk.md",
     "estimated_duration_seconds": "60-90",
     "planned_generation_replicates_per_variant": 2,
-    "notes": "Spanish lyrics and French anchor sentences are held constant between A and B; only their position changes. C changes the French dose and is a separate exploratory comparison."
+    "notes": "A and B use identical Spanish and French lyric lines in identical order, with different French placement. C changes the French dose and is exploratory."
   },
   "variants": [
     {
@@ -41,6 +41,10 @@
       "file": "A-anchors-grouped.md",
       "treatment": "Two French anchors grouped after chorus",
       "french_anchor_count": 2,
+      "anchored_lemmas": [
+        "añorar",
+        "dejar atrás"
+      ],
       "suno_url": null,
       "generated": false
     },
@@ -49,6 +53,10 @@
       "file": "B-anchors-spaced.md",
       "treatment": "Same two French anchors spaced across the song",
       "french_anchor_count": 2,
+      "anchored_lemmas": [
+        "añorar",
+        "dejar atrás"
+      ],
       "suno_url": null,
       "generated": false
     },
@@ -57,8 +65,24 @@
       "file": "C-minimal-anchor.md",
       "treatment": "Only one French anchor after chorus",
       "french_anchor_count": 1,
+      "anchored_lemmas": [
+        "añorar"
+      ],
       "suno_url": null,
       "generated": false
+    }
+  ],
+  "controlled_pairs": [
+    {
+      "variants": [
+        "A",
+        "B"
+      ],
+      "hold_constant": [
+        "spanish_lyrics",
+        "french_lyrics"
+      ],
+      "variable": "French anchor placement"
     }
   ],
   "evaluation": {
