@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from check_generation_gate import check_generation_gate, lyrics_digest  # noqa: E402
+from prepare_suno_batch import prepare  # noqa: E402
 
 PACK = ROOT / "songs/experiments/2026-10-31-semantic-reset"
 
@@ -45,6 +46,22 @@ class GenerationGateTests(unittest.TestCase):
         path = self.pack / "A-grouped.md"
         path.write_text(path.read_text(encoding="utf-8") + "\n[Instrumental]\n", encoding="utf-8")
         self.assertTrue(any("SHA-256 mismatch" in e for e in check_generation_gate(self.pack)))
+
+    def test_offline_export_stays_blocked_without_review(self):
+        jobs = prepare(self.pack, Path(self.temp.name) / "jobs")
+        self.assertTrue(jobs)
+        self.assertTrue(all(
+            json.loads(path.read_text(encoding="utf-8"))["status"] == "awaiting_human_lyrics_approval"
+            for path in jobs
+        ))
+
+    def test_offline_export_ready_after_review(self):
+        self.approve()
+        jobs = prepare(self.pack, Path(self.temp.name) / "jobs")
+        self.assertTrue(all(
+            json.loads(path.read_text(encoding="utf-8"))["status"] == "ready_for_manual_generation"
+            for path in jobs
+        ))
 
     def test_reviewer_cannot_be_omitted(self):
         self.approve()
