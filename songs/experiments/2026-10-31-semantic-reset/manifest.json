@@ -1,0 +1,120 @@
+{
+  "experiment_id": "2026-10-31-semantic-reset",
+  "created_on": "2026-10-31",
+  "status": "draft_only_no_audio",
+  "objective": "Test grouped vs spaced French semantic anchors, with all four target ideas explicitly conveyed across two natural French lines, not a bilingual dictation.",
+  "common": {
+    "target_words": [
+      {
+        "lemma": "añorar",
+        "surface": "Añoro",
+        "fr": "avoir la nostalgie de / manquer",
+        "anchor": "me manquent"
+      },
+      {
+        "lemma": "sosiego",
+        "surface": "sosiego",
+        "fr": "calme / quiétude",
+        "anchor": "le calme"
+      },
+      {
+        "lemma": "hallar",
+        "surface": "hallo",
+        "fr": "trouver",
+        "anchor": "j'ai trouvé"
+      },
+      {
+        "lemma": "dejar atrás",
+        "surface": "Dejo atrás",
+        "fr": "laisser derrière soi",
+        "anchor": "derrière moi"
+      }
+    ],
+    "style_prompt": "prompts/folk.md",
+    "estimated_duration_seconds": "45-65",
+    "max_sung_words": 100,
+    "planned_generation_replicates_per_variant": 2,
+    "require_all_targets_anchored": true,
+    "notes": "2 French lines cover all 4 meanings; no spoken instructional opening; lyrics start immediately. Static coverage is not a semantic/listening guarantee."
+  },
+  "variants": [
+    {
+      "id": "A",
+      "file": "A-grouped.md",
+      "treatment": "Two French lines grouped after chorus",
+      "french_anchor_count": 2,
+      "anchored_lemmas": [
+        "añorar",
+        "sosiego",
+        "hallar",
+        "dejar atrás"
+      ],
+      "anchor_line_map": {
+        "añorar": 0,
+        "dejar atrás": 0,
+        "sosiego": 1,
+        "hallar": 1
+      },
+      "semantic_links": {
+        "añorar": "Both languages miss the same unhurried Sundays",
+        "dejar atrás": "Both languages leave the city behind while moving forward",
+        "sosiego": "Both languages find calm in the rain",
+        "hallar": "Both languages find a handwritten note in the coat"
+      },
+      "suno_url": null,
+      "generated": false
+    },
+    {
+      "id": "B",
+      "file": "B-spaced.md",
+      "treatment": "First French line after verse, second after chorus",
+      "french_anchor_count": 2,
+      "anchored_lemmas": [
+        "añorar",
+        "sosiego",
+        "hallar",
+        "dejar atrás"
+      ],
+      "anchor_line_map": {
+        "añorar": 0,
+        "dejar atrás": 0,
+        "sosiego": 1,
+        "hallar": 1
+      },
+      "semantic_links": {
+        "añorar": "Both languages miss the same unhurried Sundays",
+        "dejar atrás": "Both languages leave the city behind while moving forward",
+        "sosiego": "Both languages find calm in the rain",
+        "hallar": "Both languages find a handwritten note in the coat"
+      },
+      "suno_url": null,
+      "generated": false
+    }
+  ],
+  "controlled_pairs": [
+    {
+      "variants": [
+        "A",
+        "B"
+      ],
+      "hold_constant": [
+        "spanish_lyrics",
+        "french_lyrics"
+      ],
+      "variable": "Grouped vs spaced placement of two multi-target French lines"
+    }
+  ],
+  "evaluation": {
+    "human_review_required": true,
+    "metrics": [
+      "French intelligibility 0-5",
+      "Spanish intelligibility 0-5",
+      "Musical naturalness 0-5",
+      "Perceived rushed transitions 0-5 (higher worse)",
+      "Immediate target recall count 0-4",
+      "24h delayed recall count 0-4",
+      "Spoken instructional intro present?"
+    ],
+    "conclusions": "pending_audio_and_listening"
+  }
+}
