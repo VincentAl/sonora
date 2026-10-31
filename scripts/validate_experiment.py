@@ -89,17 +89,49 @@ def validate(directory: Path) -> list[str]:
         if not isinstance(anchored, list) or len(anchored) != len(set(anchored)):
             errors.append(f"{variant_id}: anchored_lemmas must be a unique list")
             continue
-        if len(anchored) != expected_count:
-            errors.append(f"{variant_id}: anchored_lemmas count differs from French line count")
+        # Legacy packs anchor one target per French line. Newer packs can
+        # naturally anchor multiple targets in a single line via anchor_line_map.
+        line_map = variant.get("anchor_line_map")
+        if line_map is None:
+            if len(anchored) != expected_count:
+                errors.append(f"{variant_id}: anchored_lemmas count differs from French line count")
+        elif not isinstance(line_map, dict) or set(line_map) != set(anchored):
+            errors.append(f"{variant_id}: anchor_line_map must cover exactly anchored_lemmas")
+        if common.get("require_all_targets_anchored") and set(anchored) != set(target_map):
+            errors.append(f"{variant_id}: not all targets have French anchors")
+        semantic_links = variant.get("semantic_links", {})
+        if common.get("require_all_targets_anchored"):
+            if not isinstance(semantic_links, dict) or any(
+                not isinstance(semantic_links.get(lemma), str) or not semantic_links[lemma].strip()
+                for lemma in anchored
+            ):
+                errors.append(f"{variant_id}: missing semantic link explanations")
         french_text = "\n".join(french)
         for lemma in anchored:
             target = target_map.get(lemma)
             if not target:
                 errors.append(f"{variant_id}: unknown anchored lemma {lemma}")
-            elif not target.get("anchor"):
+                continue
+            if not target.get("anchor"):
                 errors.append(f"{variant_id}: no French anchor defined for {lemma}")
+                continue
+            if isinstance(line_map, dict):
+                index = line_map.get(lemma)
+                if type(index) is not int or not 0 <= index < len(french):
+                    errors.append(f"{variant_id}: invalid French line index for {lemma}")
+                elif not contains_phrase(french[index], target["anchor"]):
+                    errors.append(f"{variant_id}: missing French anchor for {lemma} in assigned line")
             elif not contains_phrase(french_text, target["anchor"]):
                 errors.append(f"{variant_id}: missing French anchor for {lemma}")
+
+        max_words = common.get("max_sung_words")
+        if max_words is not None:
+            if type(max_words) is not int or max_words <= 0:
+                errors.append("max_sung_words must be a positive integer")
+            else:
+                word_count = len(re.findall(r"\b\w+(?:['’]\w+)*\b", spanish_text + "\n" + french_text))
+                if word_count > max_words:
+                    errors.append(f"{variant_id}: {word_count} sung words exceeds max {max_words}")
 
     for pair in manifest.get("controlled_pairs", []):
         ids = pair.get("variants", [])
