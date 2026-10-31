@@ -49,3 +49,22 @@ Generate and evaluate a small manual batch, then automate:
 3. Suno generation
 4. review/selection
 5. spaced reappearance of learned vocabulary
+
+## First controlled experiment
+
+The first lyric-only comparison is ready in
+[`songs/experiments/2026-10-31-anchoring/`](songs/experiments/2026-10-31-anchoring/).
+It contains three variants testing the placement and density of French semantic anchors,
+a manifest, a review protocol, and a dependency-free static validator.
+
+Run locally:
+
+```bash
+python3 scripts/validate_experiment.py
+```
+
+No audio has been generated yet. Static checks cannot assess pronunciation, musical naturalness, or recall.
+
+## Suno integration update (October 2026)
+
+Suno now documents an **official MCP (Beta) connector for ChatGPT**, authenticated via Suno login rather than an API key. See [`docs/SUNO_INTEGRATION.md`](docs/SUNO_INTEGRATION.md) for setup and current automation limitations. Generation uses Suno credits and is not triggered without authorization.
