@@ -8,7 +8,7 @@ Vincent a rejeté la structure A/B précédente : phrases françaises qui ressem
 
 Ce lot teste trois architectures narratives, sans prétendre que l'une est déjà validée. Les cibles espagnoles n'apparaissent **qu'une fois chacune**. Les ancrages français ne sont pas des sous-titres immédiats ; ils doivent contribuer un nouvel élément à l'histoire.
 
-Les deux premiers essais gardent trois cibles ; le troisième est un **contrôle exploratoire à deux cibles** pour isoler l'effet de la densité. Il déroge volontairement à la règle produit de 3–4 cibles et ne peut être généré sans décision explicite.
+Les deux premiers essais gardent trois cibles ; le troisième est un **contrôle exploratoire à deux cibles** pour isoler l'effet de la densité. **Mise à jour du 31/10 : Vincent a retenu 2 cibles/minute comme densité de travail, sans approuver les paroles C.**
 
 ## A — Deux voix, une histoire (3 cibles)
 
@@ -73,7 +73,7 @@ Risque : le français pourrait encore donner une impression de résumé des troi
 
 ## C — Contrôle : deux cibles, moins de pression pédagogique
 
-*Hypothèse : l'obligation de trois ancrages en une minute contribue elle-même au caractère artificiel. Variante exploratoire **non conforme** à la densité actuelle, sans autorisation de génération.*
+*Hypothèse : l'obligation de trois ancrages en une minute contribue elle-même au caractère artificiel. Le **principe** de 2 cibles/minute est maintenant retenu, mais ces paroles ne sont toujours pas approuvées pour génération.*
 
 ```text
 [Verse — espagnol]
@@ -102,7 +102,7 @@ Risque : deux lignes françaises restent très proches du couplet espagnol, mais
 Lire les paroles **sans écouter de musique** et déterminer :
 1. Est-ce que le français sonne comme une partie de la chanson ou comme une traduction déguisée ?
 2. Laquelle des structures A / B / C a le plus de potentiel narratif ?
-3. Faut-il maintenir absolument 3–4 cibles par minute, ou autoriser 2 lorsque la densité dégrade la chanson ?
+3. Pour les 2 cibles/minute désormais retenues : quelle forme de dialogue rend leur réemploi le plus naturel ? Voir [les scènes D1/D2/D3](2026-10-31-dialogue-mechanisms.md).
 
 Ne pas déduire d'un contrôle lexical automatique que le résultat est naturel ou pédagogiquement efficace.
 
