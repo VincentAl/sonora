@@ -30,12 +30,12 @@
         "anchor": "derrière moi"
       }
     ],
-    "style_prompt": "prompts/folk.md",
+    "style_prompt": "prompts/dark-indie-compact.md",
     "estimated_duration_seconds": "45-65",
     "max_sung_words": 100,
     "planned_generation_replicates_per_variant": 2,
     "require_all_targets_anchored": true,
-    "notes": "2 French lines cover all 4 meanings; no spoken instructional opening; lyrics start immediately. Static coverage is not a semantic/listening guarantee."
+    "notes": "2 French lines cover all 4 meanings; no spoken instructional opening; lyrics start immediately. Static coverage is not a semantic/listening guarantee. Prefer user-approved higher-quality Suno voice model when available; no audio generated in this run."
   },
   "variants": [
     {
