@@ -1,7 +1,7 @@
 {
   "experiment_id": "2026-10-31-semantic-reset",
   "created_on": "2026-10-31",
-  "status": "draft_only_no_audio",
+  "status": "generated_pending_human_review",
   "objective": "Test grouped vs spaced French semantic anchors, with all four target ideas explicitly conveyed across two natural French lines, not a bilingual dictation.",
   "common": {
     "target_words": [
@@ -35,7 +35,7 @@
     "max_sung_words": 100,
     "planned_generation_replicates_per_variant": 2,
     "require_all_targets_anchored": true,
-    "notes": "2 French lines cover all 4 meanings; no spoken instructional opening; lyrics start immediately. Static coverage is not a semantic/listening guarantee. Prefer user-approved higher-quality Suno voice model when available; no audio generated in this run.",
+    "notes": "2 French lines cover all 4 meanings; no spoken instructional opening; lyrics start immediately. Static coverage is not a semantic/listening guarantee. Prefer user-approved higher-quality Suno voice model when available; four real v6-mini clips generated on 2026-10-31; human listening still pending.",
     "model_preference": "V6 (user-preferred for bilingual pronunciation; verify availability)",
     "intro_max_seconds": 3
   },
@@ -63,8 +63,12 @@
         "sosiego": "Both languages find calm in the rain",
         "hallar": "Both languages find a handwritten note in the coat"
       },
-      "suno_url": null,
-      "generated": false
+      "suno_url": "https://suno.com/song/43caccdc-d1d5-4123-88da-9f0f5fdb517d",
+      "generated": true,
+      "suno_urls": [
+        "https://suno.com/song/43caccdc-d1d5-4123-88da-9f0f5fdb517d",
+        "https://suno.com/song/70e582cb-b367-4d40-8b4b-67baaeacc9fe"
+      ]
     },
     {
       "id": "B",
@@ -89,8 +93,12 @@
         "sosiego": "Both languages find calm in the rain",
         "hallar": "Both languages find a handwritten note in the coat"
       },
-      "suno_url": null,
-      "generated": false
+      "suno_url": "https://suno.com/song/ac7962eb-a401-465a-8b15-65d1ada951ec",
+      "generated": true,
+      "suno_urls": [
+        "https://suno.com/song/ac7962eb-a401-465a-8b15-65d1ada951ec",
+        "https://suno.com/song/a3be1624-9939-4830-b67a-b55cd8d55743"
+      ]
     }
   ],
   "controlled_pairs": [
@@ -117,6 +125,7 @@
       "24h delayed recall count 0-4",
       "Spoken instructional intro present?"
     ],
-    "conclusions": "pending_audio_and_listening"
-  }
+    "conclusions": "audio_generated; human listening and memory tests pending"
+  },
+  "generation_run_log": "runs/2026-10-31-mcp-smoke-test.json"
 }
