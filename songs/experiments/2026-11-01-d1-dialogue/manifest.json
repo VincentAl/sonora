@@ -1,0 +1,59 @@
+{
+  "experiment_id": "2026-11-01-d1-dialogue",
+  "created_on": "2026-11-01",
+  "status": "approved_ready_for_generation",
+  "objective": "Test a natural conversational echo with two target notions in one minute, using two voices and different concrete contexts rather than literal translation.",
+  "common": {
+    "target_words": [
+      {
+        "lemma": "dejar atrás",
+        "surface": "Dejé atrás",
+        "fr": "laisser derrière soi",
+        "anchor": "J'ai laissé"
+      },
+      {
+        "lemma": "añorar",
+        "surface": "Añoro",
+        "fr": "regretter / ressentir le manque avec nostalgie",
+        "anchor": "me manquent"
+      }
+    ],
+    "style_prompt": "prompts/dark-indie-compact.md",
+    "estimated_duration_seconds": "45-60",
+    "max_sung_words": 70,
+    "max_target_occurrences_per_variant": 1,
+    "planned_generation_replicates_per_variant": 2,
+    "require_all_targets_anchored": true,
+    "model_preference": "v6-mini prototype; V6 full for final pronunciation validation when available",
+    "intro_max_seconds": 3
+  },
+  "variants": [
+    {
+      "id": "D1",
+      "file": "D1-dialogue.md",
+      "treatment": "Two-person conversational echo: each language reuses the target idea in a different concrete situation",
+      "french_anchor_count": 3,
+      "anchored_lemmas": ["dejar atrás", "añorar"],
+      "anchor_line_map": {
+        "dejar atrás": 0,
+        "añorar": 2
+      },
+      "semantic_links": {
+        "dejar atrás": "The Spanish speaker leaves the city behind while departing; the French speaker reveals what they left behind when they left.",
+        "añorar": "The Spanish speaker misses late-night memories; the French speaker misses rushed mornings."
+      },
+      "generated": false
+    }
+  ],
+  "human_lyrics_approval": {
+    "status": "approved",
+    "reviewer": "Vincent",
+    "approved_on": "2026-11-01",
+    "lyrics_sha256": "8bac8fbe45a227b0a34bdf161593b7fa1a88a85b3da24be40a3c5516351652bf",
+    "note": "Vincent reviewed D1/D2/D3, approved all as promising, then explicitly chose D1 to proceed."
+  },
+  "evaluation": {
+    "human_review_required": true,
+    "conclusions": "pending_generation_and_human_listening"
+  }
+}
