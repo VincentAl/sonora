@@ -1,7 +1,7 @@
 {
   "experiment_id": "2026-11-01-d1-dialogue",
   "created_on": "2026-11-01",
-  "status": "approved_ready_for_generation",
+  "status": "generated_pending_human_review",
   "objective": "Test a natural conversational echo with two target notions in one minute, using two voices and different concrete contexts rather than literal translation.",
   "common": {
     "target_words": [
@@ -33,7 +33,10 @@
       "file": "D1-dialogue.md",
       "treatment": "Two-person conversational echo: each language reuses the target idea in a different concrete situation",
       "french_anchor_count": 3,
-      "anchored_lemmas": ["dejar atrás", "añorar"],
+      "anchored_lemmas": [
+        "dejar atrás",
+        "añorar"
+      ],
       "anchor_line_map": {
         "dejar atrás": 0,
         "añorar": 2
@@ -42,7 +45,11 @@
         "dejar atrás": "The Spanish speaker leaves the city behind while departing; the French speaker reveals what they left behind when they left.",
         "añorar": "The Spanish speaker misses late-night memories; the French speaker misses rushed mornings."
       },
-      "generated": false
+      "generated": true,
+      "suno_urls": [
+        "https://suno.com/song/5985a426-741b-4c96-8578-77a1cb4d2492",
+        "https://suno.com/song/7a627bb6-9d85-4b01-8013-1a1946c54b39"
+      ]
     }
   ],
   "human_lyrics_approval": {
@@ -54,6 +61,7 @@
   },
   "evaluation": {
     "human_review_required": true,
-    "conclusions": "pending_generation_and_human_listening"
-  }
+    "conclusions": "two v6-mini takes generated; awaiting Vincent audio review"
+  },
+  "generation_run_log": "runs/2026-11-01-d1-v6mini.json"
 }
