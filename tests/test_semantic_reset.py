@@ -33,6 +33,47 @@ class SemanticResetTests(unittest.TestCase):
     def test_four_targets_two_french_lines_pass(self):
         self.assertEqual([], validate(self.pack))
 
+    def test_two_target_pack_passes(self):
+        # The 1-minute POC now uses two targets. Keep the existing lyrics
+        # and restrict the declared/anchored targets to exercise the schema.
+        def keep_two(manifest):
+            chosen = {"añorar", "dejar atrás"}
+            manifest["common"]["target_words"] = [
+                target for target in manifest["common"]["target_words"]
+                if target["lemma"] in chosen
+            ]
+            for variant in manifest["variants"]:
+                variant["anchored_lemmas"] = [
+                    lemma for lemma in variant["anchored_lemmas"] if lemma in chosen
+                ]
+                variant["anchor_line_map"] = {
+                    lemma: index for lemma, index in variant["anchor_line_map"].items()
+                    if lemma in chosen
+                }
+                variant["semantic_links"] = {
+                    lemma: explanation
+                    for lemma, explanation in variant["semantic_links"].items()
+                    if lemma in chosen
+                }
+
+        self.change_manifest(keep_two)
+        self.assertEqual([], validate(self.pack))
+
+    def test_one_target_pack_fails(self):
+        self.change_manifest(
+            lambda m: m["common"].update(target_words=m["common"]["target_words"][:1])
+        )
+        self.assertTrue(any("2–5" in e for e in validate(self.pack)))
+
+    def test_six_target_pack_fails(self):
+        def add_two(manifest):
+            manifest["common"]["target_words"].extend([
+                {"lemma": "inventado1", "surface": "inventado1", "anchor": "factice1"},
+                {"lemma": "inventado2", "surface": "inventado2", "anchor": "factice2"},
+            ])
+        self.change_manifest(add_two)
+        self.assertTrue(any("2–5" in e for e in validate(self.pack)))
+
     def test_anchor_line_must_match_target(self):
         self.change_manifest(
             lambda m: m["variants"][0]["anchor_line_map"].update({"hallar": 0})
