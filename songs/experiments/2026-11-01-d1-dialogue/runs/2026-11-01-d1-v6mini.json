@@ -1,0 +1,33 @@
+{
+  "run_id": "sonora-2026-11-01-d1-dialogue-v1",
+  "generated_at_utc": "2026-11-01T16:59:20Z",
+  "model": "v6-mini",
+  "duration_target_seconds": 55,
+  "duration_strict": false,
+  "clip_ids": [
+    "5985a426-741b-4c96-8578-77a1cb4d2492",
+    "7a627bb6-9d85-4b01-8013-1a1946c54b39"
+  ],
+  "clips": [
+    {
+      "id": "5985a426-741b-4c96-8578-77a1cb4d2492",
+      "url": "https://suno.com/song/5985a426-741b-4c96-8578-77a1cb4d2492",
+      "duration_seconds": 55.16,
+      "status": "complete"
+    },
+    {
+      "id": "7a627bb6-9d85-4b01-8013-1a1946c54b39",
+      "url": "https://suno.com/song/7a627bb6-9d85-4b01-8013-1a1946c54b39",
+      "duration_seconds": 55.6,
+      "status": "complete"
+    }
+  ],
+  "credits": {
+    "before": 50,
+    "after": 50,
+    "spent": 0
+  },
+  "credit_note": "Suno account usage reported 50 credits both immediately before and after this completed generation. Do not infer that future generations are free; re-check live balance before each call.",
+  "audio_analysis_performed": false,
+  "human_review_status": "pending"
+}
