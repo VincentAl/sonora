@@ -127,8 +127,8 @@ Nouvelle règle de process :
 
 ## Objectifs immédiats
 
-1. **Attendre le feedback de Vincent sur les 2 prises D1** avant toute nouvelle génération D1. Les 2 liens Suno sont dans le manifeste de l'expérience ; ne pas lancer une autre génération sur ce texte pendant l'attente.
-2. Évaluer uniquement à partir de son retour : naturel du dialogue bilingue, qualité musicale, voix, accent, intelligibilité et sensation d'apprentissage.
+1. D1 a reçu un premier feedback humain positif : le mécanisme « marche » et Vincent préfère **la prise 1**. Ne pas régénérer D1 sans nouvelle hypothèse. Les 2 liens Suno sont dans le manifeste de l'expérience ; ne pas lancer une autre génération sur ce texte pendant l'attente.
+2. Conserver D1 comme première structure prometteuse ; exploiter le feedback de Vincent pour les prochains tests de style/voix sans analyser l'audio automatiquement.
 3. Si D1 fonctionne comme mécanisme, garder D2/D3 pour de futurs morceaux plutôt que chercher un vainqueur unique.
 4. Si les paroles sont validées mais le style ne l'est pas, tester ensuite plusieurs traitements musicaux avec **exactement les mêmes paroles D1**.
 5. Continuer à utiliser le budget Suno uniquement sur des hypothèses déjà valides sur papier.
@@ -181,6 +181,15 @@ Objectif : obtenir une répétition qui sert la scène et le dialogue, pas la p�
 - étendre les checks déterministes de paroles / manifestes (garde-fou d'approbation déjà implémenté ; validation des packs étendue à **2–5 cibles**, avec tests 2/1/6 cibles, pour couvrir les POC 1 min et les chansons finales 3 min) ;
 - comparer 30–45 s vs 60 s si Suno permet un contrôle réellement utile de la durée ;
 - explorer des profils musicaux dérivés des goûts Deezer sans imitation d'artistes.
+
+## Hygiène Git
+
+- Un changement logique = **un commit** autant que possible.
+- Ne pas créer un commit par fichier pour un même pack/expérience.
+- Préparer les blobs/arbre puis créer un commit groupé quand plusieurs fichiers sont liés.
+- Éviter les chaînes de commits « fix précédent commit » sur `main` ; valider localement/déterministement avant de pousser.
+- Pendant un run, viser **1 commit final**, exceptionnellement 2 si les changements sont réellement indépendants.
+- Ne pas réécrire l'historique déjà poussé uniquement pour nettoyer l'esthétique.
 
 ## Règle de choix d'une tâche au réveil
 
