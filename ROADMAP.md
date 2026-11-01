@@ -85,6 +85,12 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - 80 crédits restaient après le test.
 - Ces 4 clips ont reçu un premier feedback humain sur la structure bilingue.
 
+### Compatibilité du pipeline
+
+- Le validateur `scripts/validate_experiment.py` accepte désormais **2–5 cibles** : auparavant il imposait 3–4 et aurait bloqué les POC à 2 cibles pourtant retenus dans cette roadmap.
+- Les règles de densité restent éditoriales : viser 2 cibles/minute en POC et 4–5 sur ~3 min ; le validateur contrôle seulement le nombre déclaré, pas le naturel des paroles.
+- Ce changement **n'approuve aucun texte** et ne déverrouille pas Suno sans le garde-fou d'approbation humaine.
+
 ### Prévalidation en cours
 
 - [3 variantes de paroles sans audio](songs/drafts/2026-10-31-lyrics-preflight.md) : A = deux voix, B = deux époques, C = contrôle à deux cibles.
@@ -151,7 +157,7 @@ Objectif : obtenir une répétition qui sert la scène et le dialogue, pas la p�
 - journal d'écoute / feedback humain structuré ;
 - distinguer clairement « candidat préparé », « généré », « écouté », « validé » ;
 - historique des crédits Suno par jour et par expérience (précontrôle déterministe `scripts/check_suno_budget.py` implémenté ; maintenir les journaux à jour) ;
-- étendre les checks déterministes de paroles / manifestes (garde-fou d'approbation déjà implémenté) ;
+- étendre les checks déterministes de paroles / manifestes (garde-fou d'approbation déjà implémenté ; validation des packs étendue à **2–5 cibles**, avec tests 2/1/6 cibles, pour couvrir les POC 1 min et les chansons finales 3 min) ;
 - comparer 30–45 s vs 60 s si Suno permet un contrôle réellement utile de la durée ;
 - explorer des profils musicaux dérivés des goûts Deezer sans imitation d'artistes.
 
