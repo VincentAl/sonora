@@ -61,7 +61,12 @@
   },
   "evaluation": {
     "human_review_required": true,
-    "conclusions": "two v6-mini takes generated; awaiting Vincent audio review"
+    "status": "initial_human_feedback_received",
+    "preferred_clip_id": "5985a426-741b-4c96-8578-77a1cb4d2492",
+    "feedback_date": "2026-11-01",
+    "feedback_source": "Vincent, direct chat feedback",
+    "feedback_file": "human-feedback.md",
+    "conclusions": "Vincent found the D1 audio promising ('ça marche') and preferred take 1. No explicit pronunciation, intelligibility, recall or lexical-precision assessment. Existing dejar atrás / French keys mismatch remains an editorial issue, not resolved by this feedback."
   },
   "generation_run_log": "runs/2026-11-01-d1-v6mini.json"
 }

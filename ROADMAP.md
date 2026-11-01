@@ -84,7 +84,7 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - 4 clips générés pour 20 crédits.
 - 80 crédits restaient après le test.
 - Les 4 clips du premier smoke test ont reçu un premier feedback humain sur la structure bilingue.
-- Le 1 novembre, D1 a généré 2 nouvelles prises v6-mini (~55 s chacune), actuellement en attente de revue humaine.
+- Le 1 novembre, D1 a généré 2 prises v6-mini (~55 s). Vincent a donné un **premier retour positif** (« ça marche ») et préfère la **prise 1** ; ce n'est pas une validation de la prononciation, de la mémorisation ni de la précision de chaque ancrage.
 - Le solde affichait encore 50 crédits juste après génération, mais une vérification différée a confirmé **40 crédits restants et 10 consommés**. Le journal D1 a été corrigé : ne jamais traiter une absence de décrément immédiat comme une génération gratuite.
 
 ### Compatibilité du pipeline
@@ -103,12 +103,12 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - Vincent a **validé le principe de 2 cibles/minute** et la piste de la reprise naturelle d'une notion dans un autre contexte ; il **n'a pas validé les paroles C**.
 - [D1/D2/D3 — révision sémantique](songs/drafts/2026-10-31-dialogue-mechanisms.md) : Vincent a jugé les trois pistes prometteuses puis a choisi **D1** pour le premier test audio.
 - D1 a été promue dans [l'expérience exécutable](songs/experiments/2026-11-01-d1-dialogue/) et explicitement approuvée par Vincent.
-- Un appel Suno v6-mini a généré **2 prises D1** le 1 novembre 2026. Elles sont maintenant **en attente de revue humaine**. Ne pas régénérer D1 avant feedback.
+- Un appel Suno v6-mini a généré **2 prises D1** le 1 novembre 2026. **Retour initial reçu : prise 1 préférée, mécanisme jugé prometteur**. Ne pas régénérer D1 sans nouvelle hypothèse explicite.
 - Garde-fou ajouté : `scripts/check_generation_gate.py` vérifie l'approbation humaine **liée au hash des paroles** ; les exports hors ligne restent marqués en attente si l'approbation manque.
 
 ### Expérience active
 
-`songs/experiments/2026-11-01-d1-dialogue/` (2 prises générées, revue humaine attendue).
+`songs/experiments/2026-11-01-d1-dialogue/` (2 prises générées, [premier feedback humain](songs/experiments/2026-11-01-d1-dialogue/human-feedback.md) reçu ; revue pédagogique/phonétique complète non faite).
 
 ### Expérience historique rejetée
 
@@ -128,7 +128,7 @@ Nouvelle règle de process :
 ## Objectifs immédiats
 
 1. D1 a reçu un premier feedback humain positif : le mécanisme « marche » et Vincent préfère **la prise 1**. Ne pas régénérer D1 sans nouvelle hypothèse. Les 2 liens Suno sont dans le manifeste de l'expérience ; ne pas lancer une autre génération sur ce texte pendant l'attente.
-2. Conserver D1 comme première structure prometteuse ; exploiter le feedback de Vincent pour les prochains tests de style/voix sans analyser l'audio automatiquement.
+2. **Incertitude pédagogique à résoudre** : dans D1, « Dejé atrás la ciudad » et « J'ai laissé tes clés sur la table » n'enseignent pas exactement le même sens de `dejar atrás`. Le retour positif sur l'audio ne valide pas cet ancrage. Un seul [brouillon D1b corrigé](songs/drafts/2026-11-01-d1b-semantic-preflight.md) est prêt **pour revue textuelle uniquement** ; pas de génération sans approbation explicite de ce texte.
 3. Si D1 fonctionne comme mécanisme, garder D2/D3 pour de futurs morceaux plutôt que chercher un vainqueur unique.
 4. Si les paroles sont validées mais le style ne l'est pas, tester ensuite plusieurs traitements musicaux avec **exactement les mêmes paroles D1**.
 5. Continuer à utiliser le budget Suno uniquement sur des hypothèses déjà valides sur papier.
