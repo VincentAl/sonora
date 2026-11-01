@@ -34,3 +34,9 @@ Supongo que cada uno se fue a su manera.
 **À vérifier à la lecture :** les images « peur / regrets » restent-elles naturelles dans un dialogue amoureux, sans donner l'impression d'un exercice ? Le couplet conserve-t-il l'énergie de D1 ? Le sens lexical est proposé, pas garanti par un test automatique.
 
 **Décision :** aucun appel Suno avant validation explicite de ces paroles. Ne pas remplacer les fichiers ni les IDs de l'expérience D1 originale.
+
+## Retour de Vincent — 1 novembre 2026
+
+Vincent : « ok le texte est bcp mieux ».
+
+Retour positif sur la révision textuelle D1b. Ce commentaire ne constitue pas encore une approbation explicite pour lancer une génération Suno ; statut inchangé : proposition en attente d'autorisation de génération.
