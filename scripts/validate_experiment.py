@@ -23,7 +23,10 @@ def lyric_sections(path: Path) -> tuple[list[str], list[str]]:
         if not line or line.startswith("#"):
             continue
         if line.startswith("[") and line.endswith("]"):
-            in_french = "french" in line.casefold()
+            # Accept both English and French section labels used in lyric drafts.
+            # Match whole tokens so [Refrain] is not mistaken for [FR].
+            tag = line[1:-1].casefold()
+            in_french = bool(re.search(r"(?<!\\w)(?:french|fran[cç]ais|fr)(?!\\w)", tag))
             continue
         (french if in_french else spanish).append(line)
     return spanish, french
