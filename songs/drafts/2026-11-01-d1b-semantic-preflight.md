@@ -17,7 +17,7 @@ mais pas ta voix dans le couloir.
 Añoro las noches en que llegabas tarde.
 
 [Voix 2 — français]
-Tes matins pressés me manquent encore.
+Ça me manque, quand tu partais sans faire de bruit.
 
 [Voix 1 — espagnol]
 Supongo que cada uno se fue a su manera.
@@ -27,7 +27,7 @@ Supongo que cada uno se fue a su manera.
 | Cible | Contexte espagnol | Ancrage français | Sens lexical commun |
 | --- | --- | --- | --- |
 | `dejar atrás` | dépasser la peur de partir | laisser les regrets derrière soi | se détacher d'un poids émotionnel passé |
-| `añorar` | nostalgie des nuits partagées | manque des matins partagés | éprouver la nostalgie de moments vécus |
+| `añorar` | nostalgie des nuits partagées | manque des départs silencieux du matin | éprouver la nostalgie de moments vécus |
 
 **Différence par rapport à D1 :** la première ligne espagnole et les deux lignes françaises qui suivaient ont été réécrites pour remplacer le piège « laisser les clés » ; le reste de la structure est conservé. Les deux cibles apparaissent une fois chacune en espagnol. Les répliques françaises ne sont pas des traductions phrase par phrase.
 
@@ -37,6 +37,6 @@ Supongo que cada uno se fue a su manera.
 
 ## Retour de Vincent — 1 novembre 2026
 
-Vincent : « ok le texte est bcp mieux ».
+Vincent : « ok le texte est bcp mieux », puis précise que « tes matins pressés » est peu compréhensible. La ligne a été remplacée par une image concrète de départ silencieux. La version modifiée reste à valider.
 
 Retour positif sur la révision textuelle D1b. Ce commentaire ne constitue pas encore une approbation explicite pour lancer une génération Suno ; statut inchangé : proposition en attente d'autorisation de génération.
