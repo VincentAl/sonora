@@ -67,6 +67,8 @@ Comme un appel de génération observé coûte environ 10 crédits et produit 2 
 - les ~3 autres runs sont principalement consacrés au repo, aux paroles, au vocabulaire, aux tests et à la préparation ;
 - maximum 1 appel de génération par run sauf raison exceptionnelle documentée ;
 - vérifier le solde réel Suno avant de générer ;
+- exécuter **avant chaque appel** `python3 scripts/check_suno_budget.py --cost 10 --balance <solde_Suno_actuel>` ; si le résultat est BLOCKED, ne pas générer ;
+- après chaque appel réussi, enregistrer et commiter immédiatement un journal `songs/experiments/<expérience>/runs/*.json` avec `run_id`, `generated_at_utc` et `credits.before/after/spent` ; le contrôle additionne ces journaux sur la journée de Paris ;
 - ne jamais dépasser le solde disponible ;
 - ne jamais acheter de crédits.
 
@@ -148,7 +150,7 @@ Objectif : obtenir une répétition qui sert la scène et le dialogue, pas la p�
 - améliorer la sélection de vocabulaire et le SRS léger ;
 - journal d'écoute / feedback humain structuré ;
 - distinguer clairement « candidat préparé », « généré », « écouté », « validé » ;
-- historique des crédits Suno par jour et par expérience ;
+- historique des crédits Suno par jour et par expérience (précontrôle déterministe `scripts/check_suno_budget.py` implémenté ; maintenir les journaux à jour) ;
 - étendre les checks déterministes de paroles / manifestes (garde-fou d'approbation déjà implémenté) ;
 - comparer 30–45 s vs 60 s si Suno permet un contrôle réellement utile de la durée ;
 - explorer des profils musicaux dérivés des goûts Deezer sans imitation d'artistes.
@@ -160,5 +162,5 @@ Objectif : obtenir une répétition qui sert la scène et le dialogue, pas la p�
 3. Éviter de refaire ce qui attend une revue humaine.
 4. Choisir la prochaine action qui réduit le plus une incertitude produit.
 5. Préférer scripts/checks déterministes à une analyse GPT lorsqu'ils suffisent.
-6. Pour une nouvelle structure de paroles, ne pas appeler Suno avant validation textuelle humaine par Vincent. Pour une structure déjà validée, si un appel Suno est utile et que le budget journalier le permet, faire au maximum un appel sur ce run.
+6. Pour une nouvelle structure de paroles, ne pas appeler Suno avant validation textuelle humaine par Vincent. Pour une structure déjà validée, exécuter **les deux précontrôles** : `check_generation_gate.py` et `check_suno_budget.py` avec le solde réel ; si l'un bloque, ne pas appeler Suno. Sinon faire au maximum un appel sur ce run.
 7. Mettre à jour cette roadmap si l'état ou les priorités ont réellement changé.
