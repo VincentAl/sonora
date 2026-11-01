@@ -16,7 +16,7 @@ La musique est le vecteur. L'objectif produit reste l'apprentissage.
 
 - Une chanson doit sonner comme une vraie chanson, jamais comme un exercice.
 - Pour les tests d'une minute : viser **2 mots / idées cibles**. Sur une chanson finale d'environ 3 minutes, viser environ **4–5 notions** avec répétitions naturelles.
-- Chaque cible doit être compréhensible en espagnol dans le contexte et recevoir un ancrage français naturel à l'échelle du morceau.
+- Chaque cible doit être compréhensible en espagnol dans le contexte **et la même idée sémantique doit réapparaître clairement en français**, dans une formulation ou un contexte différent. Même sens, pas forcément même phrase.
 - Pas de traduction phrase par phrase.
 - Pas d'introduction pédagogique parlée.
 - POC : viser environ 45–60 secondes et une intro très courte.
@@ -120,12 +120,24 @@ Nouvelle règle de process :
 
 ## Objectifs immédiats
 
-1. Faire valider à la lecture les nouvelles versions D1/D2/D3, désormais réécrites dans un ton adulte et moins littéral.
+1. Faire valider à la lecture les nouvelles versions D1/D2/D3, réécrites pour restaurer le couplage sémantique explicite entre espagnol et français.
 2. Réduire fortement la répétition intra-morceau : une cible peut n'apparaître qu'une fois en espagnol si le contexte est clair, avec un ancrage français naturel ailleurs ; la répétition se fait surtout entre plusieurs chansons.
 3. **En attente de revue textuelle humaine** : D1/D2/D3 réécrites dans [dialogue-mechanisms](songs/drafts/2026-10-31-dialogue-mechanisms.md). D3 sert de référence de direction ; les anciens textes A/B/C restent historiques. **Aucun texte n'est approuvé pour génération**.
 4. Une fois une structure textuelle validée, tester plusieurs traitements musicaux cohérents avec le profil Deezer en gardant les paroles constantes.
 5. Utiliser progressivement le budget Suno quotidien uniquement sur des hypothèses déjà valides sur papier.
 6. Préparer un chemin de validation V6 complet dès qu'il devient accessible.
+
+## Règle de couplage sémantique
+
+Pour chaque cible, avant toute génération, il faut pouvoir écrire :
+- sens cible X ;
+- contexte espagnol A ;
+- contexte français B ;
+- et vérifier que **X est réellement le même dans A et B**.
+
+Le français peut changer l'objet, le souvenir, le personnage ou la formulation, mais pas le sens appris.
+
+Une simple continuité d'ambiance ou de narration ne suffit pas.
 
 ## Règle de répétition
 
