@@ -1,122 +1,131 @@
-# Sonora — scènes conversationnelles, prévalidation texte (révision adulte, 1 novembre 2026)
+# Sonora — scènes conversationnelles, prévalidation texte (révision sémantique, 1 novembre 2026)
 
 **Statut : brouillons non approuvés. Zéro génération Suno autorisée.**
 
-## Retour de Vincent intégré
+## Règle centrale
 
-Les mécanismes de dialogue restent intéressants, mais les formulations D1/D2/D3 précédentes étaient trop littérales et enfantines. Les exemples de conversation ("moi aussi", "non mais moi", etc.) doivent être compris comme des **mécanismes de reprise**, pas copiés dans les paroles.
+Le français et l'espagnol ne doivent ni :
+- traduire la même phrase mot à mot ;
+- ni simplement partager une ambiance.
 
-Autre correction : éviter les images artificielles ou opaques comme "écouter l'escalier".
+Pour chaque cible, les deux langues doivent exprimer **la même idée sémantique**, dans deux formulations ou contextes naturels différents.
 
-D3 reste la piste la plus prometteuse : deux personnes parlent du même souvenir mais ne retiennent pas la même chose. Cette révision conserve les mêmes deux cibles pour comparer les mécanismes d'écriture, pas le vocabulaire.
+Exemple de mécanisme attendu :
+- espagnol : « Dejé atrás la ciudad. »
+- français : « J'ai laissé les clés sur la table. »
 
-Cibles :
-- `dejar atrás`
-- `añorar`
+Le contenu concret change, mais l'idée cible — **laisser quelque chose derrière soi / abandonner en partant** — est bien présente des deux côtés.
 
-## D1 — Écho elliptique
+Autre exemple :
+- espagnol : « Añoro aquellas noches. »
+- français : « Tes matins me manquent encore. »
 
-*Mécanisme : chacun révèle ce qu'il a laissé derrière lui, sans réponse scolaire ni "moi aussi".*
+Le souvenir change, mais l'idée cible — **ressentir le manque / la nostalgie de quelque chose** — est clairement répétée.
+
+Cibles de ce lot :
+- `dejar atrás` → laisser derrière soi / abandonner en partant
+- `añorar` → regretter / ressentir le manque avec nostalgie
+
+---
+
+## D1 — Deux départs qui se répondent
 
 ```text
 [Voix 1 — espagnol]
-Dejé atrás la ciudad antes de que amaneciera.
-La autopista estaba vacía.
+Dejé atrás la ciudad antes del amanecer.
+Ni siquiera miré por el retrovisor.
 
 [Voix 2 — français]
-Tes clés sont restées sur le bar.
-Je n'ai pas eu le courage de les reprendre.
+J'ai laissé tes clés sur la table,
+à côté du café froid.
 
 [Voix 1 — espagnol]
-Añoro el ruido de tus pasos al volver tarde.
+Añoro las noches en que llegabas tarde.
 
 [Voix 2 — français]
-Depuis, l'appartement semble trop grand.
+Tes matins pressés me manquent encore.
 
 [Voix 1 — espagnol]
-No era la ciudad lo que quería perder.
+Supongo que cada uno se fue a su manera.
 ```
 
-Pourquoi ça peut marcher :
-- l'idée de "laisser derrière" circule par la scène, sans répéter la même phrase ;
-- le manque est montré par l'espace devenu vide plutôt que défini explicitement ;
-- le français ajoute une conséquence, il ne résume pas l'espagnol.
+### Paire sémantique
+- `dejar atrás` : quitter la ville / laisser les clés en partant → même idée de laisser quelque chose derrière soi.
+- `añorar` : regretter les nuits / les matins qui manquent → même idée de nostalgie.
 
-Risque : l'ancrage français de `añorar` est encore indirect ; à juger à la lecture.
+Le dialogue avance : chacun révèle ce qu'il a laissé et ce qui lui manque.
 
-## D2 — Correction retenue
+---
 
-*Mécanisme : une personne croit comprendre le départ ; l'autre corrige subtilement ce qui lui manque vraiment.*
+## D2 — Ce qu'on croyait avoir quitté
 
 ```text
 [Voix 1 — espagnol]
-Dejé atrás la casa sin mirar la ventana.
-Todavía recuerdo dónde cruje el parquet.
+Dejé atrás la casa sin cerrar las cortinas.
 
 [Voix 2 — français]
-Je pensais que tu voulais surtout partir d'ici.
+J'ai laissé les photos dans le dernier tiroir.
 
 [Voix 1 — espagnol]
-Añoro las noches en el balcón.
+Pensé que eso bastaría.
 
 [Voix 2 — français]
-Pas le quartier, alors.
+Moi aussi.
 
 [Voix 1 — espagnol]
-No.
-La hora en que llegabas.
+Añoro las cenas que terminaban demasiado tarde.
 
 [Voix 2 — français]
-Ça, je m'en souvenais aussi.
+Les silences après minuit me manquent davantage.
+
+[Voix 1 — espagnol]
+Entonces no era la casa.
 ```
 
-Pourquoi ça peut marcher :
-- la reprise vient d'un malentendu crédible ;
-- le second sens se précise sans glose ;
-- les deux langues font progresser la scène.
+### Paire sémantique
+- `dejar atrás` : laisser la maison / laisser les photos → même action sémantique, objets différents.
+- `añorar` : nostalgie des dîners / manque des silences → même sentiment appliqué à deux souvenirs du même passé.
 
-Risque : `dejar atrás` est moins explicitement ancré en français ; la compréhension repose davantage sur la scène entière.
+Note : « Moi aussi » n'est pas ici utilisé comme mécanisme pédagogique ; c'est une réponse courte au constat « je pensais que ça suffirait ». À supprimer si ça sonne encore trop parlé/enfantin.
 
-## D3 — Souvenir contradictoire, révision
+---
 
-*Mécanisme : même souvenir, détails différents ; la répétition naît du désaccord léger entre les deux voix.*
+## D3 — Même voyage, souvenirs différents
 
 ```text
 [Voix 1 — espagnol]
-Dejé atrás el pueblo un martes de lluvia.
-El tren llegó tarde y nadie dijo nada.
+Dejé atrás el pueblo bajo la lluvia.
+El tren salió con una hora de retraso.
 
 [Voix 2 — français]
-J'avais oublié ma valise sur le quai.
-Toi, tu riais déjà derrière la vitre.
+J'ai laissé ma valise sur le quai.
+On s'en est aperçu après la frontière.
 
 [Voix 1 — espagnol]
 Añoro aquel café de la estación.
 
 [Voix 2 — français]
-Il était infect.
-Tu n'en buvais même pas la moitié.
+Le vieux serveur me manque plus que son café.
 
 [Voix 1 — espagnol]
-No era por el café.
+Nunca fue por el café.
 
 [Voix 2 — français]
 Je sais.
 ```
 
-Pourquoi ça peut marcher :
-- le dialogue est plus adulte et plus elliptique ;
-- la reprise de l'idée de départ passe par la valise laissée sur le quai, sans "moi aussi" ;
-- le manque est attaché à un souvenir partagé, puis corrigé par la chute ;
-- la dernière réponse laisse entendre que les deux savent ce qui manque vraiment, sans l'expliquer.
+### Paire sémantique
+- `dejar atrás` : laisser le village derrière soi / laisser la valise derrière soi → même idée, deux objets différents dans la même scène.
+- `añorar` : nostalgie du café comme souvenir / manque du serveur → même idée de nostalgie, mais la seconde voix précise ce qui comptait réellement.
 
-## Critère de décision
+D3 reste la piste la plus prometteuse parce que la répétition sémantique naît directement du souvenir partagé.
 
-À lire **sans musique** :
+## Critère obligatoire avant Suno
 
-1. Est-ce que les répliques pourraient exister dans une chanson adulte ?
-2. Est-ce que le français apporte une information nouvelle ?
-3. Est-ce que les deux notions restent compréhensibles sans ressembler à un exercice ?
-4. Est-ce qu'une reprise paraît naturelle parce que la scène l'exige, et non parce qu'on veut répéter un mot ?
+Pour chaque cible, on doit pouvoir remplir cette phrase :
+
+> En espagnol, la cible veut dire **X** dans la situation **A** ; en français, la même idée **X** réapparaît dans la situation **B**.
+
+Si **X** n'est pas clairement identique, le texte est rejeté avant génération.
 
 Aucune génération Suno avant validation explicite du texte par Vincent.
