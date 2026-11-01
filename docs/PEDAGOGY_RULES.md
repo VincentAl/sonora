@@ -1,6 +1,6 @@
 # Pedagogy Rules
 
-These rules come from iterative listening tests.
+These rules combine explicit listener feedback and text-prevalidation decisions. The current priorities and experiment status are defined in [ROADMAP.md](../ROADMAP.md); drafts and deterministic checks are not evidence of learning.
 
 ## Rule 1 — The learning objective comes first
 
@@ -19,9 +19,13 @@ Example:
 
 Therefore important targets need an exact semantic anchor at least once.
 
-## Rule 3 — Spanish and French must share the same idea
+## Rule 3 — Spanish and French must share the **same lexical sense**
 
-The French anchor does not need to be a literal translation of the Spanish sentence, but it MUST clearly refer to the same action, image, situation, or semantic idea.
+The French anchor does not need to translate the whole Spanish sentence, but it MUST express the **specific meaning of the target** in a different natural context. Sharing a scene, emotion, or broad word family is insufficient.
+
+**Sense trap to avoid:** `dejar atrás` (leave something behind; put a place/past behind you) is not automatically taught by `j'ai laissé mes clés sur la table` (leave an object somewhere). The latter more directly illustrates `dejar` without `atrás`. If the French lyric only communicates forgetting an object, change the target to `dejar` or find a genuine French expression of `dejar atrás`.
+
+Likewise, `añorar` suggests a felt, often nostalgic absence: `me manquer` may work in context, but mere absence of an object is not enough.
 
 Bad:
 > Spanish line uses `despejarse` about the sky clearing.
@@ -79,10 +83,12 @@ The constraint is:
 
 French is a precision tool, not the main teaching channel.
 
-Default for about 1 minute:
-- 3–4 targets;
-- 1–2 French passages;
+Current test default for about 1 minute:
+- **2 targets**;
+- only as many French anchor lines as needed to express both meanings naturally;
 - the rest in Spanish.
+
+For an approximately 3-minute song, plan **4–5 notions**, without forcing one French line per notion.
 
 ## Rule 8 — Leave time for the listener
 
@@ -99,10 +105,12 @@ Use:
 Do not repeat a translation every time.
 
 A useful sequence:
-1. target in Spanish context;
-2. semantically linked French anchor with the exact equivalent;
-3. target again in Spanish;
-4. later songs reuse it without French.
+1. target once in a clear Spanish context;
+2. a semantically precise French anchor that uses the **same sense** in a different situation;
+3. optionally reprise in Spanish **only if** the refrain or dialogue naturally calls for it;
+4. revisit the target in later songs spaced over time.
+
+Do not force three or four occurrences of a target into a one-minute test.
 
 ## Rule 10 — Favor useful ambiguity, then resolve it
 
@@ -120,9 +128,10 @@ For each target, write down explicitly:
 - intended French meaning;
 - Spanish lyric context;
 - French anchor sentence;
-- shared semantic idea between the two.
+- shared **lexical sense** between the two, not merely a shared atmosphere;
+- any shift in sense, construction, or collocation (for example `dejar` versus `dejar atrás`).
 
-Reject the lyric pack if that shared idea cannot be stated clearly in one short sentence.
+Reject the lyric pack if the exact sense cannot be stated clearly in one short sentence, or if the French anchor only fits a broader/neighboring meaning. This is a **human editorial judgment**; a string-matching script cannot verify it.
 
 ## Rule 12 — Songs should still work as songs
 
@@ -132,11 +141,11 @@ But musical naturalness never justifies breaking the semantic link needed for le
 
 The music is the delivery mechanism; the vocabulary learning is the product.
 
-## Rule 13 — Anchor the four ideas, not every line
+## Rule 13 — Anchor the targets, not every line
 
-The latest listener clarification is **not** “translate every Spanish line into French”. For a four-target song, each of the four ideas should be made clear in both languages **somewhere in the song**, while most lines remain ordinary Spanish songwriting.
+The listener clarification is **not** “translate every Spanish line into French”. In a two-target one-minute test, both meanings must be clear in both languages **somewhere in the song**, while most lines remain ordinary Spanish songwriting. The same applies to four or five targets in a longer song.
 
-Two French lines may each naturally contain two target meanings. They should preserve the same story without reading like a list of definitions. A single French bridge that recites four unrelated translations is a failure even if every target technically appears.
+One French line can naturally carry two meanings if it is coherent. A bridge that recites unrelated translations is a failure even if every target technically appears.
 
 ## Rule 14 — No classroom intro; do not confuse clarity with slowness
 
