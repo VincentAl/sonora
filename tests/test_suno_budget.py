@@ -30,8 +30,9 @@ class SunoBudgetTests(unittest.TestCase):
         }), encoding="utf-8")
         return path
 
-    def test_actual_repo_first_generation_is_counted(self):
-        self.assertEqual(20, daily_spend(ROOT / "songs/experiments", "2026-10-31"))
+    def test_first_generation_cost_is_counted(self):
+        self.log("smoke-test", "2026-10-31T16:21:43Z", 20)
+        self.assertEqual(20, daily_spend(self.root, "2026-10-31"))
 
     def test_day_boundary_uses_paris_timezone(self):
         self.log("one", "2026-10-31T23:30:00Z", 10)  # Nov 1, 00:30 in Paris
