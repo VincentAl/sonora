@@ -34,7 +34,7 @@ Sonora doit produire **de vraies chansons complètes**, pas rester au stade de P
 
 ### Prochaine priorité
 
-**Ne pas générer D1b en l'état.** Formaliser le catalogue de mécanismes, puis préparer **une chanson complète** basée sur un mécanisme candidat, avec revue textuelle avant génération. Les POC courts restent utiles pour isoler une incertitude, mais ne sont plus le livrable principal.
+**Catalogue initial rédigé** : [bestiaire de 7 mécanismes](docs/MECHANISM_BESTIARY.md), dont M01 (écho conversationnel) avec premier feedback positif, les autres encore hypothétiques. **Première chanson complète rédigée** : [La luz del pasillo V0](songs/drafts/2026-11-01-la-luz-del-pasillo-full.md), 4 cibles, ~2–3 min visées, **en attente de revue textuelle humaine**. Ne pas générer ce texte ni D1b sans approbation explicite ; prochain travail autonome : prévalidation déterministe du format long et préparation d'un protocole de comparaison contrôlée sans consommer de crédits.
 
 ## Règles produit stables
 
@@ -152,7 +152,7 @@ Nouvelle règle de process :
 ## Objectifs immédiats
 
 1. D1 a reçu un premier feedback humain positif : le mécanisme « marche » et Vincent préfère **la prise 1**. Ne pas régénérer D1 sans nouvelle hypothèse. Les 2 liens Suno sont dans le manifeste de l'expérience ; ne pas lancer une autre génération sur ce texte pendant l'attente.
-2. **Incertitude pédagogique à résoudre** : dans D1, « Dejé atrás la ciudad » et « J'ai laissé tes clés sur la table » n'enseignent pas exactement le même sens de `dejar atrás`. Le retour positif sur l'audio ne valide pas cet ancrage. Un seul [brouillon D1b corrigé](songs/drafts/2026-11-01-d1b-semantic-preflight.md) est prêt **pour revue textuelle uniquement** ; pas de génération sans approbation explicite de ce texte.
+2. **Incertitude pédagogique à résoudre** : le couplage `dejar atrás` de D1 était imprécis. [D1b](songs/drafts/2026-11-01-d1b-semantic-preflight.md) et la [chanson complète V0](songs/drafts/2026-11-01-la-luz-del-pasillo-full.md) proposent une correction **encore à valider humainement** ; ne pas générer avant approbation explicite.
 3. Si D1 fonctionne comme mécanisme, garder D2/D3 pour de futurs morceaux plutôt que chercher un vainqueur unique.
 4. Si les paroles sont validées mais le style ne l'est pas, tester ensuite plusieurs traitements musicaux avec **exactement les mêmes paroles D1**.
 5. Continuer à utiliser le budget Suno uniquement sur des hypothèses déjà valides sur papier.
