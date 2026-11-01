@@ -99,7 +99,7 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - **Statut : à relire par Vincent**. Aucune des trois variantes n'est validée.
 - Les ancrages français risquent encore de ressembler à des traductions ; c'est l'objet du test textuel.
 - Vincent a **validé le principe de 2 cibles/minute** et la piste de la reprise naturelle d'une notion dans un autre contexte ; il **n'a pas validé les paroles C**.
-- [3 nouvelles mini-scènes dialoguées (D1/D2/D3)](songs/drafts/2026-10-31-dialogue-mechanisms.md) : écho, correction, souvenir contradictoire ; mêmes 2 cibles pour comparer le mécanisme, **en attente de revue textuelle**.
+- [3 mini-scènes dialoguées D1/D2/D3 réécrites](songs/drafts/2026-10-31-dialogue-mechanisms.md) après feedback : ton plus adulte, elliptique et chantable ; suppression des formulations littérales type « moi aussi » et des images artificielles. D3 reste la piste la plus prometteuse, mais **aucun texte n'est encore validé**.
 - **Ne pas utiliser Suno pour ces variantes avant validation explicite des paroles.**
 - Garde-fou ajouté : `scripts/check_generation_gate.py` vérifie l'approbation humaine **liée au hash des paroles** ; les exports hors ligne restent marqués en attente si l'approbation manque.
 
@@ -120,9 +120,9 @@ Nouvelle règle de process :
 
 ## Objectifs immédiats
 
-1. Repenser la structure des paroles pour que les passages français ne soient pas des traductions empilées.
+1. Faire valider à la lecture les nouvelles versions D1/D2/D3, désormais réécrites dans un ton adulte et moins littéral.
 2. Réduire fortement la répétition intra-morceau : une cible peut n'apparaître qu'une fois en espagnol si le contexte est clair, avec un ancrage français naturel ailleurs ; la répétition se fait surtout entre plusieurs chansons.
-3. **En attente de revue textuelle humaine** : variantes A/B/C dans [lyrics-preflight](songs/drafts/2026-10-31-lyrics-preflight.md) et trois mini-scènes D1/D2/D3 dans [dialogue-mechanisms](songs/drafts/2026-10-31-dialogue-mechanisms.md). La piste C (densité et écho) est retenue comme direction, **aucun texte n'est approuvé pour génération**.
+3. **En attente de revue textuelle humaine** : D1/D2/D3 réécrites dans [dialogue-mechanisms](songs/drafts/2026-10-31-dialogue-mechanisms.md). D3 sert de référence de direction ; les anciens textes A/B/C restent historiques. **Aucun texte n'est approuvé pour génération**.
 4. Une fois une structure textuelle validée, tester plusieurs traitements musicaux cohérents avec le profil Deezer en gardant les paroles constantes.
 5. Utiliser progressivement le budget Suno quotidien uniquement sur des hypothèses déjà valides sur papier.
 6. Préparer un chemin de validation V6 complet dès qu'il devient accessible.
