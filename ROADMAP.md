@@ -99,7 +99,7 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - **Statut : à relire par Vincent**. Aucune des trois variantes n'est validée.
 - Les ancrages français risquent encore de ressembler à des traductions ; c'est l'objet du test textuel.
 - Vincent a **validé le principe de 2 cibles/minute** et la piste de la reprise naturelle d'une notion dans un autre contexte ; il **n'a pas validé les paroles C**.
-- [3 mini-scènes dialoguées D1/D2/D3 réécrites](songs/drafts/2026-10-31-dialogue-mechanisms.md) après feedback : ton plus adulte, elliptique et chantable ; suppression des formulations littérales type « moi aussi » et des images artificielles. D3 reste la piste la plus prometteuse, mais **aucun texte n'est encore validé**.
+- [D1/D2/D3 — révision sémantique](songs/drafts/2026-10-31-dialogue-mechanisms.md) : en attente de revue. D3 a été préférée comme **mécanisme**, pas comme paroles approuvées. Attention : les exemples « laisser des clés / une valise » n'illustrent pas forcément le sens précis de `dejar atrás` (plutôt `dejar`) ; D2 contient encore « Moi aussi » malgré le feedback sur le ton. **Ne pas considérer ces textes comme prêts à générer.**
 - **Ne pas utiliser Suno pour ces variantes avant validation explicite des paroles.**
 - Garde-fou ajouté : `scripts/check_generation_gate.py` vérifie l'approbation humaine **liée au hash des paroles** ; les exports hors ligne restent marqués en attente si l'approbation manque.
 
@@ -120,7 +120,7 @@ Nouvelle règle de process :
 
 ## Objectifs immédiats
 
-1. Faire valider à la lecture les nouvelles versions D1/D2/D3, réécrites pour restaurer le couplage sémantique explicite entre espagnol et français.
+1. Avant une nouvelle réécriture, clarifier le **sens lexical exact** des cibles dans D1/D2/D3 : la correspondance entre `dejar atrás` et « laisser ses clés / sa valise » est trop large ; éviter de reproduire les répliques enfantines signalées par Vincent. Ces textes restent en revue, ne pas multiplier les versions en attendant son retour.
 2. Réduire fortement la répétition intra-morceau : une cible peut n'apparaître qu'une fois en espagnol si le contexte est clair, avec un ancrage français naturel ailleurs ; la répétition se fait surtout entre plusieurs chansons.
 3. **En attente de revue textuelle humaine** : D1/D2/D3 réécrites dans [dialogue-mechanisms](songs/drafts/2026-10-31-dialogue-mechanisms.md). D3 sert de référence de direction ; les anciens textes A/B/C restent historiques. **Aucun texte n'est approuvé pour génération**.
 4. Une fois une structure textuelle validée, tester plusieurs traitements musicaux cohérents avec le profil Deezer en gardant les paroles constantes.
@@ -135,9 +135,9 @@ Pour chaque cible, avant toute génération, il faut pouvoir écrire :
 - contexte français B ;
 - et vérifier que **X est réellement le même dans A et B**.
 
-Le français peut changer l'objet, le souvenir, le personnage ou la formulation, mais pas le sens appris.
+Le français peut changer l'objet, le souvenir, le personnage ou la formulation, mais pas le **sens lexical précis** appris. Par exemple `dejar atrás` (« laisser derrière soi / dépasser un passé ») ne se réduit pas automatiquement à `dejar` (« laisser des clés quelque part »). Si la paire ne conserve que le sens plus large de `dejar`, revoir la cible ou l'ancrage.
 
-Une simple continuité d'ambiance ou de narration ne suffit pas.
+Une simple continuité d'ambiance, de narration **ou de famille lexicale** ne suffit pas. Voir [règles pédagogiques](docs/PEDAGOGY_RULES.md).
 
 ## Règle de répétition
 
