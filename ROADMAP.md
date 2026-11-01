@@ -83,7 +83,9 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - Premier smoke test réel effectué.
 - 4 clips générés pour 20 crédits.
 - 80 crédits restaient après le test.
-- Ces 4 clips ont reçu un premier feedback humain sur la structure bilingue.
+- Les 4 clips du premier smoke test ont reçu un premier feedback humain sur la structure bilingue.
+- Le 1 novembre, D1 a généré 2 nouvelles prises v6-mini (~55 s chacune), actuellement en attente de revue humaine.
+- Le MCP a affiché 50 crédits avant **et après** cet appel ; considérer ce non-décrément comme une observation à revérifier, pas comme la preuve que les générations sont gratuites.
 
 ### Compatibilité du pipeline
 
@@ -99,8 +101,9 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - **Statut : à relire par Vincent**. Aucune des trois variantes n'est validée.
 - Les ancrages français risquent encore de ressembler à des traductions ; c'est l'objet du test textuel.
 - Vincent a **validé le principe de 2 cibles/minute** et la piste de la reprise naturelle d'une notion dans un autre contexte ; il **n'a pas validé les paroles C**.
-- [D1/D2/D3 — révision sémantique](songs/drafts/2026-10-31-dialogue-mechanisms.md) : en attente de revue. D3 a été préférée comme **mécanisme**, pas comme paroles approuvées. Attention : les exemples « laisser des clés / une valise » n'illustrent pas forcément le sens précis de `dejar atrás` (plutôt `dejar`) ; D2 contient encore « Moi aussi » malgré le feedback sur le ton. **Ne pas considérer ces textes comme prêts à générer.**
-- **Ne pas utiliser Suno pour ces variantes avant validation explicite des paroles.**
+- [D1/D2/D3 — révision sémantique](songs/drafts/2026-10-31-dialogue-mechanisms.md) : Vincent a jugé les trois pistes prometteuses puis a choisi **D1** pour le premier test audio.
+- D1 a été promue dans [l'expérience exécutable](songs/experiments/2026-11-01-d1-dialogue/) et explicitement approuvée par Vincent.
+- Un appel Suno v6-mini a généré **2 prises D1** le 1 novembre 2026. Elles sont maintenant **en attente de revue humaine**. Ne pas régénérer D1 avant feedback.
 - Garde-fou ajouté : `scripts/check_generation_gate.py` vérifie l'approbation humaine **liée au hash des paroles** ; les exports hors ligne restent marqués en attente si l'approbation manque.
 
 ### Expérience active
@@ -120,11 +123,11 @@ Nouvelle règle de process :
 
 ## Objectifs immédiats
 
-1. Avant une nouvelle réécriture, clarifier le **sens lexical exact** des cibles dans D1/D2/D3 : la correspondance entre `dejar atrás` et « laisser ses clés / sa valise » est trop large ; éviter de reproduire les répliques enfantines signalées par Vincent. Ces textes restent en revue, ne pas multiplier les versions en attendant son retour.
-2. Réduire fortement la répétition intra-morceau : une cible peut n'apparaître qu'une fois en espagnol si le contexte est clair, avec un ancrage français naturel ailleurs ; la répétition se fait surtout entre plusieurs chansons.
-3. **En attente de revue textuelle humaine** : D1/D2/D3 réécrites dans [dialogue-mechanisms](songs/drafts/2026-10-31-dialogue-mechanisms.md). D3 sert de référence de direction ; les anciens textes A/B/C restent historiques. **Aucun texte n'est approuvé pour génération**.
-4. Une fois une structure textuelle validée, tester plusieurs traitements musicaux cohérents avec le profil Deezer en gardant les paroles constantes.
-5. Utiliser progressivement le budget Suno quotidien uniquement sur des hypothèses déjà valides sur papier.
+1. **Attendre le feedback de Vincent sur les 2 prises D1** avant toute nouvelle génération D1.
+2. Évaluer uniquement à partir de son retour : naturel du dialogue bilingue, qualité musicale, voix, accent, intelligibilité et sensation d'apprentissage.
+3. Si D1 fonctionne comme mécanisme, garder D2/D3 pour de futurs morceaux plutôt que chercher un vainqueur unique.
+4. Si les paroles sont validées mais le style ne l'est pas, tester ensuite plusieurs traitements musicaux avec **exactement les mêmes paroles D1**.
+5. Continuer à utiliser le budget Suno uniquement sur des hypothèses déjà valides sur papier.
 6. Préparer un chemin de validation V6 complet dès qu'il devient accessible.
 
 ## Règle de couplage sémantique
