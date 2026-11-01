@@ -43,9 +43,13 @@ class VocabularyAuditTests(unittest.TestCase):
             json.loads(p.read_text(encoding="utf-8"))
             for p in sorted(PACKS.glob("*/manifest.json"))
         ]
-        expected_packs = len(manifests)
-        expected_variants = sum(len(m["variants"]) for m in manifests)
         for lemma, stats in coverage.items():
+            relevant = [
+                m for m in manifests
+                if any(t["lemma"] == lemma for t in m["common"]["target_words"])
+            ]
+            expected_packs = len(relevant)
+            expected_variants = sum(len(m["variants"]) for m in relevant)
             expected_anchored = sum(
                 any(lemma in v["anchored_lemmas"] for v in m["variants"])
                 for m in manifests
