@@ -1,96 +1,122 @@
-# Sonora — scènes conversationnelles, prévalidation texte (31 octobre 2026)
+# Sonora — scènes conversationnelles, prévalidation texte (révision adulte, 1 novembre 2026)
 
 **Statut : brouillons non approuvés. Zéro génération Suno autorisée.**
 
-## Question testée
+## Retour de Vincent intégré
 
-Comment une idée revient-elle naturellement entre deux personnages sans que le français ressemble à une traduction de l'espagnol ?
+Les mécanismes de dialogue restent intéressants, mais les formulations D1/D2/D3 précédentes étaient trop littérales et enfantines. Les exemples de conversation ("moi aussi", "non mais moi", etc.) doivent être compris comme des **mécanismes de reprise**, pas copiés dans les paroles.
 
-Retour explicite de Vincent : la variante C du lot précédent a davantage de potentiel ; **2 cibles par minute** conviennent aux prototypes, et une réponse qui réemploie la même notion **dans un autre contexte** est une bonne piste. Ce retour ne valide pas les paroles C existantes.
+Autre correction : éviter les images artificielles ou opaques comme "écouter l'escalier".
 
-Ces trois essais gardent les **mêmes deux cibles** (`dejar atrás` et `añorar`) pour comparer surtout le mécanisme de dialogue. Chaque cible espagnole n'apparaît qu'une fois par version. Les répliques françaises doivent faire avancer la scène. Aucun de ces textes n'a encore été jugé naturel ou validé par Vincent.
+D3 reste la piste la plus prometteuse : deux personnes parlent du même souvenir mais ne retiennent pas la même chose. Cette révision conserve les mêmes deux cibles pour comparer les mécanismes d'écriture, pas le vocabulaire.
 
-## D1 — Écho, chacun laisse autre chose
+Cibles :
+- `dejar atrás`
+- `añorar`
 
-*Mécanisme : deux départs de nature différente ; la seconde voix reprend une action, pas une phrase.*
+## D1 — Écho elliptique
+
+*Mécanisme : chacun révèle ce qu'il a laissé derrière lui, sans réponse scolaire ni "moi aussi".*
 
 ```text
 [Voix 1 — espagnol]
-Dejé atrás la ciudad cuando amanecía.
-No había nadie en la carretera.
+Dejé atrás la ciudad antes de que amaneciera.
+La autopista estaba vacía.
 
 [Voix 2 — français]
-Moi, j'ai laissé tes clés sur le comptoir.
-Tu pourras passer sans me voir.
+Tes clés sont restées sur le bar.
+Je n'ai pas eu le courage de les reprendre.
 
 [Voix 1 — espagnol]
-Añoro tus pasos por el pasillo.
+Añoro el ruido de tus pasos al volver tarde.
 
 [Voix 2 — français]
-C'est idiot, j'écoute encore l'escalier le soir.
+Depuis, l'appartement semble trop grand.
 
 [Voix 1 — espagnol]
-Entonces no cierres todavía.
+No era la ciudad lo que quería perder.
 ```
 
-**Ancrages** : `dejar atrás` / « j'ai laissé tes clés » = départ vs objet abandonné ; `añorar` / « j'écoute encore l'escalier » = absence perceptible par une habitude. **Risque** : l'ancrage du manque est indirect ; la dernière réplique peut sembler forcée.
+Pourquoi ça peut marcher :
+- l'idée de "laisser derrière" circule par la scène, sans répéter la même phrase ;
+- le manque est montré par l'espace devenu vide plutôt que défini explicitement ;
+- le français ajoute une conséquence, il ne résume pas l'espagnol.
 
-## D2 — Correction d'une interprétation
+Risque : l'ancrage français de `añorar` est encore indirect ; à juger à la lecture.
 
-*Mécanisme : une personne croit avoir compris ; l'autre précise ce qu'elle regrette réellement.*
+## D2 — Correction retenue
+
+*Mécanisme : une personne croit comprendre le départ ; l'autre corrige subtilement ce qui lui manque vraiment.*
 
 ```text
 [Voix 1 — espagnol]
-Dejé atrás la casa, no la calle.
-Aún sé dónde cruje el suelo.
+Dejé atrás la casa sin mirar la ventana.
+Todavía recuerdo dónde cruje el parquet.
 
 [Voix 2 — français]
-Tu dis que t'as tout quitté.
-Mais tu connais encore chaque marche.
+Je pensais que tu voulais surtout partir d'ici.
 
 [Voix 1 — espagnol]
 Añoro las noches en el balcón.
 
 [Voix 2 — français]
-Je croyais que c'était la ville qui te manquait.
+Pas le quartier, alors.
 
 [Voix 1 — espagnol]
-No. Era cuando te quedabas conmigo.
+No.
+La hora en que llegabas.
+
+[Voix 2 — français]
+Ça, je m'en souvenais aussi.
 ```
 
-**Ancrages** : `dejar atrás` / « tout quitté » = correction d'une généralisation ; `añorar` / « te manquait » = une supposition corrigée. **Risque** : « tout quitté » peut encore ressembler à une glose ; le dialogue peut paraître trop explicatif.
+Pourquoi ça peut marcher :
+- la reprise vient d'un malentendu crédible ;
+- le second sens se précise sans glose ;
+- les deux langues font progresser la scène.
 
-## D3 — Souvenir contradictoire
+Risque : `dejar atrás` est moins explicitement ancré en français ; la compréhension repose davantage sur la scène entière.
 
-*Mécanisme : deux personnes se souviennent du même départ, mais pas des mêmes détails.*
+## D3 — Souvenir contradictoire, révision
+
+*Mécanisme : même souvenir, détails différents ; la répétition naît du désaccord léger entre les deux voix.*
 
 ```text
 [Voix 1 — espagnol]
 Dejé atrás el pueblo un martes de lluvia.
-El tren llegó con una hora de retraso.
+El tren llegó tarde y nadie dijo nada.
 
 [Voix 2 — français]
-Et moi j'ai laissé ma valise sur le quai.
-Tu t'es moqué de moi tout le trajet.
+J'avais oublié ma valise sur le quai.
+Toi, tu riais déjà derrière la vitre.
 
 [Voix 1 — espagnol]
 Añoro aquel café de la estación.
 
 [Voix 2 — français]
-Il était imbuvable.
-Tu me dis pourtant qu'il te manque encore.
+Il était infect.
+Tu n'en buvais même pas la moitié.
 
 [Voix 1 — espagnol]
 No era por el café.
+
+[Voix 2 — français]
+Je sais.
 ```
 
-**Ancrages** : `dejar atrás` / « laissé ma valise » = parallèle comique ; `añorar` / « il te manque » = contradiction crédible entre goût et souvenir. **Risque** : le français peut sur-expliciter le second mot ; la chute devra être portée par la musique.
+Pourquoi ça peut marcher :
+- le dialogue est plus adulte et plus elliptique ;
+- la reprise de l'idée de départ passe par la valise laissée sur le quai, sans "moi aussi" ;
+- le manque est attaché à un souvenir partagé, puis corrigé par la chute ;
+- la dernière réponse laisse entendre que les deux savent ce qui manque vraiment, sans l'expliquer.
 
-## Critère de décision (lecture seulement)
+## Critère de décision
 
-- Est-ce qu'on croirait ces répliques **dans une conversation réelle**, sans objectif pédagogique ?
-- La réponse française apporte-t-elle une **nouvelle information** ou seulement un synonyme ?
-- Peut-on retrouver le sens des deux cibles grâce à la scène entière ?
-- Si une réplique est supprimée, perd-on quelque chose à l'histoire ? Sinon, elle est probablement décorative.
+À lire **sans musique** :
 
-**Prochaine action :** obtenir une préférence et des corrections textuelles de Vincent, puis seulement préparer un pack validable par `scripts/check_generation_gate.py`. Ne pas traiter une préférence de mécanisme comme une approbation du texte final.
+1. Est-ce que les répliques pourraient exister dans une chanson adulte ?
+2. Est-ce que le français apporte une information nouvelle ?
+3. Est-ce que les deux notions restent compréhensibles sans ressembler à un exercice ?
+4. Est-ce qu'une reprise paraît naturelle parce que la scène l'exige, et non parce qu'on veut répéter un mot ?
+
+Aucune génération Suno avant validation explicite du texte par Vincent.
