@@ -43,8 +43,8 @@ def validate(directory: Path) -> list[str]:
 
     common = manifest.get("common", {})
     targets = common.get("target_words", [])
-    if not isinstance(targets, list) or not 3 <= len(targets) <= 4:
-        return ["Expected 3–4 vocabulary targets"]
+    if not isinstance(targets, list) or not 2 <= len(targets) <= 5:
+        return ["Expected 2–5 vocabulary targets (2 for 1-minute tests, 4–5 for longer songs)"]
     target_map: dict[str, dict] = {}
     for target in targets:
         lemma, surface = target.get("lemma"), target.get("surface")
