@@ -24,10 +24,10 @@
   ],
   "credits": {
     "before": 50,
-    "after": 50,
-    "spent": 0
+    "after": 40,
+    "spent": 10
   },
-  "credit_note": "Suno account usage reported 50 credits both immediately before and after this completed generation. Do not infer that future generations are free; re-check live balance before each call.",
+  "credit_note": "Correction après vérification différée du solde réel Suno le 2026-11-01 : 40 crédits restants, monthly_usage 10. La lecture immédiatement après génération affichait encore 50 (décalage de mise à jour). L'appel a bien coûté 10 crédits.",
   "audio_analysis_performed": false,
   "human_review_status": "pending"
 }
