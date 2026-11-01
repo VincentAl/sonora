@@ -74,7 +74,7 @@ Comme un appel de génération observé coûte environ 10 crédits et produit 2 
 
 Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si le comportement réel du quota Suno diffère, consigner l'observation et respecter le solde réellement disponible.
 
-## État actuel — 31 octobre 2026
+## État actuel — 1 novembre 2026
 
 ### Suno
 
@@ -85,7 +85,7 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - 80 crédits restaient après le test.
 - Les 4 clips du premier smoke test ont reçu un premier feedback humain sur la structure bilingue.
 - Le 1 novembre, D1 a généré 2 nouvelles prises v6-mini (~55 s chacune), actuellement en attente de revue humaine.
-- Le MCP a affiché 50 crédits avant **et après** cet appel ; considérer ce non-décrément comme une observation à revérifier, pas comme la preuve que les générations sont gratuites.
+- Le solde affichait encore 50 crédits juste après génération, mais une vérification différée a confirmé **40 crédits restants et 10 consommés**. Le journal D1 a été corrigé : ne jamais traiter une absence de décrément immédiat comme une génération gratuite.
 
 ### Compatibilité du pipeline
 
@@ -108,6 +108,10 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 
 ### Expérience active
 
+`songs/experiments/2026-11-01-d1-dialogue/` (2 prises générées, revue humaine attendue).
+
+### Expérience historique rejetée
+
 `songs/experiments/2026-10-31-semantic-reset/`
 
 Conclusion actuelle :
@@ -123,7 +127,7 @@ Nouvelle règle de process :
 
 ## Objectifs immédiats
 
-1. **Attendre le feedback de Vincent sur les 2 prises D1** avant toute nouvelle génération D1.
+1. **Attendre le feedback de Vincent sur les 2 prises D1** avant toute nouvelle génération D1. Les 2 liens Suno sont dans le manifeste de l'expérience ; ne pas lancer une autre génération sur ce texte pendant l'attente.
 2. Évaluer uniquement à partir de son retour : naturel du dialogue bilingue, qualité musicale, voix, accent, intelligibilité et sensation d'apprentissage.
 3. Si D1 fonctionne comme mécanisme, garder D2/D3 pour de futurs morceaux plutôt que chercher un vainqueur unique.
 4. Si les paroles sont validées mais le style ne l'est pas, tester ensuite plusieurs traitements musicaux avec **exactement les mêmes paroles D1**.
