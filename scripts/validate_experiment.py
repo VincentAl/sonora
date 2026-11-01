@@ -34,7 +34,12 @@ def lyric_sections(path: Path) -> tuple[list[str], list[str]]:
 
 def contains_phrase(text: str, phrase: str) -> bool:
     """Require whole-word phrase, case-insensitively, not a substring of a longer word."""
-    return bool(re.search(r"(?<!\w)" + re.escape(phrase) + r"(?!\w)", text, re.IGNORECASE))
+    return count_phrase(text, phrase) > 0
+
+
+def count_phrase(text: str, phrase: str) -> int:
+    """Count exact target surface phrases, ignoring case and partial words."""
+    return len(re.findall(r"(?<!\w)" + re.escape(phrase) + r"(?!\w)", text, re.IGNORECASE))
 
 
 def validate(directory: Path) -> list[str]:
@@ -58,6 +63,12 @@ def validate(directory: Path) -> list[str]:
             errors.append(f"Duplicate target lemma: {lemma}")
         target_map[lemma] = target
 
+    # Optional safeguard for new short-form packs; legacy packs remain valid.
+    # Exact surface matching cannot assess semantic repetition or inflections.
+    max_repeats = common.get("max_target_occurrences_per_variant")
+    if max_repeats is not None and (type(max_repeats) is not int or max_repeats < 1):
+        errors.append("max_target_occurrences_per_variant must be a positive integer")
+
     variants = manifest.get("variants", [])
     if not isinstance(variants, list) or not variants:
         return errors + ["At least one variant is required"]
@@ -80,12 +91,18 @@ def validate(directory: Path) -> list[str]:
         parsed[variant_id] = (spanish, french)
         spanish_text = "\n".join(spanish)
         for lemma, target in target_map.items():
-            if not contains_phrase(spanish_text, target["surface"]):
+            occurrences = count_phrase(spanish_text, target["surface"])
+            if not occurrences:
                 errors.append(f"{variant_id}: missing Spanish target {target['surface']} ({lemma})")
+            elif type(max_repeats) is int and max_repeats >= 1 and occurrences > max_repeats:
+                errors.append(
+                    f"{variant_id}: Spanish target {target['surface']} ({lemma}) "
+                    f"appears {occurrences} times, max {max_repeats}"
+                )
 
         expected_count = variant.get("french_anchor_count")
-        if not isinstance(expected_count, int) or expected_count not in (1, 2):
-            errors.append(f"{variant_id}: french_anchor_count must be 1 or 2")
+        if type(expected_count) is not int or not 1 <= expected_count <= 5:
+            errors.append(f"{variant_id}: french_anchor_count must be between 1 and 5")
         elif len(french) != expected_count:
             errors.append(f"{variant_id}: expected {expected_count} French lines, found {len(french)}")
         anchored = variant.get("anchored_lemmas")
