@@ -12,6 +12,30 @@ Créer des chansons qu'on peut écouter normalement en travaillant, qui enseigne
 
 La musique est le vecteur. L'objectif produit reste l'apprentissage.
 
+## Trajectoire produit — validée dans la discussion du 1 novembre 2026
+
+Sonora doit produire **de vraies chansons complètes**, pas rester au stade de POC de quatre lignes. Le but à terme est **une chanson nouvelle par semaine**, ajoutée à une playlist/bibliothèque où Vincent peut écouter, aimer, rejeter et conserver les titres, pour apprendre progressivement du vocabulaire.
+
+### Vocabulaire de conception
+
+- **Mécanisme pédagogique** : façon naturelle d'introduire et de réactiver une notion dans une chanson (écho conversationnel, confirmation, correction, souvenir partagé, question-réponse, etc.). C'est le nom de travail pour ce que nous appelions « scénarios ».
+- **Scénario narratif** : situation et personnages qui rendent le mécanisme crédible (ex. deux anciens amoureux se répondent).
+- **Identité musicale** : style, arrangement, interprète/voix. Ces dimensions doivent pouvoir être testées séparément.
+- **Bestiaire** : catalogue de mécanismes, scénarios et combinaisons testées, avec statut et feedback humain.
+
+### Étapes et critères de passage
+
+1. **Cataloguer les mécanismes** : documenter D1 comme premier candidat prometteur et explorer d'autres formes de reprise naturelle. Distinguer mécanisme et histoire. Le feedback sur D1 ne valide pas automatiquement chaque ancrage lexical.
+2. **Écrire des chansons complètes** : produire un premier texte de ~2–3 minutes avec ~4–5 notions, structure musicale cohérente, ancrages sémantiques vérifiables et répétitions non forcées. Revue humaine du texte avant Suno. D1b reste un brouillon court servant de référence, **pas** un feu vert pour le générer.
+3. **Valider musicalement** : générer des versions de chansons complètes, recueillir le feedback d'écoute de Vincent, comparer des mécanismes et scénarios, documenter les réussites/échecs.
+4. **Explorer styles et voix** : tests contrôlés de styles à paroles constantes ; étudier la faisabilité de chanteuses/chanteurs récurrents sur Suno, créer une première identité vocale si possible, puis plusieurs. Ne pas présumer que Suno garantit une voix identique.
+5. **Bibliothèque et playlist** : choisir une intégration réellement disponible, gérer ajout, écoute, like/dislike, conservation et lien avec les notions enseignées. Ne pas présumer qu'une playlist externe est automatisable avant vérification.
+6. **Cadence hebdomadaire** : automatiser la préparation et la livraison d'environ une chanson par semaine, avec validation humaine adaptée, budget maîtrisé et suivi des mots/reprises entre chansons.
+
+### Prochaine priorité
+
+**Ne pas générer D1b en l'état.** Formaliser le catalogue de mécanismes, puis préparer **une chanson complète** basée sur un mécanisme candidat, avec revue textuelle avant génération. Les POC courts restent utiles pour isoler une incertitude, mais ne sont plus le livrable principal.
+
 ## Règles produit stables
 
 - Une chanson doit sonner comme une vraie chanson, jamais comme un exercice.
