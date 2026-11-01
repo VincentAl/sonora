@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from validate_experiment import validate  # noqa: E402
+from validate_experiment import count_phrase, validate  # noqa: E402
 from prepare_suno_batch import prepare  # noqa: E402
 
 PACK = ROOT / "songs/experiments/2026-10-31-anchoring"
@@ -50,6 +50,33 @@ class ExperimentTests(unittest.TestCase):
         path = self.pack / "B-anchors-spaced.md"
         path.write_text(path.read_text(encoding="utf-8").replace("la luz de la tarde", "el color de la tarde"), encoding="utf-8")
         self.assertTrue(any("Spanish lyrics differ" in e for e in validate(self.pack)))
+
+    def test_opt_in_target_repetition_cap(self):
+        # Historical A deliberately repeats "Dejo atrás" twice.
+        self.mutate_manifest(lambda m: m["common"].update(max_target_occurrences_per_variant=1))
+        self.assertTrue(any("appears 2 times, max 1" in e for e in validate(self.pack)))
+        self.mutate_manifest(lambda m: m["common"].update(max_target_occurrences_per_variant=2))
+        self.assertEqual([], validate(self.pack))
+
+    def test_invalid_repetition_cap_rejected(self):
+        for invalid in (0, True, "2"):
+            self.mutate_manifest(lambda m: m["common"].update(max_target_occurrences_per_variant=invalid))
+            self.assertTrue(any("max_target_occurrences_per_variant" in e for e in validate(self.pack)))
+
+    def test_repetition_counter_uses_word_boundaries(self):
+        self.assertEqual(2, count_phrase("Añoro; añoro. añoroso", "añoro"))
+        self.assertEqual(2, count_phrase("Dejo atrás, dejo atrás.", "dejo atrás"))
+
+    def test_three_french_lines_supported_with_explicit_anchor_mapping(self):
+        path = self.pack / "A-anchors-grouped.md"
+        path.write_text(path.read_text(encoding="utf-8") +
+                        "\n[French Outro]\nUne dernière minute avant de partir.\n", encoding="utf-8")
+        def update(m):
+            m["controlled_pairs"] = []
+            m["variants"][0]["french_anchor_count"] = 3
+            m["variants"][0]["anchor_line_map"] = {"añorar": 0, "dejar atrás": 1}
+        self.mutate_manifest(update)
+        self.assertEqual([], validate(self.pack))
 
     def test_export_six_jobs_without_network(self):
         jobs = prepare(self.pack, Path(self.tmp.name) / "out")
