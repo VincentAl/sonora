@@ -38,7 +38,7 @@ def audit(path: Path, targets: list[str]) -> tuple[dict, list[str]]:
             continue
         if line.startswith("[") and line.endswith("]"):
             tag = line[1:-1].casefold()
-            if re.search(r"fran[cç]ais|french", tag):
+            if re.search(r"fran[cç]ais|franc[eé]s|french", tag):
                 language = "fr"
             elif re.search(r"espa[nñ]ol|spanish", tag):
                 language = "es"
