@@ -60,7 +60,10 @@ Sonora doit produire **de vraies chansons complètes**, pas rester au stade de P
 
 ### Prochaine action autonome
 
-Préparer un **journal de feedback hebdomadaire minimal** (clip ID, date, chanson, mécanisme, cibles, statut `pending/liked/rejected/kept`, feedback explicite) qui évite de confondre les likes Suno avec une validation pédagogique. Ne pas automatiser la publication avant validation des paroles et de l'audio.
+**Journal hebdomadaire minimal prêt** : [format et procédure](docs/WEEKLY_FEEDBACK_JOURNAL.md), [données](data/weekly_feedback.json), validateur déterministe `scripts/validate_weekly_feedback.py` et tests. Il démarre vide : D1 reste un test, pas un titre diffusé. Ne pas confondre like, approbation audio, approbation pédagogique et publication.
+
+**Prochain travail autonome** : préparer un contrôle déterministe des liens entre la playlist, les clips et le journal (sans ajout automatique ni faux feedback), ou améliorer le premier brouillon complet en réponse à un retour humain explicite. `La luz del pasillo` attend toujours une validation textuelle avant toute génération.
+
 
 ## Règles produit stables
 
