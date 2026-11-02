@@ -64,7 +64,7 @@ Sonora doit produire **de vraies chansons complètes**, pas rester au stade de P
 
 **Contrôle playlist/journal prêt** : `scripts/check_weekly_playlist.py` compare une capture Suno MCP fraîche, complète et paginée avec `data/weekly_feedback.json`, sans rien modifier ; six tests couvrent les écarts et les refus. Voir [procédure](docs/WEEKLY_FEEDBACK_JOURNAL.md). La playlist réelle a été relue le 2 novembre : **0 titre**, cohérent avec le journal vide. Aucun titre ajouté, aucun feedback inventé.
 
-**Prochain travail autonome** : explorer les critères déterministes de sélection de vocabulaire ou préparer une autre expérience textuelle sans dupliquer la revue humaine en cours. `La luz del pasillo` attend toujours une validation textuelle avant toute génération.
+**Sélection de vocabulaire V0 prête** : [registre](data/vocabulary.json), [planificateur déterministe](scripts/plan_vocabulary.py), [documentation](docs/VOCABULARY_PLANNING.md) et 8 tests. Les 4 notions de `La luz del pasillo` sont réservées comme brouillon, jamais considérées apprises ; 4 nouvelles notions sont candidates, non validées. Reprise éventuelle après 14 jours depuis une **publication vérifiée**, pas depuis une génération. Paramètres exploratoires, sans mesure de mémorisation. **Prochain travail autonome** : préparer une autre scène/mécanisme sur papier à partir de candidats distincts, sans générer ni dupliquer la chanson en revue. `La luz del pasillo` attend toujours la validation textuelle.
 
 
 ## Règles produit stables

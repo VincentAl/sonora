@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "targets": [
+    {
+      "id": "dejar-atras-figurative",
+      "es": "dejar atrás",
+      "fr_sense": "laisser derrière soi un poids du passé",
+      "status": "candidate",
+      "priority": 5
+    },
+    {
+      "id": "anorar-nostalgia",
+      "es": "añorar",
+      "fr_sense": "ressentir le manque nostalgique d'un souvenir",
+      "status": "candidate",
+      "priority": 5
+    },
+    {
+      "id": "hallar-discover",
+      "es": "hallar",
+      "fr_sense": "trouver, découvrir quelque chose",
+      "status": "candidate",
+      "priority": 3
+    },
+    {
+      "id": "sosiego-calm",
+      "es": "sosiego",
+      "fr_sense": "calme intérieur, paix retrouvée",
+      "status": "candidate",
+      "priority": 3
+    },
+    {
+      "id": "darse-cuenta-realize",
+      "es": "darse cuenta",
+      "fr_sense": "se rendre compte de quelque chose",
+      "status": "candidate",
+      "priority": 5
+    },
+    {
+      "id": "atreverse-dare",
+      "es": "atreverse",
+      "fr_sense": "oser faire quelque chose malgré une hésitation",
+      "status": "candidate",
+      "priority": 4
+    },
+    {
+      "id": "aguantar-endure",
+      "es": "aguantar",
+      "fr_sense": "tenir bon, supporter une difficulté",
+      "status": "candidate",
+      "priority": 4
+    },
+    {
+      "id": "aprovechar-opportunity",
+      "es": "aprovechar",
+      "fr_sense": "tirer parti d’une occasion",
+      "status": "candidate",
+      "priority": 4
+    }
+  ],
+  "history": [
+    {
+      "target_id": "dejar-atras-figurative",
+      "date": "2026-11-01",
+      "stage": "draft",
+      "song_id": "la-luz-del-pasillo-v0"
+    },
+    {
+      "target_id": "anorar-nostalgia",
+      "date": "2026-11-01",
+      "stage": "draft",
+      "song_id": "la-luz-del-pasillo-v0"
+    },
+    {
+      "target_id": "hallar-discover",
+      "date": "2026-11-01",
+      "stage": "draft",
+      "song_id": "la-luz-del-pasillo-v0"
+    },
+    {
+      "target_id": "sosiego-calm",
+      "date": "2026-11-01",
+      "stage": "draft",
+      "song_id": "la-luz-del-pasillo-v0"
+    }
+  ]
+}
