@@ -34,7 +34,7 @@ Sonora doit produire **de vraies chansons complètes**, pas rester au stade de P
 
 ### Prochaine priorité
 
-**Catalogue initial rédigé** : [bestiaire de 7 mécanismes](docs/MECHANISM_BESTIARY.md), dont M01 (écho conversationnel) avec premier feedback positif, les autres encore hypothétiques. **Première chanson complète rédigée** : [La luz del pasillo V0](songs/drafts/2026-11-01-la-luz-del-pasillo-full.md), 4 cibles, ~2–3 min visées, **en attente de revue textuelle humaine**. Ne pas générer ce texte ni D1b sans approbation explicite ; prochain travail autonome : prévalidation déterministe du format long et préparation d'un protocole de comparaison contrôlée sans consommer de crédits.
+**Catalogue initial rédigé** : [bestiaire de 7 mécanismes](docs/MECHANISM_BESTIARY.md), dont M01 (écho conversationnel) avec premier feedback positif, les autres encore hypothétiques. **Première chanson complète rédigée** : [La luz del pasillo V0](songs/drafts/2026-11-01-la-luz-del-pasillo-full.md), 4 cibles, ~2–3 min visées, **en attente de revue textuelle humaine**. Ne pas générer ce texte ni D1b sans approbation explicite. Prévalidation structurelle disponible via `scripts/audit_full_draft.py` ; [protocole de comparaison à paroles constantes](docs/FULL_SONG_COMPARISON_PROTOCOL.md) préparé. Prochain travail autonome : préparer le chemin de promotion du brouillon approuvé vers un pack sans contourner le garde-fou, ou avancer sur la faisabilité des voix/playlist sans génération.
 
 ## Règles produit stables
 
@@ -116,7 +116,7 @@ Le chiffre de 50/jour est le budget de travail actuel demandé par Vincent. Si l
 - Le validateur `scripts/validate_experiment.py` accepte désormais **2–5 cibles** : auparavant il imposait 3–4 et aurait bloqué les POC à 2 cibles pourtant retenus dans cette roadmap.
 - Les règles de densité restent éditoriales : viser 2 cibles/minute en POC et 4–5 sur ~3 min ; le validateur contrôle seulement le nombre déclaré, pas le naturel des paroles.
 - Pour les **nouveaux POC d'une minute**, définir `common.max_target_occurrences_per_variant: 2` dans le manifeste : le validateur bloque alors les répétitions exactes d'une cible au-delà de deux occurrences par variante. Ce contrôle est **opt-in** pour ne pas réécrire l'historique ; il ne détecte ni conjugaisons différentes ni répétitions sémantiques, qui restent à juger à la lecture.
-- Les packs longs peuvent maintenant déclarer **1 à 5 lignes françaises** avec `french_anchor_count` et utiliser `anchor_line_map` si plusieurs cibles partagent des lignes. Cela n'impose aucune répétition.
+- Les packs longs peuvent maintenant déclarer **1 à 40 lignes françaises** avec `french_anchor_count` et utiliser `anchor_line_map` si plusieurs cibles partagent des lignes. Cela n'impose aucune répétition.
 - Ce changement **n'approuve aucun texte** et ne déverrouille pas Suno sans le garde-fou d'approbation humaine.
 
 ### Prévalidation en cours

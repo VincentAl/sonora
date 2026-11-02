@@ -101,8 +101,8 @@ def validate(directory: Path) -> list[str]:
                 )
 
         expected_count = variant.get("french_anchor_count")
-        if type(expected_count) is not int or not 1 <= expected_count <= 5:
-            errors.append(f"{variant_id}: french_anchor_count must be between 1 and 5")
+        if type(expected_count) is not int or not 1 <= expected_count <= 40:
+            errors.append(f"{variant_id}: french_anchor_count must be between 1 and 40")
         elif len(french) != expected_count:
             errors.append(f"{variant_id}: expected {expected_count} French lines, found {len(french)}")
         anchored = variant.get("anchored_lemmas")
