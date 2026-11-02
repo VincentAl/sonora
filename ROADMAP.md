@@ -62,7 +62,9 @@ Sonora doit produire **de vraies chansons complètes**, pas rester au stade de P
 
 **Journal hebdomadaire minimal prêt** : [format et procédure](docs/WEEKLY_FEEDBACK_JOURNAL.md), [données](data/weekly_feedback.json), validateur déterministe `scripts/validate_weekly_feedback.py` et tests. Il démarre vide : D1 reste un test, pas un titre diffusé. Ne pas confondre like, approbation audio, approbation pédagogique et publication.
 
-**Prochain travail autonome** : préparer un contrôle déterministe des liens entre la playlist, les clips et le journal (sans ajout automatique ni faux feedback), ou améliorer le premier brouillon complet en réponse à un retour humain explicite. `La luz del pasillo` attend toujours une validation textuelle avant toute génération.
+**Contrôle playlist/journal prêt** : `scripts/check_weekly_playlist.py` compare une capture Suno MCP fraîche, complète et paginée avec `data/weekly_feedback.json`, sans rien modifier ; six tests couvrent les écarts et les refus. Voir [procédure](docs/WEEKLY_FEEDBACK_JOURNAL.md). La playlist réelle a été relue le 2 novembre : **0 titre**, cohérent avec le journal vide. Aucun titre ajouté, aucun feedback inventé.
+
+**Prochain travail autonome** : explorer les critères déterministes de sélection de vocabulaire ou préparer une autre expérience textuelle sans dupliquer la revue humaine en cours. `La luz del pasillo` attend toujours une validation textuelle avant toute génération.
 
 
 ## Règles produit stables
