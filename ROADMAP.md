@@ -34,7 +34,33 @@ Sonora doit produire **de vraies chansons complètes**, pas rester au stade de P
 
 ### Prochaine priorité
 
-**Catalogue initial rédigé** : [bestiaire de 7 mécanismes](docs/MECHANISM_BESTIARY.md), dont M01 (écho conversationnel) avec premier feedback positif, les autres encore hypothétiques. **Première chanson complète rédigée** : [La luz del pasillo V0](songs/drafts/2026-11-01-la-luz-del-pasillo-full.md), 4 cibles, ~2–3 min visées, **en attente de revue textuelle humaine**. Ne pas générer ce texte ni D1b sans approbation explicite. Prévalidation structurelle disponible via `scripts/audit_full_draft.py` ; [protocole de comparaison à paroles constantes](docs/FULL_SONG_COMPARISON_PROTOCOL.md) préparé. Chemin de promotion déterministe prêt via `scripts/prepare_full_song_pack.py` et le modèle `songs/drafts/2026-11-01-la-luz-del-pasillo-pack-template.json`. Le script extrait uniquement les paroles, valide la structure, fige le SHA-256 et produit un pack **toujours bloqué** jusqu'à approbation explicite des paroles exactes par Vincent. Prochain travail autonome : explorer la faisabilité des voix récurrentes ou de la playlist, sans génération.
+**Catalogue initial rédigé** : [bestiaire de 7 mécanismes](docs/MECHANISM_BESTIARY.md), dont M01 (écho conversationnel) avec premier feedback positif, les autres encore hypothétiques. **Première chanson complète rédigée** : [La luz del pasillo V0](songs/drafts/2026-11-01-la-luz-del-pasillo-full.md), 4 cibles, ~2–3 min visées, **en attente de revue textuelle humaine**. Ne pas générer ce texte ni D1b sans approbation explicite. Prévalidation structurelle disponible via `scripts/audit_full_draft.py` ; [protocole de comparaison à paroles constantes](docs/FULL_SONG_COMPARISON_PROTOCOL.md) préparé. Chemin de promotion déterministe prêt via `scripts/prepare_full_song_pack.py` et le modèle `songs/drafts/2026-11-01-la-luz-del-pasillo-pack-template.json`. Le script extrait uniquement les paroles, valide la structure, fige le SHA-256 et produit un pack **toujours bloqué** jusqu'à approbation explicite des paroles exactes par Vincent. Playlist privée créée et faisabilité des voix documentée ci-dessous. Prochain travail autonome : préparer le journal de feedback hebdomadaire minimal, sans génération.
+
+## Intégration Suno — vérifiée le 2 novembre 2026
+
+### Playlist hebdomadaire
+
+- Playlist privée créée et relue via Suno MCP : **[Sonora — Hebdo](https://suno.com/playlist/152d06fb-bd76-4d7c-9eb3-b11bd3c90bde)**, ID `152d06fb-bd76-4d7c-9eb3-b11bd3c90bde`.
+- **0 titre** actuellement. Ne pas y ajouter D1 ni d'autres tests tant que les paroles et la qualité n'ont pas été validées humainement pour la diffusion hebdomadaire.
+- Suno MCP permet de lister, créer, ajouter et retirer des clips de playlists. Pour un titre validé, l'ajouter par `clip_id` à cette playlist, vérifier le résultat (dont les éventuels `failed`), puis enregistrer l'ID du clip et l'état de publication dans le repo.
+- Suno MCP propose `audio_like` / `audio_unlike` et `library_liked`. **Pas d'action explicite de dislike** : ne pas confondre « unlike » avec un rejet. Le statut `rejected` devra être consigné dans un journal Sonora séparé, sur feedback explicite de Vincent.
+- La playlist est un canal d'écoute, pas à elle seule une base de suivi pédagogique ou un système de SRS. La sélection des notions et les retours restent à tracer côté Sonora.
+
+### Voix récurrentes
+
+- `voices_list(collection="own")` retourne **0 voix** au 2 novembre. Aucune voix récurrente disponible actuellement.
+- Suno MCP propose `voices_start`, qui ouvre un parcours Suno de création **et vérification par l'utilisateur**. Après disponibilité d'une voix, `voices_list` donne un `voice_id` réutilisable dans `audio_create` ou `audio_covers_create`.
+- Une identité vocale récurrente est donc techniquement **testable**, mais pas encore créée ni validée. Ne pas lancer ce parcours sans intérêt confirmé au moment du test ; ne jamais présenter un `voice_id` comme garantissant une interprétation identique à chaque génération.
+- Protocole futur : même texte, même style, comparer voix par défaut vs voix enregistrée, puis évaluer exclusivement à l'écoute de Vincent.
+
+### Quota observé
+
+- Lecture `account_usage` le 2 novembre : plan **Free**, `allowed_models=["v6-mini"]`, `credits_remaining=50`, `monthly_limit=50`, `monthly_usage=0`, `renews_on=null`.
+- C'est une **observation ponctuelle**, pas la preuve d'un renouvellement quotidien. Le contrôle de budget existant reste obligatoire avant toute génération ; aucune dépense sur ce run.
+
+### Prochaine action autonome
+
+Préparer un **journal de feedback hebdomadaire minimal** (clip ID, date, chanson, mécanisme, cibles, statut `pending/liked/rejected/kept`, feedback explicite) qui évite de confondre les likes Suno avec une validation pédagogique. Ne pas automatiser la publication avant validation des paroles et de l'audio.
 
 ## Règles produit stables
 
