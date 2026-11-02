@@ -237,6 +237,16 @@ Objectif : obtenir une répétition qui sert la scène et le dialogue, pas la p�
 - comparer 30–45 s vs 60 s si Suno permet un contrôle réellement utile de la durée ;
 - explorer des profils musicaux dérivés des goûts Deezer sans imitation d'artistes.
 
+## Workflow GitHub — revue avant fusion
+
+- **Ne plus pousser directement sur main** depuis les routines autonomes.
+- Une branche et une PR par livrable/expérience ; conserver la même PR au fil des runs jusqu'à décision de Vincent. Éviter de mélanger les sujets indépendants.
+- Au début d'un run, lire cette roadmap sur main, puis inspecter les PR ouvertes pertinentes et leurs commentaires/reviews, notamment les remarques ligne par ligne.
+- Mettre à jour la branche de la PR avec de petits commits logiques, exécuter les tests pertinents, vérifier les checks et répondre aux retours de revue.
+- Laisser les propositions en PR pour que Vincent puisse commenter les fichiers dans « Files changed » ; ne pas merger sans validation explicite de Vincent. Une approbation GitHub n'est pas à elle seule une autorisation de génération Suno.
+- Si une PR est en attente de revue, avancer sur une autre tâche indépendante sans polluer cette PR. Garder les documents de pilotage sur main comme source de vérité jusqu'à fusion ; ne pas supposer qu'une roadmap non fusionnée est déjà active.
+- Pas de fusion automatique, y compris si les tests passent. Après validation, fusionner puis reprendre la roadmap actualisée sur main.
+
 ## Hygiène Git
 
 - Un changement logique = **un commit** autant que possible.
