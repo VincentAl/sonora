@@ -41,6 +41,15 @@ class LyricSectionTests(unittest.TestCase):
         self.assertEqual(["Sigo aquí."], spanish)
         self.assertEqual(["J'ai laissé la porte ouverte."], french)
 
+    def test_spanish_label_frances_is_french(self):
+        spanish, french = self.parse(
+            "[Verso — español]\nDejé atrás el miedo.\n"
+            "[Respuesta — voz B, francés]\nJ'ai laissé mes regrets derrière moi.\n"
+            "[Estribillo — español]\nNo era la casa.\n"
+        )
+        self.assertEqual(["Dejé atrás el miedo.", "No era la casa."], spanish)
+        self.assertEqual(["J'ai laissé mes regrets derrière moi."], french)
+
     def test_existing_french_tags_still_work(self):
         spanish, french = self.parse(
             "[Verse — Spanish]\nLa noche cae.\n"

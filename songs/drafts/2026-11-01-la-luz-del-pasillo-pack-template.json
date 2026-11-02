@@ -1,0 +1,67 @@
+{
+  "experiment_id": "la-luz-del-pasillo-full",
+  "status": "awaiting_human_lyrics_approval",
+  "objective": "Test M01 conversational echoes in a full bilingual song with four lexically anchored notions.",
+  "common": {
+    "target_words": [
+      {
+        "lemma": "dejar atrás",
+        "surface": "Dejé atrás",
+        "fr": "laisser derrière soi un poids du passé",
+        "anchor": "J'ai laissé mes regrets derrière moi"
+      },
+      {
+        "lemma": "añorar",
+        "surface": "Añoro",
+        "fr": "ressentir un manque nostalgique",
+        "anchor": "Ça me manque"
+      },
+      {
+        "lemma": "hallar",
+        "surface": "Hallé",
+        "fr": "trouver, découvrir",
+        "anchor": "J'ai trouvé"
+      },
+      {
+        "lemma": "sosiego",
+        "surface": "sosiego",
+        "fr": "calme intérieur",
+        "anchor": "Je me suis senti en paix"
+      }
+    ],
+    "require_all_targets_anchored": true,
+    "max_target_occurrences_per_variant": 2,
+    "max_sung_words": 400,
+    "estimated_duration_seconds": "120-180",
+    "model_preference": "v6-mini prototype; full V6 when available"
+  },
+  "variants": [
+    {
+      "id": "full-v0",
+      "file": "lyrics.md",
+      "french_anchor_count": 8,
+      "anchored_lemmas": [
+        "dejar atrás",
+        "añorar",
+        "hallar",
+        "sosiego"
+      ],
+      "anchor_line_map": {
+        "dejar atrás": 0,
+        "añorar": 2,
+        "hallar": 4,
+        "sosiego": 6
+      },
+      "semantic_links": {
+        "dejar atrás": "The Spanish speaker leaves fear behind; the French speaker leaves regrets behind.",
+        "añorar": "The Spanish speaker misses late returns; the French speaker misses silent morning departures.",
+        "hallar": "One finds a letter in books; the other finds a photograph in a novel.",
+        "sosiego": "The Spanish speaker experiences quiet after the breakup; the French speaker feels at peace alone."
+      },
+      "generated": false
+    }
+  ],
+  "human_lyrics_approval": {
+    "status": "pending"
+  }
+}
