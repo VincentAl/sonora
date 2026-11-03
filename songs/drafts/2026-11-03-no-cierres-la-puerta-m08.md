@@ -1,102 +1,106 @@
-# No cierres la puerta — M08, paroles V0
+# No me atrevo — M08, paroles V1 après revue de Vincent
 
-**Statut : brouillon non approuvé. Aucun appel Suno autorisé.** Document de travail dans la PR #5, à commenter ligne par ligne.
+**Statut : brouillon révisé, non approuvé. Aucun appel Suno autorisé.** PR #5.
 
-**Scène :** après une fête, une femme s'apprête à partir ; l'autre voix reste dans la pièce. Le refrain « No cierres la puerta » est une supplique concrète, répétée sur le rythme, puis change de sens au dénouement. Les breaks féminins sont des pensées dites à voix basse, pas des instructions pédagogiques.
+## Retour explicite de Vincent — 3 novembre
 
-**Hypothèses :** H1 répétition d'un motif rythmique ; H2 rupture entre chant espagnol et parole féminine française. Cette version combine les deux pour tester d'abord la crédibilité *sur papier* ; un protocole audio factoriel sera préparé après validation du texte.
+- Seule la cible `atreverse` était incertaine ; `darse cuenta`, `aguantar` et `aprovechar` sont déjà connues. Ne pas les recycler comme objectifs d'apprentissage.
+- La répétition rythmique doit **ancrer une cible espagnole**, pas seulement un refrain décoratif.
+- Le premier break avait une chute absurde (« je cherche mes clés ») après une montée dramatique ; le deuxième contredisait la scène (« je pars » / « ouvre-moi »).
+- Le pont (« je ne te dis pas de rester / j'ai entendu ta voix ») n'avait pas de lien causal compréhensible.
+- Exigence : les paroles doivent former **une scène intelligible et émotionnellement proportionnée**, pas une suite d'ancrages collés.
 
-## Paroles — version dense avec breaks
+## Scène et choix éditorial
 
-[Intro — guitarra seca, voz cantada, español]
-Queda un vaso junto al fregadero,
-una chaqueta en el sillón.
-La calle empieza a despertarse,
-y tú buscando el ascensor.
+Une femme quitte une relation après une humiliation publique : son partenaire a raconté une confidence devant des amis, puis l'a laissée seule face à leurs réactions. Il demande qu'elle reste ; elle refuse de minimiser ce qui s'est passé. **C'est elle qui part**, du début à la fin. Le motif musical répète `no me atrevo` / `me atrevo` (oser) : au début elle n'ose pas lui dire la vérité ; à la fin elle ose partir. Les breaks sont sa parole directe, sans chute gratuite.
+
+**Cibles proposées, à confirmer selon le niveau réel de Vincent :** `atreverse` (oser), `echar en cara` (reprocher à quelqu'un), `dar marcha atrás` (revenir sur sa décision), `pasar página` (tourner la page). Seule `atreverse` est étayée par le feedback comme cible nouvelle ; les trois autres sont **candidates non validées**. Le refrain répète la première cible, contrairement à V0.
+
+## Paroles — V1, dense et breaks parlés
+
+[Intro — guitarra seca, voz femenina cantada, español]
+Todavía suenan las risas
+de tus amigos en el bar.
+Dijiste aquello que era nuestro
+y yo no supe reaccionar.
 
 [Verso 1 — español]
-Me di cuenta demasiado tarde
-de lo que callabas al volver.
-Tú aguantaste tantas noches
-sin preguntarme para qué.
-Ahora tus pasos van deprisa,
-las llaves suenan contra el metal.
-Yo tengo cosas que decirte,
-pero no sé por dónde empezar.
+Lo contaste como una broma,
+me miraste para comprobar
+si me reía con los otros.
+No me salió ni respirar.
+Ahora dices que fue un detalle,
+que no lo vuelva a mencionar.
+Pero aquella mesa entera
+ya sabe lo que quise guardar.
 
-[Estribillo — español, pulso marcado]
-No cierres la puerta,
-no cierres la puerta,
-que todavía queda luz.
-No cierres la puerta,
-no cierres la puerta,
-si no quieres, salgo yo.
+[Estribillo — pulso firme, repetición hipnótica]
+No me atrevo, no me atrevo
+a decirte lo que pienso.
+No me atrevo, no me atrevo,
+y tú lo llamas silencio.
+No me atrevo, no me atrevo
+a quedarme un minuto más.
 
-[Break 1 — voz femenina hablada, francés, íntima, sans chant]
-J'ai compris trop tard pourquoi tu te taisais.
-J'ai tenu pendant des semaines sans rien dire.
-Et maintenant, tu me demandes d'attendre ?
-Non. Je cherche juste mes clés.
+[Break 1 — femme parlée, français, proche, colère contenue]
+Tu savais que je ne voulais pas qu'ils le sachent.
+Et tu l'as raconté pour les faire rire.
+Le pire, c'est que tu m'as regardée,
+comme si j'étais censée rire avec eux.
 
 [Verso 2 — español]
-Quise aprovechar la última noche
-como si el tiempo fuera a parar.
-No me atreví a decir tu nombre
-cuando te vi junto al portal.
-Hay una planta en la ventana,
-la que olvidamos de regar.
-No es una excusa para verte,
-ni una razón para quedar.
+Ahora me lo echas en cara:
+«Ni siquiera sabes perdonar».
+Yo no vine a darte un castigo,
+vine a buscar mi dignidad.
+Quieres dar marcha atrás de golpe,
+recoger lo que hiciste ayer.
+Pero no puedes devolverme
+lo que escucharon sin querer.
 
-[Estribillo — español, misma célula rítmica]
-No cierres la puerta,
-no cierres la puerta,
-que todavía queda luz.
-No cierres la puerta,
-no cierres la puerta,
-si no quieres, salgo yo.
+[Estribillo — même cellule rythmique]
+No me atrevo, no me atrevo
+a decirte lo que pienso.
+No me atrevo, no me atrevo,
+y tú lo llamas silencio.
+No me atrevo, no me atrevo
+a quedarme un minuto más.
 
-[Break 2 — voz femenina hablada, francés, proche du micro]
-J'aurais voulu profiter de cette soirée autrement.
-Je n'ai pas osé te regarder en partant.
-Tu peux garder la plante.
-Mais ouvre-moi, s'il te plaît.
+[Break 2 — femme parlée, français, sans chant, décision nette]
+Tu peux dire que tu regrettes.
+Mais tu me reproches encore de t'en vouloir.
+Tu voudrais revenir en arrière ?
+Alors commence par arrêter de dire que j'exagère.
 
-[Puente — español, casi sin acompañamiento]
-La llave gira despacio,
-la luz del patio se apagó.
-No digo que te quedes.
-Digo que escuché tu voz.
+[Puente — español, casi a capela]
+Pasar página no es borrar
+lo que pasó delante de todos.
+No necesito que lo entiendas.
+Necesito salir de aquí.
 
-[Estribillo final — español, changement de sens]
-No cierres la puerta,
-no cierres la puerta,
-ya no te pido que vuelvas.
-No cierres la puerta,
-no cierres la puerta,
-que pueda salir yo también.
+[Estribillo final — renversement du motif]
+Sí me atrevo, sí me atrevo
+a decirte lo que pienso.
+Sí me atrevo, sí me atrevo,
+ya no voy a hacer silencio.
+Sí me atrevo, sí me atrevo.
+Esta vez me voy de verdad.
 
-[Outro — español]
-Queda un vaso junto al fregadero.
-Mañana lo voy a lavar.
+[Outro — guitarra sola, voz baja]
+Se acabaron las risas.
+Ya no tengo que fingir.
 
-## Cibles et ancrages à soumettre à revue
+## Vérification pédagogique et narrative
 
-| Cible | Sens visé | Contexte espagnol | Ancrage français autonome |
+| Cible | Sens précis | Espagnol | Ancrage français distinct |
 | --- | --- | --- | --- |
-| `darse cuenta` | se rendre compte / comprendre soudain | « Me di cuenta demasiado tarde » | « J'ai compris trop tard pourquoi tu te taisais » |
-| `aguantar` | supporter / tenir malgré une difficulté | « Tú aguantaste tantas noches » | « J'ai tenu pendant des semaines sans rien dire » |
-| `aprovechar` | profiter d'une occasion | « Quise aprovechar la última noche » | « J'aurais voulu profiter de cette soirée autrement » |
-| `atreverse` | oser faire quelque chose | « No me atreví a decir tu nombre » | « Je n'ai pas osé te regarder en partant » |
+| `atreverse` | oser malgré la peur | « No me atrevo » → « Sí me atrevo » | « je ne voulais pas qu'ils le sachent » ne suffit **pas** comme ancrage : **à écrire naturellement avant validation**, par exemple « J'ai pas osé te répondre devant eux » si la scène le permet |
+| `echar en cara` | reprocher / jeter à la figure | « Ahora me lo echas en cara » | « tu me reproches encore de t'en vouloir » |
+| `dar marcha atrás` | revenir en arrière / sur sa décision | « Quieres dar marcha atrás » | « Tu voudrais revenir en arrière ? » |
+| `pasar página` | tourner la page | « Pasar página no es borrar » | **Ancrage français encore manquant** ; ne pas déclarer la cible validée |
 
-**Réserve :** les cibles sont des candidates issues du registre, pas des notions validées. Les ancrages sont des propositions éditoriales, non une preuve de compréhension. Le motif répété « no cierres la puerta » n'est pas une cinquième cible obligatoire ; il sert d'accroche narrative.
+**État : prévalidation incomplète.** Cette V1 corrige la causalité de la scène et utilise la répétition sur la cible `atreverse`, mais il reste à rendre naturels les ancrages français manquants et à vérifier avec Vincent si les trois autres expressions lui sont réellement inconnues. Ne pas promouvoir ni générer avant ces deux contrôles et son approbation explicite.
 
-## À vérifier avant promotion
+## Hypothèse testable
 
-- Le motif répété reste-t-il désirable et dramatique, ou tourne-t-il à vide ?
-- Les deux breaks ressemblent-ils à une personne réelle plutôt qu'à quatre définitions successives ? En particulier, les deux premiers ancrages sont proches : revoir si cela fait « exercice ».
-- Les breaks doivent-ils rester en français, être mixtes, ou être en espagnol avec ancrages ailleurs ? Comparaison à préparer **sans changer simultanément le rythme**.
-- La fin transforme-t-elle assez le sens de « no cierres la puerta » ?
-- Préparer ensuite une variante témoin moins répétitive, **mêmes cibles, scène et voix**, et une variante sans breaks. Aucune appréciation musicale ne peut être déduite du texte seul.
-
-**Pas de génération, ni de validation de voix/accent par IA.** Toute génération ultérieure exige approbation humaine du texte exact, pack et garde-fous budgétaires.
+Comparer plus tard un refrain dense `no me atrevo` à un refrain moins dense avec **la même cible et le même récit**. La présence des breaks sera une variable séparée ; ne pas attribuer à l'audio une qualité non jugée par Vincent.
