@@ -14,6 +14,14 @@ import pathlib
 import sys
 import unicodedata
 
+# Explicit spelling variants of the same lexical entry, not broad stemming.
+# Avoid marking a known expression as unassessed just because a draft omits
+# its optional preposition. Do not infer other aliases from morphology.
+LEXICAL_ALIASES = {
+    "atreverse": "atreverse a",
+    "darse cuenta": "darse cuenta de",
+}
+
 DEFAULT_DATA = pathlib.Path(__file__).resolve().parents[1] / "data" / "learner_vocabulary_diagnostic_2026-11-03.json"
 
 def normalize(value):
@@ -27,6 +35,7 @@ def classify(data, targets):
     results = []
     for target in targets:
         key = normalize(target)
+        key = LEXICAL_ALIASES.get(key, key)
         state = "known" if key in known else "to_learn_or_confirm" if key in candidates else "unassessed"
         results.append({"target": target, "state": state, "eligible_as_new_target": state == "to_learn_or_confirm"})
     return results
