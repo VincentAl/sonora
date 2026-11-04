@@ -1,106 +1,96 @@
-# No me atrevo — M08, paroles V1 après revue de Vincent
+# No voy a dar marcha atrás — M08, paroles V2 (prévalidation)
 
-**Statut : brouillon révisé, non approuvé. Aucun appel Suno autorisé.** PR #5.
+**Statut : proposition de texte non approuvée ; ne pas générer sur Suno.** PR #5. Cette V2 remplace les cibles pédagogiques de V1 en tenant compte du diagnostic explicite du 3 novembre (30 connues / 30 à apprendre ou confirmer). Elle conserve la scène, le caractère percussif du refrain et les deux breaks féminins parlés que Vincent juge prometteurs. Le risque « trop histoire racontée » reste à tester **seulement après validation des paroles figées**.
 
-## Retour explicite de Vincent — 3 novembre
+## Cibles et scène
 
-- Seule la cible `atreverse` était incertaine ; `darse cuenta`, `aguantar` et `aprovechar` sont déjà connues. Ne pas les recycler comme objectifs d'apprentissage.
-- La répétition rythmique doit **ancrer une cible espagnole**, pas seulement un refrain décoratif.
-- Le premier break avait une chute absurde (« je cherche mes clés ») après une montée dramatique ; le deuxième contredisait la scène (« je pars » / « ouvre-moi »).
-- Le pont (« je ne te dis pas de rester / j'ai entendu ta voix ») n'avait pas de lien causal compréhensible.
-- Exigence : les paroles doivent former **une scène intelligible et émotionnellement proportionnée**, pas une suite d'ancrages collés.
+**Cibles à apprendre ou confirmer :** `dar marcha atrás` (revenir sur une décision), `echar en cara` (reprocher), `hacer las paces` (faire la paix), `poner pegas` (objecter / trouver à redire). Aucune n'est déclarée définitivement inconnue. `atreverse a` et `pasar página` sont **connues** selon le diagnostic et ne sont plus des objectifs pédagogiques.
 
-## Scène et choix éditorial
+Une femme quitte une relation après que son partenaire a raconté à leurs amis une confidence qu'elle lui avait faite en privé. Il a minimisé l'humiliation, puis lui reproche de ne pas pardonner. Elle ne veut pas revenir sur sa décision. Les breaks français sont une confrontation à la même personne, sans changement de lieu ni d'interlocuteur. Le refrain répète **la cible exacte** `dar marcha atrás` avec sa négation, comme décision rythmique.
 
-Une femme quitte une relation après une humiliation publique : son partenaire a raconté une confidence devant des amis, puis l'a laissée seule face à leurs réactions. Il demande qu'elle reste ; elle refuse de minimiser ce qui s'est passé. **C'est elle qui part**, du début à la fin. Le motif musical répète `no me atrevo` / `me atrevo` (oser) : au début elle n'ose pas lui dire la vérité ; à la fin elle ose partir. Les breaks sont sa parole directe, sans chute gratuite.
-
-**Cibles proposées, à confirmer selon le niveau réel de Vincent :** `atreverse` (oser), `echar en cara` (reprocher à quelqu'un), `dar marcha atrás` (revenir sur sa décision), `pasar página` (tourner la page). Seule `atreverse` est étayée par le feedback comme cible nouvelle ; les trois autres sont **candidates non validées**. Le refrain répète la première cible, contrairement à V0.
-
-## Paroles — V1, dense et breaks parlés
+## Paroles V2 — texte candidat à figer après revue
 
 [Intro — guitarra seca, voz femenina cantada, español]
 Todavía suenan las risas
 de tus amigos en el bar.
-Dijiste aquello que era nuestro
-y yo no supe reaccionar.
+Lo contaste como una broma.
+Yo me quedé sin hablar.
 
-[Verso 1 — español]
-Lo contaste como una broma,
-me miraste para comprobar
-si me reía con los otros.
-No me salió ni respirar.
-Ahora dices que fue un detalle,
-que no lo vuelva a mencionar.
-Pero aquella mesa entera
-ya sabe lo que quise guardar.
+[Verso 1 — español, seco]
+Me miraste entre las copas,
+esperando verme sonreír.
+Ahora dices: «No fue para tanto».
+Qué fácil hablar por mí.
+Y me echas en cara el silencio,
+como si te debiera aplaudir.
+No fue un secreto cualquiera.
+Era algo que confié en ti.
 
-[Estribillo — pulso firme, repetición hipnótica]
-No me atrevo, no me atrevo
-a decirte lo que pienso.
-No me atrevo, no me atrevo,
-y tú lo llamas silencio.
-No me atrevo, no me atrevo
-a quedarme un minuto más.
+[Estribillo — pulso firme, repetición rítmica]
+No voy a dar marcha atrás,
+no voy a dar marcha atrás.
+Lo que dijiste ya está dicho.
+No lo puedes retirar.
+No voy a dar marcha atrás,
+no voy a dar marcha atrás.
 
-[Break 1 — femme parlée, français, proche, colère contenue]
-Tu savais que je ne voulais pas qu'ils le sachent.
-Et tu l'as raconté pour les faire rire.
-Le pire, c'est que tu m'as regardée,
-comme si j'étais censée rire avec eux.
+[Break 1 — femme parlée, français, colère contenue, espace instrumental]
+Tu me reproches d'avoir quitté la table.
+Mais c'est toi qui les as fait rire.
+Je t'avais demandé de garder ça pour toi.
+Tu le savais.
 
-[Verso 2 — español]
-Ahora me lo echas en cara:
-«Ni siquiera sabes perdonar».
-Yo no vine a darte un castigo,
-vine a buscar mi dignidad.
-Quieres dar marcha atrás de golpe,
-recoger lo que hiciste ayer.
-Pero no puedes devolverme
-lo que escucharon sin querer.
+[Verso 2 — español, plus tendu]
+Ahora quieres hacer las paces
+con un «perdona» a media voz.
+Pero si digo que me dolió,
+siempre me pones pegas tú:
+«No era para tanto», «no exageres».
+Lo repites como una canción.
+No es la puerta lo que cierro.
+Es la excusa que inventas hoy.
 
 [Estribillo — même cellule rythmique]
-No me atrevo, no me atrevo
-a decirte lo que pienso.
-No me atrevo, no me atrevo,
-y tú lo llamas silencio.
-No me atrevo, no me atrevo
-a quedarme un minuto más.
+No voy a dar marcha atrás,
+no voy a dar marcha atrás.
+Lo que dijiste ya está dicho.
+No lo puedes retirar.
+No voy a dar marcha atrás,
+no voy a dar marcha atrás.
 
-[Break 2 — femme parlée, français, sans chant, décision nette]
-Tu peux dire que tu regrettes.
-Mais tu me reproches encore de t'en vouloir.
-Tu voudrais revenir en arrière ?
-Alors commence par arrêter de dire que j'exagère.
+[Break 2 — femme parlée, français, décision sans grand discours]
+Tu voudrais qu'on fasse la paix ce soir.
+Mais dès que je parle, tu trouves quelque chose à redire.
+Tu veux que je revienne sur ma décision ?
+Alors écoute-moi sans m'interrompre.
 
-[Puente — español, casi a capela]
-Pasar página no es borrar
-lo que pasó delante de todos.
-No necesito que lo entiendas.
-Necesito salir de aquí.
+[Puente — español, casi a capela, respiration]
+No te pido que lo borres.
+Te pido que dejes de fingir.
+Si no puedes escucharme,
+ya no tengo nada que decir.
 
-[Estribillo final — renversement du motif]
-Sí me atrevo, sí me atrevo
-a decirte lo que pienso.
-Sí me atrevo, sí me atrevo,
-ya no voy a hacer silencio.
-Sí me atrevo, sí me atrevo.
+[Estribillo final — voix plus affirmée, percussion puis arrêt]
+No voy a dar marcha atrás,
+no voy a dar marcha atrás.
+Lo que dijiste ya está dicho.
 Esta vez me voy de verdad.
+No voy a dar marcha atrás.
+No voy a dar marcha atrás.
 
-[Outro — guitarra sola, voz baja]
-Se acabaron las risas.
-Ya no tengo que fingir.
+[Outro — guitarra seule, sans discours]
+Y se apagaron las risas.
+Y por fin pude salir.
 
-## Vérification pédagogique et narrative
+## Contrôle sémantique éditorial (non automatisable)
 
-| Cible | Sens précis | Espagnol | Ancrage français distinct |
+| Cible | Sens précis | Contexte espagnol | Ancrage français **dans une autre phrase** |
 | --- | --- | --- | --- |
-| `atreverse` | oser malgré la peur | « No me atrevo » → « Sí me atrevo » | « je ne voulais pas qu'ils le sachent » ne suffit **pas** comme ancrage : **à écrire naturellement avant validation**, par exemple « J'ai pas osé te répondre devant eux » si la scène le permet |
-| `echar en cara` | reprocher / jeter à la figure | « Ahora me lo echas en cara » | « tu me reproches encore de t'en vouloir » |
-| `dar marcha atrás` | revenir en arrière / sur sa décision | « Quieres dar marcha atrás » | « Tu voudrais revenir en arrière ? » |
-| `pasar página` | tourner la page | « Pasar página no es borrar » | **Ancrage français encore manquant** ; ne pas déclarer la cible validée |
+| `dar marcha atrás` | revenir sur sa décision | « No voy a dar marcha atrás » : elle refuse de renoncer à partir | « Tu veux que je revienne sur ma décision ? » |
+| `echar en cara` | reprocher une attitude à quelqu'un | « Me echas en cara el silencio » : il lui reproche son mutisme | « Tu me reproches d'avoir quitté la table » : autre action reprochée |
+| `hacer las paces` | se réconcilier après un conflit | « Quieres hacer las paces » : il propose de se réconcilier | « Tu voudrais qu'on fasse la paix ce soir » : proposition exprimée à un autre moment |
+| `poner pegas` | faire des objections, trouver à redire | « Siempre me pones pegas » : il conteste son ressenti | « Dès que je parle, tu trouves quelque chose à redire » |
 
-**État : prévalidation incomplète.** Cette V1 corrige la causalité de la scène et utilise la répétition sur la cible `atreverse`, mais il reste à rendre naturels les ancrages français manquants et à vérifier avec Vincent si les trois autres expressions lui sont réellement inconnues. Ne pas promouvoir ni générer avant ces deux contrôles et son approbation explicite.
+**Points de vigilance avant approbation :** (1) les breaks restent assez explicatifs : vérifier à la lecture qu'ils ne sonnent pas comme des sous-titres ; (2) `hacer las paces` et `poner pegas` sont rapprochés dans le second couplet et le break 2, à évaluer pour éviter l'effet glossaire ; (3) la répétition de `dar marcha atrás` est volontairement forte pour M08 et ne doit pas être interprétée comme une règle de densité pour toutes les chansons ; (4) vérifier la fluidité idiomatique de chaque ligne espagnole et la durée réelle **à l'écoute humaine**, pas par analyse IA.
 
-## Hypothèse testable
-
-Comparer plus tard un refrain dense `no me atrevo` à un refrain moins dense avec **la même cible et le même récit**. La présence des breaks sera une variable séparée ; ne pas attribuer à l'audio une qualité non jugée par Vincent.
+**Décision de process :** ne pas générer de test audio avec un texte provisoire. Après approbation explicite des paroles exactes par Vincent, figer leur hash et comparer plusieurs interprétations Suno **sans changer les paroles**. Aucun retour positif sur l'énergie du texte ne vaut approbation de génération.
