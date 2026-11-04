@@ -227,6 +227,31 @@ Chercher des scènes où, dans la vraie vie, des gens répètent naturellement u
 
 Objectif : obtenir une répétition qui sert la scène et le dialogue, pas la pédagogie visible.
 
+## File de travail autonome — priorité et anti-attente (proposition du 4 novembre 2026)
+
+**Règle de sélection :** à chaque run, prendre la première tâche **actionnable** de cette file, pas simplement la première tâche numérotée. Si une tâche attend la revue de Vincent, un accès, un quota ou une PR concurrente, la marquer `blocked` avec la raison et **passer immédiatement à la suivante dans le même run**. Une tâche bloquée n'immobilise jamais toute la routine. Ne pas fabriquer des micro-correctifs pour remplir un run. Ne recontrôler une PR en attente que si son état a changé ou si cela débloque réellement une action. Une vérification CI seule ne constitue pas un livrable produit.
+
+**Livrable attendu :** pour une tâche choisie, viser un résultat concret et vérifiable (texte à relire, script + tests, protocole exploitable, jeu de données ou décision documentée), en une PR par livrable et un commit logique. Si aucune tâche n'est faisable, signaler précisément pourquoi, sans inventer de travail.
+
+| Ordre | Chantier | Résultat concret / critère de fin | Dépendance |
+| --- | --- | --- | --- |
+| 1 | M08 — finalisation | Paroles cohérentes avec cibles du diagnostic, ancrages français exacts, sections chantées suffisamment musicales ; soumettre **un seul texte figé** à validation | PR #5 ; **bloqué si déjà soumis et sans nouveau retour** |
+| 2 | Diagnostic vocabulaire | Registre de 30 connus / 30 à confirmer et tests, puis sélection effective par le planificateur sans supposer qu'un non-coché est inconnu | PR #6 ; intégration au planificateur dépend de PR #4 ; ne pas dupliquer |
+| 3 | Nouvelle chanson M02 / autre mécanisme | Une chanson complète autonome, scène crédible, 4–5 cibles pertinentes, grille des sens FR/ES, sans génération | Réutiliser PR #3 si même livrable ; **passer si en revue** |
+| 4 | Nouvelle expérience de mécanisme | Préparer une chanson/variante distincte qui teste un mécanisme non couvert (confirmation, correction, parallèle), avec hypothèse discriminante et paroles à valider | Indépendant de M08 ; PR dédiée ; éviter de multiplier des brouillons identiques |
+| 5 | Audit déterministe des chansons | Script de prévalidation qui signale cible déjà connue/non évaluée, cible sans ancrage et incohérences **structurelles vérifiables** ; tests sur exemples positifs/négatifs | Réutiliser les contrôles existants ; ne pas prétendre automatiser la qualité narrative |
+| 6 | Parcours approbation → pack figé | Vérifier bout en bout sur un fixture que hash des paroles, approbation humaine et gate empêchent toute génération après modification | Aucun appel Suno ; tests déterministes |
+| 7 | Expériences à paroles constantes | Préparer 2–3 prompts musicaux réellement contrastés pour un **même texte futur approuvé**, avec critères de comparaison soumis à Vincent | Pas de génération avant validation du texte |
+| 8 | Journal des retours d'écoute | Formaliser un formulaire/JSON minimal pour qualité musicale, prononciation, naturel, vocabulaire retenu et statut accepté/rejeté ; test de validation | Ne pas inventer d'avis humains |
+| 9 | Bibliothèque hebdomadaire | Définir le flux de promotion d'un clip validé vers playlist + journal, et tester la cohérence avec fixtures | Ne pas publier de morceau non validé |
+| 10 | Suivi des crédits et cadence | Consolider les journaux de génération et une synthèse quotidienne déterministe, sans IA audio ; différencier budget souhaité et solde Suno réel | Pas d'achat ni génération fictive |
+| 11 | Sélection espacée des notions | Proposition de reprise entre chansons à partir d'expositions **publiées**, jamais de simple génération, avec tests | Après stabilisation du planificateur |
+| 12 | Pipeline hebdomadaire | Définir une machine d'états explicite : brouillon → revue texte → texte figé → génération → revue audio → playlist, avec reprises sur échec | Réutiliser les gates et journaux existants |
+
+**Entretien de la file :** quand un livrable est terminé, noter sa PR/commit et remplacer son entrée par la prochaine incertitude concrète. Garder en permanence **au moins 5 tâches indépendantes actionnables** (écriture, pédagogie, outillage, bibliothèque), sans compter les tâches déjà en revue. Ne pas ouvrir de nouvelles PR pour des tâches déjà couvertes par #2–#6. Mettre à jour cette file lorsque la priorité produit change, sur branche/PR uniquement.
+
+**Mesure des runs :** dans le bilan de 21 h, indiquer les runs avec livrable réel, les runs bloqués et la cause, et le nombre de PR en attente. Un run de simple vérification n'est pas compté productif.
+
 ## Backlog
 
 - améliorer la sélection de vocabulaire et le SRS léger ;
