@@ -41,7 +41,7 @@ class SummaryTests(unittest.TestCase):
 
     def test_daylight_saving_transition(self):
         self.log("d1", "early.json", "early", "2026-10-24T22:30:00Z")
-        self.log("d1", "late.json", "late", "2026-10-25T22:30:00Z")
+        self.log("d1", "late.json", "late", "2026-10-25T23:30:00Z")
         self.assertEqual(module.summarize(self.root, "2026-10-25")["generation_calls"], 1)
 
     def test_duplicate_id_fails_even_across_days(self):
