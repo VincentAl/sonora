@@ -7,7 +7,7 @@
 | Cible | Sens précis | Contexte espagnol A | Ancrage français B, autre situation | Risque |
 | --- | --- | --- | --- | --- |
 | **aplazar** | reporter à plus tard une décision/action prévue | « Aplacemos la mudanza hasta enero » | « J'ai repoussé le rendez-vous au mois prochain » | ne pas confondre avec annuler |
-| **ceder** | céder dans un désaccord, faire une concession | « Esta vez cedo yo, nos quedamos » | « Pour une fois, c'est moi qui fais un pas vers toi » | « céder » matériellement (donner un objet) n'est pas le sens ici |
+| **ceder** | céder dans un désaccord, faire une concession | « Esta vez cedo yo, nos quedamos » | « L'autre soir, j'ai fini par céder sur le choix de la ville » | « céder » matériellement (donner un objet) n'est pas le sens ici |
 
 Ces cibles ne sont pas ajoutées au registre : il faut d'abord confirmer qu'elles ne sont pas déjà connues et qu'elles méritent une place dans la progression.
 
@@ -34,12 +34,12 @@ No por miedo, no por costumbre.
 
 [Outro — voix B, plus bas]
 
-Pour une fois, c'est moi qui fais un pas vers toi.  
+L'autre soir, j'ai fini par céder sur le choix de la ville.  
 Dejemos las cajas, que pase la lluvia.
 
 ## Hypothèse discriminante
 
-Le premier désaccord rend `aplazar` crédible ; la décision commune rend `ceder` crédible. Les ancrages français portent **les mêmes sens lexicaux** dans des contextes différents, sans traduire ligne à ligne les répliques espagnoles. L'ancrage de `ceder` (« faire un pas vers toi ») reste une **hypothèse sémantique éditoriale** : à confirmer, car l'expression française peut aussi désigner une simple initiative sans concession.
+Le premier désaccord rend `aplazar` crédible ; la décision commune rend `ceder` crédible. Les ancrages français portent **les mêmes sens lexicaux** dans des contextes différents, sans traduire ligne à ligne les répliques espagnoles. L'ancrage de `ceder` (« j'ai fini par céder sur le choix de la ville ») reprend le sens précis de concession dans un autre désaccord passé. La voix B reconnaît ainsi sa propre concession passée, sans prétendre céder elle aussi dans la décision présente.
 
 ## Critères de revue humaine — texte uniquement
 
