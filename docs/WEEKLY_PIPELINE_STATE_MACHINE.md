@@ -17,7 +17,7 @@ Une **version de morceau** est identifiée par `song_id` et par le SHA-256 des *
 | `generation_requested` | ID de requête ou identifiant de corrélation enregistré avant toute nouvelle tentative | `audio_review` lorsque les clips et la dépense réelle sont consignés ; sinon `generation_unknown` | Automatisation |
 | `generation_unknown` | Réponse perdue / statut incertain | Réconciliation par IDs et compte Suno, **jamais de nouvelle génération aveugle** | Automatisation |
 | `audio_review` | Clips, URLs, paramètres et crédits consignés | `audio_approved` ou `rejected` sur retour explicite | Vincent |
-| `audio_approved` | Prise précisément désignée et validée | `published` après ajout confirmé à la playlist et écriture du journal | Automatisation |
+| `audio_approved` | Prise précisément désignée et validée | `published` uniquement si `selection=kept`, `audio_approved=true` et `pedagogy_approved=true` pour cette prise, puis ajout confirmé à la playlist et journal cohérent | Automatisation |
 | `published` | Clip présent dans playlist et journal cohérent | État final pour cette prise ; le retrait est une action explicite distincte | Automatisation |
 | `rejected` | Motif humain enregistré sans jugement GPT | État final pour la prise ; nouveau brouillon/version si nécessaire | Vincent |
 
@@ -27,7 +27,7 @@ Les états concernent deux niveaux : `draft` à `generation_requested` décriven
 
 1. Aucun appel Suno sans approbation humaine explicite du hash exact, `check_generation_gate.py` = APPROVED et `check_suno_budget.py` = PASS avec solde frais.
 2. Une PR ouverte, une CI verte, un texte corrigé ou un avis positif sur une autre prise **ne constituent pas** une approbation.
-3. Pas de publication sans validation audio explicite de **la prise concernée**. Le like Suno ne remplace pas l'approbation pédagogique ni la publication.
+3. Pas de publication sans `selection=kept`, `audio_approved=true` **et** `pedagogy_approved=true` pour **la prise concernée**. Ces trois conditions sont distinctes ; le like Suno ne remplace aucune d'elles. Le validateur `scripts/validate_weekly_feedback.py` doit confirmer leur cohérence avant de considérer `playlist_state=added`.
 4. Pas de double dépense après timeout : enregistrer le statut inconnu, retrouver la requête ou s'arrêter pour vérification.
 5. Le journal de crédits contient les montants réellement constatés, y compris un décrément différé ; un solde inchangé juste après l'appel ne signifie pas zéro dépense.
 6. Une notion n'entre dans la planification de réexposition qu'après publication vérifiée, pas après génération.
@@ -52,7 +52,7 @@ Ne pas créer une seconde base de vérité : réutiliser les manifestes, journau
 ## Cas d'acceptation à automatiser ultérieurement
 
 - Approbation sur hash A, paroles modifiées en B : génération bloquée.
-- Deux prises : A approuvée, B rejetée ; seule A peut être publiée.
+- Deux prises : A approuvée musicalement mais sans approbation pédagogique, B rejetée ; aucune ne peut être publiée. Après `selection=kept` et approbation pédagogique explicites pour A, seule A peut être publiée.
 - Timeout Suno : aucune seconde requête tant que l'état n'est pas réconcilié.
 - Ajout playlist confirmé mais journal absent : anomalie, pas de publication réputée cohérente.
 - Génération réussie, audio non revu : aucun titre ajouté à la playlist.
