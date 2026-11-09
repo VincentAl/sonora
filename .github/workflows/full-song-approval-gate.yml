@@ -1,0 +1,25 @@
+name: Full-song approval gate tests
+
+on:
+  pull_request:
+    paths:
+      - 'tests/test_prepare_full_song_pack.py'
+      - 'scripts/prepare_full_song_pack.py'
+      - 'scripts/check_generation_gate.py'
+      - 'scripts/validate_experiment.py'
+      - 'songs/drafts/2026-11-01-la-luz-del-pasillo-full.md'
+      - 'songs/drafts/2026-11-01-la-luz-del-pasillo-pack-template.json'
+      - '.github/workflows/full-song-approval-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  approval-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run deterministic approval gate tests
+        run: python3 -m unittest discover -s tests -p 'test_prepare_full_song_pack.py' -v
