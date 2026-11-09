@@ -37,6 +37,37 @@ class FullSongPromotionTests(unittest.TestCase):
         self.assertEqual(8, len(french))
         self.assertGreater(len(spanish), len(french))
 
+    def test_exact_approval_then_edit_reblocks_generation(self):
+        manifest = prepare(DRAFT, TEMPLATE, self.output)
+        approval = {
+            "status": "approved",
+            "reviewer": "Vincent",
+            "lyrics_sha256": lyrics_digest(self.output, manifest),
+        }
+        manifest["human_lyrics_approval"] = approval
+        (self.output / "manifest.json").write_text(
+            json.dumps(manifest, ensure_ascii=False), encoding="utf-8"
+        )
+        self.assertEqual([], check_generation_gate(self.output))
+
+        lyrics_path = self.output / "lyrics.md"
+        lyrics_path.write_bytes(lyrics_path.read_bytes() + b"\n")
+        self.assertTrue(any("SHA-256 mismatch" in error
+                            for error in check_generation_gate(self.output)))
+
+    def test_wrong_digest_never_unlocks_generation(self):
+        manifest = prepare(DRAFT, TEMPLATE, self.output)
+        manifest["human_lyrics_approval"] = {
+            "status": "approved",
+            "reviewer": "Vincent",
+            "lyrics_sha256": manifest["source_draft_sha256"],
+        }
+        (self.output / "manifest.json").write_text(
+            json.dumps(manifest, ensure_ascii=False), encoding="utf-8"
+        )
+        self.assertTrue(any("SHA-256 mismatch" in error
+                            for error in check_generation_gate(self.output)))
+
     def test_reject_existing_pack_without_overwrite(self):
         self.output.mkdir()
         with self.assertRaisesRegex(ValueError, "Refusing to overwrite"):
