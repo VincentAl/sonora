@@ -1,6 +1,6 @@
 {
   "experiment_id": "2026-11-11-m08-v2",
-  "status": "approved_for_generation",
+  "status": "generated_awaiting_human_audio_review",
   "objective": "Test approved M08 V2 as a complete song with rhythmic repetition and spoken French breaks.",
   "common": {
     "target_words": [
@@ -58,7 +58,19 @@
         "hacer las paces": "The Spanish line proposes reconciliation; the French line proposes making peace.",
         "poner pegas": "The Spanish line objects to her pain; the French line finds fault with what she says."
       },
-      "generated": false
+      "generated": true,
+      "clips": [
+        {
+          "id": "4cb614fb-abb5-4c65-8c1f-e19aa6b21b88",
+          "url": "https://suno.com/song/4cb614fb-abb5-4c65-8c1f-e19aa6b21b88",
+          "status": "streaming"
+        },
+        {
+          "id": "719e7126-276b-4460-83a4-9677baf81f0e",
+          "url": "https://suno.com/song/719e7126-276b-4460-83a4-9677baf81f0e",
+          "status": "streaming"
+        }
+      ]
     }
   ],
   "human_lyrics_approval": {
@@ -67,5 +79,18 @@
     "approved_on": "2026-11-10",
     "evidence": "https://github.com/VincentAl/sonora/pull/5#issuecomment-6777871233",
     "note": "Vincent approved unchanged M08 V2 lyrics on 2026-11-10; approval remains valid until lyrics change."
+  },
+  "generation": {
+    "run_id": "4cb614fb-abb5-4c65-8c1f-e19aa6b21b88",
+    "generated_at_utc": "2026-11-11T14:03:13Z",
+    "model": "v6-mini",
+    "duration_target_seconds": 180,
+    "strict_duration": false,
+    "credits": {
+      "before": 50,
+      "after_observed_immediately": 50,
+      "spent": "pending_delayed_provider_reconciliation"
+    },
+    "note": "Suno can delay credit deductions; do not treat unchanged immediate balance as zero spend. Recheck before any subsequent generation."
   }
 }
