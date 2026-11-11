@@ -1,6 +1,6 @@
 {
   "experiment_id": "2026-11-11-m08-v2",
-  "status": "generated_awaiting_human_audio_review",
+  "status": "human_audio_feedback_received_partial",
   "objective": "Test approved M08 V2 as a complete song with rhythmic repetition and spoken French breaks.",
   "common": {
     "target_words": [
@@ -89,8 +89,21 @@
     "credits": {
       "before": 50,
       "after_observed_immediately": 50,
-      "spent": "pending_delayed_provider_reconciliation"
+      "spent": 10,
+      "after_verified_later": 40,
+      "reconciliation_note": "Suno account_usage on 2026-11-11 reported 40 remaining and monthly_usage 10 after pre-generation balance 50."
     },
     "note": "Suno can delay credit deductions; do not treat unchanged immediate balance as zero spend. Recheck before any subsequent generation."
+  },
+  "human_audio_feedback": {
+    "date": "2026-11-11",
+    "preferred_clip_id": "719e7126-276b-4460-83a4-9677baf81f0e",
+    "comparison": {
+      "clip_1": "Voice perceived as excessively raspy ('fume 4 paquets par jour').",
+      "clip_2": "Preferred overall; rhythm liked; French voice works better than clip 1."
+    },
+    "prompt_difference": "None: both clips from same Suno call with identical lyrics, style and model.",
+    "scope": "Human preference on musical interpretation; no full pedagogical or pronunciation validation.",
+    "next_step": "Keep clip 2 as musical reference; do not regenerate unchanged M08 without a new hypothesis."
   }
 }
