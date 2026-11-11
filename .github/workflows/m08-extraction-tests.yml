@@ -13,4 +13,4 @@ jobs:
       - name: Validate exact M08 lyric extraction
         run: python3 scripts/extract_m08_v2_lyrics.py --self-test
       - name: Verify extraction against reviewed draft
-        run: python3 scripts/extract_m08_v2_lyrics.py songs/drafts/2026-11-03-m08-repetition-spoken-full.md
+        run: python3 scripts/extract_m08_v2_lyrics.py songs/drafts/2026-11-03-no-cierres-la-puerta-m08.md
