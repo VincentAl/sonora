@@ -29,11 +29,36 @@ def extract(text: str) -> str:
     return body
 
 
+def self_test() -> None:
+    sample = (
+        "preface\\n" + START + "\\n\\n"
+        "[Intro — español]\\nUna línea.\\n[Outro — español]\\nFin.\\n\\n"
+        + END + "\\nnotes\\n"
+    )
+    expected = "[Intro — español]\\nUna línea.\\n[Outro — español]\\nFin.\\n"
+    assert extract(sample) == expected
+    for invalid in (sample.replace(START, "wrong"), sample + START,
+                    sample.replace(END, ""), sample.replace("[Outro", "[Final")):
+        try:
+            extract(invalid)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("Invalid source was accepted")
+    print("PASS: M08 exact extraction and four invalid-source cases")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("draft", type=Path)
+    parser.add_argument("draft", type=Path, nargs="?")
+    parser.add_argument("--self-test", action="store_true")
     parser.add_argument("--output", type=Path, help="Optional new file; never overwrite")
     args = parser.parse_args()
+    if args.self_test:
+        self_test()
+        return 0
+    if args.draft is None:
+        parser.error('draft required unless --self-test')
     try:
         lyrics = extract(args.draft.read_text(encoding="utf-8"))
         digest = hashlib.sha256(lyrics.encode("utf-8")).hexdigest()
