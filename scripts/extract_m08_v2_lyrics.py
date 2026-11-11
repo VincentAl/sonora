@@ -31,11 +31,11 @@ def extract(text: str) -> str:
 
 def self_test() -> None:
     sample = (
-        "preface\\n" + START + "\\n\\n"
-        "[Intro — español]\\nUna línea.\\n[Outro — español]\\nFin.\\n\\n"
-        + END + "\\nnotes\\n"
+        "preface\n" + START + "\n\n"
+        "[Intro — español]\nUna línea.\n[Outro — español]\nFin.\n\n"
+        + END + "\nnotes\n"
     )
-    expected = "[Intro — español]\\nUna línea.\\n[Outro — español]\\nFin.\\n"
+    expected = "[Intro — español]\nUna línea.\n[Outro — español]\nFin.\n"
     assert extract(sample) == expected
     for invalid in (sample.replace(START, "wrong"), sample + START,
                     sample.replace(END, ""), sample.replace("[Outro", "[Final")):
