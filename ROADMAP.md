@@ -255,3 +255,11 @@ Objectif : obtenir une répétition qui sert la scène et le dialogue, pas la p�
 5. Préférer scripts/checks déterministes à une analyse GPT lorsqu'ils suffisent.
 6. Pour une nouvelle structure de paroles, ne pas appeler Suno avant validation textuelle humaine par Vincent. Pour une structure déjà validée, exécuter **les deux précontrôles** : `check_generation_gate.py` et `check_suno_budget.py` avec le solde réel ; si l'un bloque, ne pas appeler Suno. Sinon faire au maximum un appel sur ce run.
 7. Mettre à jour cette roadmap si l'état ou les priorités ont réellement changé.
+
+## Escalade obligatoire après trois blocages (validée le 11 novembre 2026)
+
+- Compter les blocages **entre les runs** : un même obstacle persistant sur trois tentatives ou trois runs sans progrès produit concret atteint le seuil, même si chaque run redémarre.
+- Au seuil, **ne pas réessayer une quatrième fois la même approche**. Diagnostiquer la cause et proposer immédiatement une solution plus simple : contourner, remplacer ou retirer la complexité non indispensable, sans supprimer les contrôles de dépenses ni les validations humaines réellement requises.
+- Si une décision de Vincent est indispensable, l'escalader dans cette conversation avec une recommandation précise et les options utiles ; sinon appliquer la solution autonome et poursuivre.
+- Si le blocage est réellement externe, documenter le problème, le nombre de tentatives et la prochaine condition de reprise, puis avancer sur une autre tâche utile plutôt que boucler.
+- Priorité à un résultat produit testable (notamment un morceau à écouter) plutôt qu'à des étapes administratives, des tests redondants ou des commits de préparation.
