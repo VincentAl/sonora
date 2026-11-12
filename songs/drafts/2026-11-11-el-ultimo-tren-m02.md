@@ -85,13 +85,16 @@ Ya no tenemos que huir.
 Que pase, que pase el tren.
 Esta noche vamos a elegir.
 Que se apaguen las luces,
-todavía queda la ciudad.
+me sé de memoria tu sonrisa.
 Que pase, que pase el tren.
 Vamos juntos a caminar.
 
 [Outro — guitarra]
 Se fue el último tren.
 Nos quedamos en el andén.
+
+## Note éditoriale
+La nouvelle image « me sé de memoria tu sonrisa » reprend la piste proposée par Vincent : l'obscurité n'empêche pas de voir mentalement le sourire de l'autre. Elle remplace « todavía queda la ciudad », jugé joli mais dépourvu de sens affectif précis. À confirmer à la revue du texte complet.
 
 ## Validation attendue
 Vincent doit approuver ou corriger ces paroles exactes avant toute génération.
