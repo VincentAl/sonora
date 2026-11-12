@@ -33,28 +33,28 @@
       "id": "darse-cuenta-realize",
       "es": "darse cuenta",
       "fr_sense": "se rendre compte de quelque chose",
-      "status": "candidate",
+      "status": "known",
       "priority": 5
     },
     {
       "id": "atreverse-dare",
       "es": "atreverse",
       "fr_sense": "oser faire quelque chose malgré une hésitation",
-      "status": "candidate",
+      "status": "known",
       "priority": 4
     },
     {
       "id": "aguantar-endure",
       "es": "aguantar",
       "fr_sense": "tenir bon, supporter une difficulté",
-      "status": "candidate",
+      "status": "known",
       "priority": 4
     },
     {
       "id": "aprovechar-opportunity",
       "es": "aprovechar",
       "fr_sense": "tirer parti d’une occasion",
-      "status": "candidate",
+      "status": "known",
       "priority": 4
     }
   ],
@@ -83,5 +83,74 @@
       "stage": "draft",
       "song_id": "la-luz-del-pasillo-v0"
     }
-  ]
+  ],
+  "diagnostic": {
+    "date": "2026-11-03",
+    "source": "Vincent — diagnostic explicite",
+    "known": [
+      "atreverse a",
+      "pasar página",
+      "echar de menos",
+      "tener ganas de",
+      "guardar rencor",
+      "dar por hecho",
+      "darse cuenta de",
+      "aguantar",
+      "aprovechar",
+      "dejar claro",
+      "no tener ni idea",
+      "tomar el pelo",
+      "acabar de",
+      "estar a punto de",
+      "dar igual",
+      "hacer falta",
+      "salir adelante",
+      "arreglárselas",
+      "pasarlo bien",
+      "llegar a tiempo",
+      "estar hecho polvo",
+      "costar un ojo de la cara",
+      "por si acaso",
+      "aun así",
+      "sin embargo",
+      "como si nada",
+      "ni siquiera",
+      "más vale que",
+      "por lo visto",
+      "al fin y al cabo"
+    ],
+    "learning": [
+      "echar en cara",
+      "dar marcha atrás",
+      "quedarse con las ganas",
+      "hacer las paces",
+      "llevarse bien",
+      "venirse abajo",
+      "tener en cuenta",
+      "salirse con la suya",
+      "irse por las ramas",
+      "poner pegas",
+      "quedar en algo",
+      "meter la pata",
+      "quedarse sin",
+      "tener pendiente",
+      "pillar desprevenido",
+      "dejar plantado",
+      "no pegar ojo",
+      "tirar la toalla",
+      "estar entre la espada y la pared",
+      "dar en el clavo",
+      "irse de las manos",
+      "hacer la vista gorda",
+      "quedarse de piedra",
+      "no dar abasto",
+      "estar al tanto",
+      "por mucho que",
+      "siempre y cuando",
+      "de ahí que",
+      "a no ser que",
+      "ojalá"
+    ],
+    "policy": "Ne pas choisir de cible dans known. Sélectionner les cibles dans learning. Un statut candidate historique ne signifie pas inconnu."
+  }
 }
