@@ -17,7 +17,7 @@ from validate_experiment import validate
 def lyrics_digest(pack: Path, manifest: dict) -> str:
     """Stable digest for legacy packs and optional edit-detection on new approvals."""
     digest = hashlib.sha256()
-    for variant in manifest["variants"]:
+    for variant in sorted(manifest["variants"], key=lambda item: item["file"]):
         digest.update(variant["file"].encode("utf-8"))
         digest.update(b"\\0")
         digest.update((pack / variant["file"]).read_bytes())
