@@ -30,8 +30,8 @@ Tú creías que yo me marchaba;
 yo solo quería hablar.
 
 [Break — français parlé, voix masculine]
-J'ai cru que tu allais me laisser sur le quai.
-Et cette discussion, on la repousse depuis des semaines.
+J'ai cru que tu allais me laisser sur le quai…
+et repousser encore une fois cette discussion.
 
 [Pre-estribillo — español]
 Me quedé con las ganas
