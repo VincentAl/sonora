@@ -32,9 +32,15 @@ Sonora doit produire **de vraies chansons complètes**, pas rester au stade de P
 5. **Bibliothèque et playlist** : choisir une intégration réellement disponible, gérer ajout, écoute, like/dislike, conservation et lien avec les notions enseignées. Ne pas présumer qu'une playlist externe est automatisable avant vérification.
 6. **Cadence hebdomadaire** : automatiser la préparation et la livraison d'environ une chanson par semaine, avec validation humaine adaptée, budget maîtrisé et suivi des mots/reprises entre chansons.
 
-### Prochaine priorité
+### Prochaine priorité — actualisée le 11 novembre 2026
 
-**Catalogue initial rédigé** : [bestiaire de 7 mécanismes](docs/MECHANISM_BESTIARY.md), dont M01 (écho conversationnel) avec premier feedback positif, les autres encore hypothétiques. **Première chanson complète rédigée** : [La luz del pasillo V0](songs/drafts/2026-11-01-la-luz-del-pasillo-full.md), 4 cibles, ~2–3 min visées, **en attente de revue textuelle humaine**. Ne pas générer ce texte ni D1b sans approbation explicite. Prévalidation structurelle disponible via `scripts/audit_full_draft.py` ; [protocole de comparaison à paroles constantes](docs/FULL_SONG_COMPARISON_PROTOCOL.md) préparé. Chemin de promotion déterministe prêt via `scripts/prepare_full_song_pack.py` et le modèle `songs/drafts/2026-11-01-la-luz-del-pasillo-pack-template.json`. Le script extrait uniquement les paroles, valide la structure, fige le SHA-256 et produit un pack **toujours bloqué** jusqu'à approbation explicite des paroles exactes par Vincent. Playlist privée créée et faisabilité des voix documentée ci-dessous. Prochain travail autonome : préparer le journal de feedback hebdomadaire minimal, sans génération.
+**Livrable produit d'abord.** M08 « No voy a dar marcha atrás » a été généré (2 prises) dans [PR #5](https://github.com/VincentAl/sonora/pull/5). Retour explicite : prise 2 préférée (rythme, voix française), prise 1 trop rauque. **Même prompt et mêmes paroles** pour les deux ; la préférence musicale ne valide pas encore les acquis pédagogiques ni la publication en playlist. Ne pas régénérer M08 sans hypothèse nouvelle.
+
+**Deuxième chanson en revue** : M02 « El último tren » est proposée dans [PR #22](https://github.com/VincentAl/sonora/pull/22), sans audio. Le diagnostic de Vincent (30 expressions connues / 30 à apprendre) a été intégré dans `data/vocabulary.json` sur cette PR ; les cibles sont désormais `dejar plantado`, `quedarse con las ganas`, `tener pendiente`, `no pegar ojo`. Le planificateur doit exclure les mots déjà connus. Les corrections de fluidité du break français et de l'image « Que se apaguen las luces / me sé de memoria tu sonrisa » sont consignées dans `docs/CREATIVE_FEEDBACK_RULES.md` ; **Vincent a validé cette image précise, pas les paroles complètes**. Attendre l'approbation explicite de l'ensemble du texte avant Suno ; ne pas multiplier les brouillons concurrents.
+
+**Prochain travail autonome** : éviter de rouvrir M02 tant que sa revue textuelle est en attente ; exploiter le retour M08 dans le bestiaire s'il manque, puis préparer une hypothèse musicale/pédagogique réellement discriminante à partir du vocabulaire non connu, sans Suno avant approbation. Les nouvelles chansons doivent relire `docs/CREATIVE_FEEDBACK_RULES.md` et le diagnostic lexical avant rédaction. Priorité aux résultats écoutables et au progrès pédagogique, pas aux formalités Git.
+
+**Simplification approuvée** : une approbation humaine explicite de paroles inchangées suffit ; ne pas bloquer un texte déjà approuvé sur un hash cryptographique. Conserver un contrôle simple d'identité du texte, de budget réel et de doublons. La suppression effective des anciens scripts de gate doit être faite dans une PR technique séparée, testée et fusionnée selon les règles du workflow.
 
 ## Intégration Suno — vérifiée le 2 novembre 2026
 
@@ -253,7 +259,7 @@ Objectif : obtenir une répétition qui sert la scène et le dialogue, pas la p�
 3. Éviter de refaire ce qui attend une revue humaine.
 4. Choisir la prochaine action qui réduit le plus une incertitude produit.
 5. Préférer scripts/checks déterministes à une analyse GPT lorsqu'ils suffisent.
-6. Pour une nouvelle structure de paroles, ne pas appeler Suno avant validation textuelle humaine par Vincent. Pour une structure déjà validée, exécuter **les deux précontrôles** : `check_generation_gate.py` et `check_suno_budget.py` avec le solde réel ; si l'un bloque, ne pas appeler Suno. Sinon faire au maximum un appel sur ce run.
+6. Pour une nouvelle structure, attendre la validation textuelle explicite. Pour un texte déjà approuvé et inchangé, éviter tout verrou administratif redondant ; tant que le gate technique existant n'est pas simplifié, respecter ses contrôles, ainsi que `check_suno_budget.py` avec le solde réel. Au maximum un appel Suno par run.
 7. Mettre à jour cette roadmap si l'état ou les priorités ont réellement changé.
 
 ## Escalade obligatoire après trois blocages (validée le 11 novembre 2026)
