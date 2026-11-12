@@ -6,7 +6,17 @@ import json
 from pathlib import Path
 
 
-def plan(items, history, today, limit=5, revisit_days=14, revisit_slots=1):
+def plan(items, history, today, limit=5, revisit_days=14, revisit_slots=1, diagnostic=None):
+    """With a diagnostic, only explicitly learning expressions can be proposed."""
+    if diagnostic is not None:
+        known_es = set(diagnostic['known'])
+        learning_es = set(diagnostic['learning'])
+        if known_es & learning_es:
+            raise ValueError('diagnostic known/learning overlap')
+        if not known_es or not learning_es:
+            raise ValueError('diagnostic must include known and learning expressions')
+    else:
+        known_es, learning_es = set(), set()
     if not 1 <= limit <= 5 or not 0 <= revisit_slots <= limit or revisit_days < 1:
         raise ValueError('invalid planning limits')
     ids = [x['id'] for x in items]
@@ -33,7 +43,14 @@ def plan(items, history, today, limit=5, revisit_days=14, revisit_slots=1):
     pending = {id for id, (_, stage) in latest_event.items() if stage != 'published'}
     fresh, revisits = [], []
     for item in items:
-        if item['status'] != 'candidate' or item['id'] in pending:
+        if item['id'] in pending:
+            continue
+        if diagnostic is None:
+            if item['status'] != 'candidate':
+                continue
+        elif item['es'] not in learning_es or item['es'] in known_es:
+            continue
+        if item['status'] == 'retired':
             continue
         dates = published.get(item['id'], [])
         priority = item['priority']
@@ -73,7 +90,8 @@ def main():
         p.error('unsupported vocabulary schema version')
     try:
         result = plan(source['targets'], source['history'], dt.date.fromisoformat(args.as_of),
-                      args.limit, args.revisit_days, args.revisit_slots)
+                      args.limit, args.revisit_days, args.revisit_slots,
+                      source.get('diagnostic'))
     except (ValueError, KeyError) as exc:
         p.error(str(exc))
     print(json.dumps(result, ensure_ascii=False, indent=2))
