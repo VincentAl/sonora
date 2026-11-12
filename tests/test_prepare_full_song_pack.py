@@ -43,6 +43,8 @@ class FullSongPromotionTests(unittest.TestCase):
             "status": "approved",
             "reviewer": "Vincent",
             "lyrics_sha256": lyrics_digest(self.output, manifest),
+            "evidence": "Vincent explicit approval in review",
+            "approved_on": "2026-11-12",
         }
         manifest["human_lyrics_approval"] = approval
         (self.output / "manifest.json").write_text(
@@ -61,6 +63,8 @@ class FullSongPromotionTests(unittest.TestCase):
             "status": "approved",
             "reviewer": "Vincent",
             "lyrics_sha256": manifest["source_draft_sha256"],
+            "evidence": "Vincent explicit approval in review",
+            "approved_on": "2026-11-12",
         }
         (self.output / "manifest.json").write_text(
             json.dumps(manifest, ensure_ascii=False), encoding="utf-8"

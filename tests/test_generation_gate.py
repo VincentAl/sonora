@@ -31,6 +31,8 @@ class GenerationGateTests(unittest.TestCase):
             "status": "approved",
             "reviewer": "Vincent",
             "lyrics_sha256": lyrics_digest(self.pack, manifest),
+            "evidence": "Vincent explicit approval in review",
+            "approved_on": "2026-11-12",
         }
         path.write_text(json.dumps(manifest, ensure_ascii=False), encoding="utf-8")
 
@@ -62,6 +64,14 @@ class GenerationGateTests(unittest.TestCase):
             json.loads(path.read_text(encoding="utf-8"))["status"] == "ready_for_manual_generation"
             for path in jobs
         ))
+
+    def test_missing_evidence_is_blocked(self):
+        self.approve()
+        path = self.pack / "manifest.json"
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+        del manifest["human_lyrics_approval"]["evidence"]
+        path.write_text(json.dumps(manifest), encoding="utf-8")
+        self.assertTrue(any("evidence" in e for e in check_generation_gate(self.pack)))
 
     def test_reviewer_cannot_be_omitted(self):
         self.approve()

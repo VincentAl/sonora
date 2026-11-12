@@ -7,10 +7,22 @@ Vincent must explicitly approve the lyric text. Approval evidence and date are r
 from __future__ import annotations
 
 import json
+import hashlib
 import sys
 from pathlib import Path
 
 from validate_experiment import validate
+
+
+def lyrics_digest(pack: Path, manifest: dict) -> str:
+    """Stable digest for legacy packs and optional edit-detection on new approvals."""
+    digest = hashlib.sha256()
+    for variant in manifest["variants"]:
+        digest.update(variant["file"].encode("utf-8"))
+        digest.update(b"\\0")
+        digest.update((pack / variant["file"]).read_bytes())
+        digest.update(b"\\0")
+    return digest.hexdigest()
 
 
 def check_generation_gate(pack: Path) -> list[str]:
@@ -27,6 +39,8 @@ def check_generation_gate(pack: Path) -> list[str]:
         errors.append("Human approval must cite an explicit review (evidence URL or reference)")
     if not approval.get("approved_on"):
         errors.append("Human approval must include its date")
+    if approval.get("lyrics_sha256") and approval["lyrics_sha256"] != lyrics_digest(pack, manifest):
+        errors.append("SHA-256 mismatch: lyrics changed since approval")
     return errors
 
 
