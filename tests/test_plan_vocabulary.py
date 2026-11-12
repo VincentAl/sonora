@@ -54,6 +54,20 @@ class VocabularyPlannerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             plan(self.items, [{'target_id': 'a', 'date': '2026-10-01', 'stage': 'listened'}], self.today)
 
+    def test_diagnostic_blocks_known_and_unverified_candidates(self):
+        items = [
+            {'id': 'known', 'es': 'atreverse', 'fr_sense': 'oser', 'status': 'candidate', 'priority': 5},
+            {'id': 'unverified', 'es': 'hallar', 'fr_sense': 'trouver', 'status': 'candidate', 'priority': 5},
+            {'id': 'learn', 'es': 'no pegar ojo', 'fr_sense': 'ne pas dormir', 'status': 'learning', 'priority': 4},
+        ]
+        diagnostic = {'known': ['atreverse'], 'learning': ['no pegar ojo']}
+        result = plan(items, [], self.today, limit=5, diagnostic=diagnostic)
+        self.assertEqual([x['es'] for x in result['proposed']], ['no pegar ojo'])
+
+    def test_diagnostic_rejects_overlap(self):
+        with self.assertRaises(ValueError):
+            plan(self.items, [], self.today, diagnostic={'known': ['a'], 'learning': ['a']})
+
     def test_reject_duplicate_ids(self):
         with self.assertRaises(ValueError):
             plan(self.items + [self.items[0]], [], self.today)

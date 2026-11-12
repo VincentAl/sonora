@@ -4,11 +4,15 @@ Objectif : proposer des notions **à examiner** pour une prochaine chanson, sans
 
 ## Sources et statuts
 
-- `data/vocabulary.json` est un petit registre éditorial versionné : chaque cible possède un **ID de sens lexical** (pas seulement un mot), son expression espagnole, un sens français, une priorité manuelle de 1 à 5 et un statut `candidate` ou `retired`.
+- `data/vocabulary.json` est un petit registre éditorial versionné : chaque cible possède un **ID de sens lexical** (pas seulement un mot), son expression espagnole, un sens français, une priorité manuelle de 1 à 5 et un statut historique `candidate` ou `retired` (le diagnostic peut également marquer `known` ou `learning`).
 - `history` contient des événements datés : `draft`, `generated`, `published`. **Seul `published` constitue une exposition potentielle** pour la programmation de reprises. Même une publication ne prouve ni écoute ni apprentissage.
 - Un mot réservé dans un brouillon ou une génération non publiée n'est pas proposé pour une autre chanson : on évite de dupliquer une expérience encore en revue. Une publication ultérieure le libère pour une reprise espacée.
 - Les quatre mots de *La luz del pasillo* sont enregistrés uniquement comme `draft` ; les quatre nouveaux candidats sont des **propositions éditoriales**, non validées par Vincent.
 - Lorsqu'une chanson est réellement diffusée, ajouter une ligne `published` par cible **après** vérification de la publication. Ne jamais inférer ce statut d'un brouillon, d'une génération, d'un like ou d'une simple présence dans la playlist non approuvée.
+
+## Diagnostic personnel (novembre 2026)
+
+Quand `diagnostic` est présent dans `data/vocabulary.json`, le planificateur ne propose **que** des entrées du registre dont l'expression exacte figure dans `diagnostic.learning`. Les mots de `diagnostic.known` et les candidats sans statut d'apprentissage confirmé sont exclus. Une expression présente dans le diagnostic mais pas encore enrichie dans `targets` n'est pas inventée automatiquement : il faut d'abord lui donner un ID, un sens français et une priorité. Ce garde-fou évite de présenter comme nouveaux des mots déjà connus.
 
 ## Utilisation
 
