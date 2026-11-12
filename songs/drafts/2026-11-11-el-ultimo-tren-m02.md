@@ -44,8 +44,8 @@ Que pase, que pase el tren.
 No tenemos que subir.
 Que pase, que pase el tren.
 Esta noche quiero elegir.
-Si se apagan las luces,
-todavía queda la ciudad.
+Que se apaguen las luces,
+me sé de memoria tu sonrisa.
 Que pase, que pase el tren.
 Podemos echar a andar.
 
@@ -68,8 +68,8 @@ Que pase, que pase el tren.
 No tenemos que subir.
 Que pase, que pase el tren.
 Esta noche quiero elegir.
-Si se apagan las luces,
-todavía queda la ciudad.
+Que se apaguen las luces,
+me sé de memoria tu sonrisa.
 Que pase, que pase el tren.
 Podemos echar a andar.
 
@@ -94,7 +94,7 @@ Se fue el último tren.
 Nos quedamos en el andén.
 
 ## Note éditoriale
-La nouvelle image « me sé de memoria tu sonrisa » reprend la piste proposée par Vincent : l'obscurité n'empêche pas de voir mentalement le sourire de l'autre. Elle remplace « todavía queda la ciudad », jugé joli mais dépourvu de sens affectif précis. À confirmer à la revue du texte complet.
+La nouvelle image « me sé de memoria tu sonrisa » reprend la piste proposée par Vincent : l'obscurité n'empêche pas de voir mentalement le sourire de l'autre. Elle remplace « todavía queda la ciudad », jugé joli mais dépourvu de sens affectif précis. **Passage approuvé explicitement par Vincent le 12 novembre 2026 à 10:09 UTC** ; cette approbation est locale, pas celle des paroles complètes.
 
 ## Validation attendue
 Vincent doit approuver ou corriger ces paroles exactes avant toute génération.

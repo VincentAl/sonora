@@ -20,7 +20,7 @@ Ce document est un **journal cumulatif de retours de Vincent**, à lire avant ch
 
 **Retour** : Vincent aime l'image des lumières qui s'éteignent, mais « todavía queda la ciudad » ne dit rien de la relation. Il suggère plusieurs pistes : une autre lumière (lune, flamme, briquet, cigarette), la présence ou la voix qui suffisent, ou la mémoire d'un sourire visible même dans l'obscurité.
 
-**Révision candidate** : « Que se apaguen las luces, / me sé de memoria tu sonrisa. » (« Je connais ton sourire par cœur. »)
+**Révision explicitement approuvée par Vincent le 12 novembre 2026 (pour ce passage seulement)** : « Que se apaguen las luces, / me sé de memoria tu sonrisa. » (« Je connais ton sourire par cœur. »)
 
 **Règle** : préserver une image forte lorsqu'elle plaît ; corriger sa conséquence pour qu'elle révèle une émotion, un souvenir ou un choix des personnages. Préférer une image incarnée à une formule abstraite sans enjeu. Ne pas imposer systématiquement la même métaphore dans les chansons suivantes.
 
