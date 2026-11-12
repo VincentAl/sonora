@@ -19,9 +19,9 @@ def lyrics_digest(pack: Path, manifest: dict) -> str:
     digest = hashlib.sha256()
     for variant in sorted(manifest["variants"], key=lambda item: item["file"]):
         digest.update(variant["file"].encode("utf-8"))
-        digest.update(b"\\0")
+        digest.update(b"\0")
         digest.update((pack / variant["file"]).read_bytes())
-        digest.update(b"\\0")
+        digest.update(b"\0")
     return digest.hexdigest()
 
 
