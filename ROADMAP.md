@@ -32,6 +32,20 @@ Sonora doit produire **de vraies chansons complètes**, pas rester au stade de P
 5. **Bibliothèque et playlist** : choisir une intégration réellement disponible, gérer ajout, écoute, like/dislike, conservation et lien avec les notions enseignées. Ne pas présumer qu'une playlist externe est automatisable avant vérification.
 6. **Cadence hebdomadaire** : automatiser la préparation et la livraison d'environ une chanson par semaine, avec validation humaine adaptée, budget maîtrisé et suivi des mots/reprises entre chansons.
 
+### Nouvelle piste proposée — M08 (3 novembre 2026)
+
+Vincent a signalé dans « Lo malo que he sido contigo » de Yerai Cortés deux qualités qu'il souhaite explorer : une répétition très fréquente qui reste naturelle grâce au rythme, et des breaks avec une voix féminine parlée. Ce **feedback explicite** motive une exception expérimentale à la règle de répétition modérée, **sans supprimer cette règle pour les autres mécanismes**.
+
+Travail en [PR #5](https://github.com/VincentAl/sonora/pull/5) : cadrage M08, brouillon complet « No cierres la puerta » et protocole de comparaison répétition dense/modérée × breaks parlés/absents. **Texte en attente de revue humaine** ; aucun appel Suno autorisé. Ne pas réécrire les paroles ou préparer des générations supplémentaires avant commentaires. Prochaine action sur M08 : traiter les remarques ligne par ligne et obtenir l'approbation explicite des paroles exactes. Les changements de cette section ne sont actifs qu'après validation et fusion de la PR.
+
+### Décision de préproduction — 3 novembre 2026 (retour explicite de Vincent)
+
+Vincent trouve la V1 M08 **plus percutante**, mais craint un rendu trop « histoire racontée » ; cette incertitude se juge à l'écoute **uniquement après** stabilisation des paroles. Il a explicitement rejeté l'idée de générer un brouillon pour ensuite modifier les paroles : Suno n'est pas déterministe, et une interprétation réussie pourrait être impossible à retrouver.
+
+**Ordre obligatoire pour M08 :** (1) reprendre les cibles avec le diagnostic de 60 expressions en [PR #6](https://github.com/VincentAl/sonora/pull/6) — `atreverse a` et `pasar página` sont déclarées connues, `echar en cara` et `dar marcha atrás` restent à apprendre ou confirmer ; (2) corriger la cohérence narrative et les ancrages FR/ES, réduire la narration inutile ; (3) obtenir l'approbation explicite de Vincent sur **les paroles exactes et figées** ; (4) seulement alors préparer le pack et les gates, puis comparer des interprétations Suno **sans changer les paroles entre les prises**. Une approbation de direction artistique ou un « plus de punch » ne vaut pas approbation du texte. Aucun audio exploratoire sur un texte encore destiné à changer.
+
+Ce travail reste sur la PR #5 ; ne pas ouvrir un doublon et ne pas prétendre que la V1 est approuvée. Ne pas confondre expressions non cochées et ignorance certaine. Cette décision est proposée dans la PR, sans changement direct sur main.
+
 ### Prochaine priorité
 
 **Catalogue initial rédigé** : [bestiaire de 7 mécanismes](docs/MECHANISM_BESTIARY.md), dont M01 (écho conversationnel) avec premier feedback positif, les autres encore hypothétiques. **Première chanson complète rédigée** : [La luz del pasillo V0](songs/drafts/2026-11-01-la-luz-del-pasillo-full.md), 4 cibles, ~2–3 min visées, **en attente de revue textuelle humaine**. Ne pas générer ce texte ni D1b sans approbation explicite. Prévalidation structurelle disponible via `scripts/audit_full_draft.py` ; [protocole de comparaison à paroles constantes](docs/FULL_SONG_COMPARISON_PROTOCOL.md) préparé. Chemin de promotion déterministe prêt via `scripts/prepare_full_song_pack.py` et le modèle `songs/drafts/2026-11-01-la-luz-del-pasillo-pack-template.json`. Le script extrait uniquement les paroles, valide la structure, fige le SHA-256 et produit un pack **toujours bloqué** jusqu'à approbation explicite des paroles exactes par Vincent. Playlist privée créée et faisabilité des voix documentée ci-dessous. Prochain travail autonome : préparer le journal de feedback hebdomadaire minimal, sans génération.

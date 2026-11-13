@@ -1,0 +1,109 @@
+{
+  "experiment_id": "2026-11-11-m08-v2",
+  "status": "human_audio_feedback_received_partial",
+  "objective": "Test approved M08 V2 as a complete song with rhythmic repetition and spoken French breaks.",
+  "common": {
+    "target_words": [
+      {
+        "lemma": "dar marcha atrás",
+        "surface": "dar marcha atrás",
+        "fr": "revenir sur une décision",
+        "anchor": "revienne sur ma décision"
+      },
+      {
+        "lemma": "echar en cara",
+        "surface": "echas en cara",
+        "fr": "reprocher",
+        "anchor": "reproches"
+      },
+      {
+        "lemma": "hacer las paces",
+        "surface": "hacer las paces",
+        "fr": "faire la paix",
+        "anchor": "fasse la paix"
+      },
+      {
+        "lemma": "poner pegas",
+        "surface": "pones pegas",
+        "fr": "trouver à redire",
+        "anchor": "trouves quelque chose à redire"
+      }
+    ],
+    "require_all_targets_anchored": true,
+    "max_sung_words": 500,
+    "estimated_duration_seconds": "120-180",
+    "model_preference": "v6-mini prototype; V6 full when accessible",
+    "style_prompt": "raw dark acoustic guitar, strong rhythmic Spanish female sung refrain, intimate French female spoken breaks, organic percussion, restrained intense vocal, not cute or sugary"
+  },
+  "variants": [
+    {
+      "id": "M08-V2",
+      "file": "lyrics.md",
+      "french_anchor_count": 8,
+      "anchored_lemmas": [
+        "dar marcha atrás",
+        "echar en cara",
+        "hacer las paces",
+        "poner pegas"
+      ],
+      "anchor_line_map": {
+        "dar marcha atrás": 6,
+        "echar en cara": 0,
+        "hacer las paces": 4,
+        "poner pegas": 5
+      },
+      "semantic_links": {
+        "dar marcha atrás": "The Spanish refrain refuses to reverse the decision; the French break asks whether she should reverse it.",
+        "echar en cara": "The Spanish line reproaches her silence; the French line reproaches leaving the table.",
+        "hacer las paces": "The Spanish line proposes reconciliation; the French line proposes making peace.",
+        "poner pegas": "The Spanish line objects to her pain; the French line finds fault with what she says."
+      },
+      "generated": true,
+      "clips": [
+        {
+          "id": "4cb614fb-abb5-4c65-8c1f-e19aa6b21b88",
+          "url": "https://suno.com/song/4cb614fb-abb5-4c65-8c1f-e19aa6b21b88",
+          "status": "streaming"
+        },
+        {
+          "id": "719e7126-276b-4460-83a4-9677baf81f0e",
+          "url": "https://suno.com/song/719e7126-276b-4460-83a4-9677baf81f0e",
+          "status": "streaming"
+        }
+      ]
+    }
+  ],
+  "human_lyrics_approval": {
+    "status": "approved",
+    "reviewer": "Vincent",
+    "approved_on": "2026-11-10",
+    "evidence": "https://github.com/VincentAl/sonora/pull/5#issuecomment-6777871233",
+    "note": "Vincent approved unchanged M08 V2 lyrics on 2026-11-10; approval remains valid until lyrics change."
+  },
+  "generation": {
+    "run_id": "4cb614fb-abb5-4c65-8c1f-e19aa6b21b88",
+    "generated_at_utc": "2026-11-11T14:03:13Z",
+    "model": "v6-mini",
+    "duration_target_seconds": 180,
+    "strict_duration": false,
+    "credits": {
+      "before": 50,
+      "after_observed_immediately": 50,
+      "spent": 10,
+      "after_verified_later": 40,
+      "reconciliation_note": "Suno account_usage on 2026-11-11 reported 40 remaining and monthly_usage 10 after pre-generation balance 50."
+    },
+    "note": "Suno can delay credit deductions; do not treat unchanged immediate balance as zero spend. Recheck before any subsequent generation."
+  },
+  "human_audio_feedback": {
+    "date": "2026-11-11",
+    "preferred_clip_id": "719e7126-276b-4460-83a4-9677baf81f0e",
+    "comparison": {
+      "clip_1": "Voice perceived as excessively raspy ('fume 4 paquets par jour').",
+      "clip_2": "Preferred overall; rhythm liked; French voice works better than clip 1."
+    },
+    "prompt_difference": "None: both clips from same Suno call with identical lyrics, style and model.",
+    "scope": "Human preference on musical interpretation; no full pedagogical or pronunciation validation.",
+    "next_step": "Keep clip 2 as musical reference; do not regenerate unchanged M08 without a new hypothesis."
+  }
+}

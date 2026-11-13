@@ -36,7 +36,7 @@ class VocabularyAuditTests(unittest.TestCase):
     def test_all_existing_drafts_covered_without_exposures(self):
         errors, coverage = audit(self.csv, PACKS)
         self.assertEqual([], errors)
-        self.assertEqual({"añorar", "sosiego", "hallar", "dejar atrás"}, set(coverage))
+        self.assertEqual({"añorar", "sosiego", "hallar", "dejar atrás", "dar marcha atrás", "echar en cara", "hacer las paces", "poner pegas"}, set(coverage))
         # Derive expected coverage from manifests rather than freezing the
         # number of packs/variants: adding a new valid experiment is not a regression.
         manifests = [

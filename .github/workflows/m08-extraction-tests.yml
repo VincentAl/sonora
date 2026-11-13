@@ -1,0 +1,16 @@
+name: M08 lyric extraction tests
+on:
+  pull_request:
+    paths:
+      - 'scripts/extract_m08_v2_lyrics.py'
+      - '.github/workflows/m08-extraction-tests.yml'
+  workflow_dispatch:
+jobs:
+  extraction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate exact M08 lyric extraction
+        run: python3 scripts/extract_m08_v2_lyrics.py --self-test
+      - name: Verify extraction against reviewed draft
+        run: python3 scripts/extract_m08_v2_lyrics.py songs/drafts/2026-11-03-no-cierres-la-puerta-m08.md
