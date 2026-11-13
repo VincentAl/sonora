@@ -58,6 +58,23 @@ class VocabularyPlannerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             plan(self.items + [self.items[0]], [], self.today)
 
+    def test_external_pr_reservations_are_excluded(self):
+        result = plan(self.items, [], self.today, limit=3, reserved_ids=['c', 'b'])
+        self.assertEqual([x['id'] for x in result['proposed']], ['a'])
+        self.assertEqual(result['pending_excluded'], ['b', 'c'])
+        self.assertEqual(result['external_reserved'], ['b', 'c'])
+
+    def test_external_reservations_reject_unknown_and_duplicates(self):
+        with self.assertRaises(ValueError):
+            plan(self.items, [], self.today, reserved_ids=['missing'])
+        with self.assertRaises(ValueError):
+            plan(self.items, [], self.today, reserved_ids=['b', 'b'])
+
+    def test_external_reservation_blocks_even_if_old_publication_exists(self):
+        history = [{'target_id': 'b', 'date': '2026-10-01', 'stage': 'published'}]
+        result = plan(self.items, history, self.today, limit=3, reserved_ids=['b'])
+        self.assertNotIn('b', [x['id'] for x in result['proposed']])
+
 
 if __name__ == '__main__':
     unittest.main()
