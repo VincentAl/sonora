@@ -2,7 +2,7 @@
 """Deterministic human-approval gate for Sonora audio generation.
 
 Run before ANY Suno call. Static validation is necessary but not sufficient:
-Vincent must explicitly approve the lyric text. Approval evidence and date are required.\nAny subsequent lyric edit requires renewed human approval; this script cannot\nindependently prove that an approval applies to unchanged text. No AI calls.
+Vincent must explicitly approve the lyric text. Approval evidence, date and exact lyric SHA-256 are required.\nAny subsequent lyric edit invalidates approval. No AI calls.
 """
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ from validate_experiment import validate
 
 
 def lyrics_digest(pack: Path, manifest: dict) -> str:
-    """Stable digest for legacy packs and optional edit-detection on new approvals."""
+    """Stable digest for approval binding and mandatory edit-detection."""
     digest = hashlib.sha256()
     for variant in sorted(manifest["variants"], key=lambda item: item["file"]):
         digest.update(variant["file"].encode("utf-8"))
@@ -39,7 +39,9 @@ def check_generation_gate(pack: Path) -> list[str]:
         errors.append("Human approval must cite an explicit review (evidence URL or reference)")
     if not approval.get("approved_on"):
         errors.append("Human approval must include its date")
-    if approval.get("lyrics_sha256") and approval["lyrics_sha256"] != lyrics_digest(pack, manifest):
+    if not approval.get("lyrics_sha256"):
+        errors.append("Human approval must include lyrics_sha256 for exact-text binding")
+    elif approval["lyrics_sha256"] != lyrics_digest(pack, manifest):
         errors.append("SHA-256 mismatch: lyrics changed since approval")
     return errors
 
@@ -58,7 +60,7 @@ def main() -> int:
     except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
         print("BLOCKED:", exc)
         return 1
-    print("APPROVED: explicit Vincent lyric approval recorded; review any lyric edits before generation")
+    print("APPROVED: exact lyric files match Vincent's evidenced, dated approval")
     return 0
 
 
