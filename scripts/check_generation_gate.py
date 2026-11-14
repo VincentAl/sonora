@@ -2,12 +2,12 @@
 """Deterministic human-approval gate for Sonora audio generation.
 
 Run before ANY Suno call. Static validation is necessary but not sufficient:
-Vincent must explicitly approve the exact lyric files. No network or AI calls.
+Vincent must explicitly approve the lyric text. Approval evidence, date and exact lyric SHA-256 are required.\nAny subsequent lyric edit invalidates approval. No AI calls.
 """
 from __future__ import annotations
 
-import hashlib
 import json
+import hashlib
 import sys
 from pathlib import Path
 
@@ -15,12 +15,13 @@ from validate_experiment import validate
 
 
 def lyrics_digest(pack: Path, manifest: dict) -> str:
-    """Hash variant filenames + exact bytes; order independent."""
+    """Stable digest for approval binding and mandatory edit-detection."""
     digest = hashlib.sha256()
     for variant in sorted(manifest["variants"], key=lambda item: item["file"]):
-        name = variant["file"]
-        digest.update(name.encode("utf-8") + b"\0")
-        digest.update((pack / name).read_bytes() + b"\0")
+        digest.update(variant["file"].encode("utf-8"))
+        digest.update(b"\0")
+        digest.update((pack / variant["file"]).read_bytes())
+        digest.update(b"\0")
     return digest.hexdigest()
 
 
@@ -34,9 +35,14 @@ def check_generation_gate(pack: Path) -> list[str]:
         return ["Human lyric review is not approved: no Suno generation allowed"]
     if approval.get("reviewer") != "Vincent":
         errors.append("Human approval must explicitly name Vincent as reviewer")
-    expected = lyrics_digest(pack, manifest)
-    if approval.get("lyrics_sha256") != expected:
-        errors.append("Lyrics changed since human approval (SHA-256 mismatch)")
+    if not approval.get("evidence"):
+        errors.append("Human approval must cite an explicit review (evidence URL or reference)")
+    if not approval.get("approved_on"):
+        errors.append("Human approval must include its date")
+    if not approval.get("lyrics_sha256"):
+        errors.append("Human approval must include lyrics_sha256 for exact-text binding")
+    elif approval["lyrics_sha256"] != lyrics_digest(pack, manifest):
+        errors.append("SHA-256 mismatch: lyrics changed since approval")
     return errors
 
 
@@ -50,15 +56,11 @@ def main() -> int:
         if errors:
             for error in errors:
                 print("BLOCKED:", error)
-            if (pack / "manifest.json").exists():
-                manifest = json.loads((pack / "manifest.json").read_text(encoding="utf-8"))
-                if not validate(pack):
-                    print("Current lyric digest:", lyrics_digest(pack, manifest))
             return 1
     except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
         print("BLOCKED:", exc)
         return 1
-    print("APPROVED: exact lyric files match Vincent's recorded approval")
+    print("APPROVED: exact lyric files match Vincent's evidenced, dated approval")
     return 0
 
 
